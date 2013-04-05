@@ -298,6 +298,74 @@ function ideas_clean_cookie(){
     return;
 }
 
+//该函数用于处理MediaWiki格式时间戳,基于正则表达式.接受形如:2013-04-05T15:21:00Z
+//含有两个参数:$timestamp:需要处理的时间戳
+//$returntype:返回类型
+//unixtime(类似于UNIX时间戳,默认):1365175260
+//mysql:MYSQL格式:2013-04-05 15:21:00
+//year:仅年:2013
+//month:仅月:04
+//day:仅日:05
+//hour:仅小时:15
+//minute:仅分钟:21
+//second:仅秒:00
+//all:堆积:20130405152100
+//该函数会对$returntype进行检查,如果请求的不是预期的格式,则返回false
+function ideas_deal_timestamp($timestamp,$returntype="unixtime"){
+    ereg("[0-9]{4}",$timestamp,$reg);
+    $year=$reg[0] ;
+    //年
+    ereg("-[0-9]{2}-",$timestamp,$reg);
+    $month=$reg[0] ;
+    ereg("[0-9]{2}",$month,$reg);
+    $month=$reg[0] ;
+    //月
+    ereg("-[0-9]{2}T",$timestamp,$reg);
+    $day=$reg[0] ;
+    ereg("[0-9]{2}",$day,$reg);
+    $day=$reg[0] ;
+    //日
+    ereg("T[0-9]{2}",$timestamp,$reg);
+    $hour=$reg[0] ;
+    ereg("[0-9]{2}",$hour,$reg);
+    $hour=$reg[0] ;
+    //时
+    ereg(":[0-9]{2}:",$timestamp,$reg);
+    $minute=$reg[0] ;
+    ereg("[0-9]{2}",$minute,$reg);
+    $minute=$reg[0] ;
+    //分
+    ereg(":[0-9]{2}Z",$timestamp,$reg);
+    $second=$reg[0] ;
+    ereg("[0-9]{2}",$second,$reg);
+    $second=$reg[0] ;
+    //秒
+    if ($returntype="all"){
+        return $year.$month.$day.$hour.$minute.$second;
+    }elseif ($returntype="year"){
+        return $year;
+    }elseif ($returntype="month"){
+        return $month;
+    }elseif ($returntype="day"){
+        return $day;
+    }elseif ($returntype="hour"){
+        return $hour;
+    }elseif ($returntype="minute"){
+        return $minute;
+    }elseif ($returntype="second"){
+        return $second;
+    }elseif ($returntype="unixtime"){
+        $unixtime=$year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
+        $unixtime=trtotime($unixtime);
+        return $unixtime;
+    }elseif ($returntype="mysql"){
+        $mysqltime=$year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
+        return $mysqltime;
+    }else{
+        return false;
+    }
+}
+
 //该函数用于记录运行日志.自动添加时间戳和换行,部分兼容Wikied格式(文本)
 function ideaslog($text){
     global $logfile,$logformat;
