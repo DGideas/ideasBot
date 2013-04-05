@@ -687,7 +687,7 @@ function zhwp_check_ad_core($title){
 //目前只支持大小为267字节的沙箱
 function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
     global $zf_cleansandbox_min_time; //最短清理沙盒时间(秒)
-    $timestamp=ideas_get_last_edit_time($title);
+    $timestamp=ideas_get_last_edit_time($sandboxname);
     $unixtime=ideas_deal_timestamp($timestamp,"unixtime");
     $now=time();
     $second=$now-$unixtime;
@@ -715,7 +715,7 @@ function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
 function zhwp_clean_pic_sandbox(){
     $sandboxname="File:沙盒.png";
     global $zf_cleansandbox_min_time; //最短清理沙盒时间(秒)
-    $timestamp=ideas_get_last_edit_time($sandboxname);
+    $timestamp=ideas_get_last_edit_time("File:沙盒.png");
     $unixtime=ideas_deal_timestamp($timestamp,"unixtime");
     $now=time();
     $second=$now-$unixtime;
