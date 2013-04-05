@@ -4,8 +4,8 @@
 
 
 //该函数用于cURL连接
-function ideasconnect($post="") {
-    global $url,$useragent,$cookiefilepath;
+function ideasconnect($post="",$sitecode="") {
+    global $url,$useragent,$cookiefilepath,$defaulturl;
     // 创建一个新cURL资源
     $ideasconnect = curl_init();
     // 设置XML格式
@@ -13,7 +13,11 @@ function ideasconnect($post="") {
         $post=$post."&format=xml";
     }
     
-    curl_setopt ($ideasconnect, CURLOPT_URL, $url);
+    if ($sitecode==""){
+        curl_setopt ($ideasconnect, CURLOPT_URL, $url[$defaulturl]);
+    }else{
+        curl_setopt ($ideasconnect, CURLOPT_URL, $url[$sitecode]);
+    }
     curl_setopt ($ideasconnect, CURLOPT_HEADER, false);
     curl_setopt ($ideasconnect, CURLOPT_ENCODING, "UTF-8" );
     curl_setopt ($ideasconnect, CURLOPT_USERAGENT, $useragent);
