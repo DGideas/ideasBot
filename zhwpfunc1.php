@@ -684,6 +684,10 @@ function zhwp_check_ad_core($title){
 //该函数用于清空中文维基百科沙盒
 //目前只支持大小为267字节的沙箱
 function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
+    $zf_cleansandbox_min_time; //最短清理沙盒时间(秒)
+    $timestamp=ideas_get_last_edit_time($title);
+    $unixtime=ideas_deal_timestamp($timestamp,"unixtime");
+    $now=time();
     if (ideas_get_size($sandboxname)!="267"){
         $author=ideasgetauthor($sandboxname);
         $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
