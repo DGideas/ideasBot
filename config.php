@@ -29,7 +29,7 @@ $editsummaryhead="[[WP:BOT|".$lgname."]]: "; //机器人编辑摘要头
 $editsummarylast="([[User_talk:".$logname."|有问题?]])"; //机器人编辑摘要尾
 
 //zhwpfunc1拓展(https://github.com/DGideas/ideasBot/blob/master/zhwpfunc1.php)
-$zf_cleansandbox_min_time=300; //最短清理沙箱时间为300秒(5分钟)
+$zf_cleansandbox_min_time="300"; //最短清理沙箱时间为300秒(5分钟)
 
 //好了,请不要继续编辑,请在点击保存之后退出
 ?>
