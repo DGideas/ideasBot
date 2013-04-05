@@ -69,307 +69,307 @@ function zhwp_check_ad(){
 //广告检查函数核心(页面名称)
 //另请参见:https://github.com/DGideas/AntiAD
 function zhwp_check_ad_core($title){
-        $action=0; //初始化:条目评分为0
-        //先获得工作条目的完整源代码
-        $articlewikied=ideasview($title);
-        echo $articlewikied;
-        echo $title." : ";
-        echop();
-        //排除页面标题
-        if (ideasstrfind($title,"列表")==true){
-            $action="title:列表";
-        }elseif(ideasstrfind($title,"tmp")==true){
-            $action="title:tmp";
-        }elseif(ideasstrfind($title,"temp")==true){
-            $action="title:temp";
-        }elseif(ideasstrfind($title,"测试")==true){
-            $action="title:测试";
-        }elseif(ideasstrfind($title,"消歧义")==true){
-            $action="title:消歧义";
-        }
-        //排除关键字
-        if (ideasstrfind($articlewikied,"{{disambig}}")==true){
-            $action="keyword:消歧义模板"; 
-        }elseif(ideasstrfind($articlewikied,"编程")==true){
-            $action="keyword:编程"; 
-        }elseif(ideasstrfind($articlewikied,"接口")==true){
-            $action="keyword:接口"; 
-        }elseif(ideasstrfind($articlewikied,"节目")==true){
-            $action="keyword:节目"; 
-        }elseif(ideasstrfind($articlewikied,"空军")==true || ideasstrfind($articlewikied,"空軍")==true){
-            $action="keyword:空军"; 
-        }elseif(ideasstrfind($articlewikied,"陆军")==true){
-            $action="keyword:陆军"; 
-        }elseif(ideasstrfind($articlewikied,"海军")==true){
-            $action="keyword:海军"; 
-        }elseif(ideasstrfind($articlewikied,"软件")==true){
-            $action="keyword:软件"; 
-        }elseif(ideasstrfind($articlewikied,"二名法")==true){
-            $action="keyword:二名法"; 
-        }elseif(ideasstrfind($articlewikied,"轨")==true){
-            $action="keyword:轨"; 
-        }elseif(ideasstrfind($articlewikied,"法学")==true){
-            $action="keyword:法学"; 
-        }elseif(ideasstrfind($articlewikied,"物理")==true){
-            $action="keyword:物理";
-        }elseif(ideasstrfind($articlewikied,"山脉")==true){
-            $action="keyword:山脉";
-        }elseif(ideasstrfind($articlewikied,"数学")==true){
-            $action="keyword:数学"; 
-        }elseif(ideasstrfind($articlewikied,"舞蹈")==true){
-            $action="keyword:舞蹈"; 
-        }elseif(ideasstrfind($articlewikied,"夏朝")==true){
-            $action="keyword:夏朝"; 
-        }elseif(ideasstrfind($articlewikied,"商朝")==true || ideasstrfind($articlewikied,"商代")==true){
-            $action="keyword:商朝,商代"; 
-        }elseif(ideasstrfind($articlewikied,"周朝")==true){
-            $action="keyword:周朝"; 
-        }elseif(ideasstrfind($articlewikied,"晋朝")==true || ideasstrfind($articlewikied,"晋代")==true){
-            $action="keyword:晋朝,晋代"; 
-        }elseif(ideasstrfind($articlewikied,"南北朝")==true){
-            $action="keyword:南北朝"; 
-        }elseif(ideasstrfind($articlewikied,"秦朝")==true || ideasstrfind($articlewikied,"秦代")==true){
-            $action="keyword:秦朝,秦代"; 
-        }elseif(ideasstrfind($articlewikied,"汉朝")==true || ideasstrfind($articlewikied,"汉代")==true){
-            $action="keyword:汉朝,汉代"; 
-        }elseif(ideasstrfind($articlewikied,"三国")==true){
-            $action="keyword:三国"; 
-        }elseif(ideasstrfind($articlewikied,"唐朝")==true || ideasstrfind($articlewikied,"唐代")==true){
-            $action="keyword:唐朝,唐代";  
-        }elseif(ideasstrfind($articlewikied,"宋朝")==true || ideasstrfind($articlewikied,"宋代")==true){
-            $action="keyword:宋朝,宋代"; 
-        }elseif(ideasstrfind($articlewikied,"元朝")==true || ideasstrfind($articlewikied,"元代")==true){
-            $action="keyword:元朝,元代"; 
-        }elseif(ideasstrfind($articlewikied,"明朝")==true || ideasstrfind($articlewikied,"明代")==true){
-            $action="keyword:明朝,明代"; 
-        }elseif(ideasstrfind($articlewikied,"清朝")==true || ideasstrfind($articlewikied,"清代")==true){
-            $action="keyword:清朝,清代"; 
-        }elseif(ideasstrfind($articlewikied,"动漫")==true){
-            $action="keyword:动漫"; 
-        }elseif(ideasstrfind($articlewikied,"列表")==true){
-            $action="keyword:列表"; 
-        }elseif(ideasstrfind($articlewikied,"出版社")==true){
-            $action="keyword:出版社"; 
-        }elseif(ideasstrfind($articlewikied,"医疗")==true){
-            $action="keyword:医疗"; 
-        }elseif(ideasstrfind($articlewikied,"辖区")==true){
-            $action="keyword:辖区"; 
-        }elseif(ideasstrfind($articlewikied,"市镇")==true){
-            $action="keyword:市镇";
-        }elseif(ideasstrfind($articlewikied,"系统")==true){
-            $action="keyword:系统"; 
-        }elseif(ideasstrfind($articlewikied,"核")==true){
-            $action="keyword:核"; 
-        }elseif(ideasstrfind($articlewikied,"特征")==true){
-            $action="keyword:特征"; 
-        }elseif(ideasstrfind($articlewikied,"学名")==true){
-            $action="keyword:学名"; 
-        }elseif(ideasstrfind($articlewikied,"朝鲜")==true){
-            $action="keyword:朝鲜"; 
-        }elseif(ideasstrfind($articlewikied,"分布")==true){
-            $action="keyword:分布"; 
-        }elseif(ideasstrfind($articlewikied,"法律")==true){
-            $action="keyword:法律"; 
-        }elseif(ideasstrfind($articlewikied,"校长")==true){
-            $action="keyword:校长"; 
-        }elseif(ideasstrfind($articlewikied,"市长")==true){
-            $action="keyword:市长"; 
-        }elseif(ideasstrfind($articlewikied,"气候")==true){
-            $action="keyword:气候";
-        }elseif(ideasstrfind($articlewikied,"气象")==true){
-            $action="keyword:气象"; 
-        }elseif(ideasstrfind($articlewikied,"向量")==true){
-            $action="keyword:向量"; 
-        }elseif(ideasstrfind($articlewikied,"歌手")==true){
-            $action="keyword:歌手"; 
-        }elseif(ideasstrfind($articlewikied,"泛音")==true){
-            $action="keyword:泛音"; 
-        }elseif(ideasstrfind($articlewikied,"社会")==true){
-            $action="keyword:社会"; 
-        }elseif(ideasstrfind($articlewikied,"冠军杯")==true){
-            $action="keyword:冠军杯"; 
-        }elseif(ideasstrfind($articlewikied,"理事会")==true){
-            $action="keyword:理事会"; 
-        }elseif(ideasstrfind($articlewikied,"表示")==true){
-            $action="keyword:表示"; 
-        }elseif(ideasstrfind($articlewikied,"大学")==true){
-            $action="keyword:大学"; 
-        }elseif(ideasstrfind($articlewikied,"基督教")==true){
-            $action="keyword:基督教"; 
-        }elseif(ideasstrfind($articlewikied,"道教")==true){
-            $action="keyword:道教"; 
-        }elseif(ideasstrfind($articlewikied,"佛教")==true){
-            $action="keyword:佛教"; 
-        }elseif(ideasstrfind($articlewikied,"中共")==true){
-            $action="keyword:中共"; 
-        }elseif(ideasstrfind($articlewikied,"六四")==true){
-            $action="keyword:六四"; 
-        }elseif(ideasstrfind($articlewikied,"镇压")==true){
-            $action="keyword:镇压"; 
-        }elseif(ideasstrfind($articlewikied,"单曲")==true){
-            $action="keyword:单曲"; 
-        }elseif(ideasstrfind($articlewikied,"歌曲")==true){
-            $action="keyword:歌曲"; 
-        }elseif(ideasstrfind($articlewikied,"乐队")==true){
-            $action="keyword:乐队"; 
-        }elseif(ideasstrfind($articlewikied,"爵士")==true){
-            $action="keyword:爵士"; 
-        }elseif(ideasstrfind($articlewikied,"媒体")==true){
-            $action="keyword:媒体"; 
-        }elseif(ideasstrfind($articlewikied,"电力")==true){
-            $action="keyword:电力"; 
-        }elseif(ideasstrfind($articlewikied,"列车")==true){
-            $action="keyword:列车"; 
-        }elseif(ideasstrfind($articlewikied,"车站")==true){
-            $action="keyword:车站"; 
-        }elseif(ideasstrfind($articlewikied,"动画")==true){
-            $action="keyword:动画";
-        }elseif(ideasstrfind($articlewikied,"漫画")==true){
-            $action="keyword:漫画";
-        }elseif(ideasstrfind($articlewikied,"逻辑")==true){
-            $action="keyword:逻辑";
-        }elseif(ideasstrfind($articlewikied,"文件")==true){
-            $action="keyword:文件"; 
-        }elseif(ideasstrfind($articlewikied,"人生")==true){
-            $action="keyword:人生"; 
-        }elseif(ideasstrfind($articlewikied,"生于")==true){
-            $action="keyword:生于"; 
-        }elseif(ideasstrfind($articlewikied,"毕业于")==true){
-            $action="keyword:毕业于"; 
-        }elseif(ideasstrfind($articlewikied,"燃烧")==true){
-            $action="keyword:燃烧"; 
-        }elseif(ideasstrfind($articlewikied,"基层")==true){
-            $action="keyword:基层"; 
-        }elseif(ideasstrfind($articlewikied,"通称")==true){
-            $action="keyword:通称"; 
-        }elseif(ideasstrfind($articlewikied,"演员")==true){
-            $action="keyword:演员"; 
-        }elseif(ideasstrfind($articlewikied,"战术")==true){
-            $action="keyword:战术"; 
-        }elseif(ideasstrfind($articlewikied,"战略")==true){
-            $action="keyword:战略"; 
-        }elseif(ideasstrfind($articlewikied,"委员")==true){
-            $action="keyword:委员"; 
-        }elseif(ideasstrfind($articlewikied,"事件")==true){
-            $action="keyword:事件"; 
-        }elseif(ideasstrfind($articlewikied,"地铁")==true){
-            $action="keyword:地铁"; 
-        }elseif(ideasstrfind($articlewikied,"机关")==true){
-            $action="keyword:机关"; 
-        }elseif(ideasstrfind($articlewikied,"法院")==true){
-            $action="keyword:法院"; 
-        }elseif(ideasstrfind($articlewikied,"临床")==true){
-            $action="keyword:临床"; 
-        }elseif(ideasstrfind($articlewikied,"细胞")==true){
-            $action="keyword:细胞"; 
-        }elseif(ideasstrfind($articlewikied,"出版")==true){
-            $action="keyword:出版"; 
-        }
-        if (ideasstrfind($articlewikied,"上市公司")==true && is_numeric($action)==true){
-            $action=$action+1;
-        }
-        if(ideasstrfind($articlewikied,"股票代码")==true && is_numeric($action)==true){
-            $action=$action+1;
-        }
-        if(ideasstrfind($articlewikied,"有限公司")==true && is_numeric($action)==true){
-            $action=$action+1;
-        }
-        if(ideasstrfind($articlewikied,"有限责任公司")==true && is_numeric($action)==true){
-            $action=$action+1;
-        }
-        if(ideasstrfind($articlewikied,"互联网")==true && is_numeric($action)==true){
-            $action=$action+1;
-        }
-        if(ideasstrfind($articlewikied,"集团")==true && is_numeric($action)==true){
-            $action=$action+1;
-        }
-        if(ideasstrfind($articlewikied,"控股")==true && is_numeric($action)==true){
-            $action=$action+1;
-        }
-        if(ideasstrfind($articlewikied,"差评")==true && is_numeric($action)==true){
-            $action=$action+1;
-        }
-        if(ideasstrfind($articlewikied,"另请参见")==true && is_numeric($action)==true){
-            $action=$action+2;
-        }
-        if(ideasstrfind($articlewikied,"[[")==true && is_numeric($action)==true){
-            $action=$action+2;
-        }
-        if(ideasstrfind($articlewikied,"'''")==true && is_numeric($action)==true){
-            $action=$action+2;
-        }
-        if(ideasstrfind($articlewikied,"旗下")==true && is_numeric($action)==true){
-            $action=$action+2;
-        }
-        if(ideasstrfind($articlewikied,"发明")==true && is_numeric($action)==true){
-            $action=$action+2;
-        }
-        if(ideasstrfind($articlewikied,"专利")==true && is_numeric($action)==true){
-            $action=$action+2;
-        }
-        if(ideasstrfind($articlewikied,"==")==true && is_numeric($action)==true){
-            $action=$action+2;
-        }
-        if(ideasstrfind($articlewikied,"失败")==true && is_numeric($action)==true){
-            $action=$action+2;
-        }
-        if(ideasstrfind($articlewikied,"贸易")==true && is_numeric($action)==true){
-            $action=$action+2;
-        }
-        if(ideasstrfind($articlewikied,"19世纪")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"参考文献")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"18世纪")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"17世纪")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"16世纪")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"慈善")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"公益")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"影响")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"捐助")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"跨国")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"国有")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"纠纷")==true && is_numeric($action)==true){
-            $action=$action+3;
-        }
-        if(ideasstrfind($articlewikied,"注释")==true && is_numeric($action)==true){
-            $action=$action+4;
-        }
-        if(ideasstrfind($articlewikied,"参考")==true && is_numeric($action)==true){
-            $action=$action+4;
-        }
-        if(ideasstrfind($articlewikied,"丑闻")==true && is_numeric($action)==true){
-            $action=$action+5;
-        }
-        if(ideasstrfind($articlewikied,"负面")==true && is_numeric($action)==true){
-            $action=$action+5;
-        }
-        if(ideasstrfind($articlewikied,"质疑")==true && is_numeric($action)==true){
-            $action=$action+5;
-        }
-        if(ideasstrfind($articlewikied,"英雄")==true && is_numeric($action)==true){
-            $action=$action-1;
-        }
+    $action=0; //初始化:条目评分为0
+    //先获得工作条目的完整源代码
+    $articlewikied=ideasview($title);
+    echo $articlewikied;
+    echo $title." : ";
+    echop();
+    //排除页面标题
+    if (ideasstrfind($title,"列表")==true){
+        $action="title:列表";
+    }elseif(ideasstrfind($title,"tmp")==true){
+        $action="title:tmp";
+    }elseif(ideasstrfind($title,"temp")==true){
+        $action="title:temp";
+    }elseif(ideasstrfind($title,"测试")==true){
+        $action="title:测试";
+    }elseif(ideasstrfind($title,"消歧义")==true){
+        $action="title:消歧义";
+    }
+    //排除关键字
+    if (ideasstrfind($articlewikied,"{{disambig}}")==true){
+        $action="keyword:消歧义模板"; 
+    }elseif(ideasstrfind($articlewikied,"编程")==true){
+        $action="keyword:编程"; 
+    }elseif(ideasstrfind($articlewikied,"接口")==true){
+        $action="keyword:接口"; 
+    }elseif(ideasstrfind($articlewikied,"节目")==true){
+        $action="keyword:节目"; 
+    }elseif(ideasstrfind($articlewikied,"空军")==true || ideasstrfind($articlewikied,"空軍")==true){
+        $action="keyword:空军"; 
+    }elseif(ideasstrfind($articlewikied,"陆军")==true){
+        $action="keyword:陆军"; 
+    }elseif(ideasstrfind($articlewikied,"海军")==true){
+        $action="keyword:海军"; 
+    }elseif(ideasstrfind($articlewikied,"软件")==true){
+        $action="keyword:软件"; 
+    }elseif(ideasstrfind($articlewikied,"二名法")==true){
+        $action="keyword:二名法"; 
+    }elseif(ideasstrfind($articlewikied,"轨")==true){
+        $action="keyword:轨"; 
+    }elseif(ideasstrfind($articlewikied,"法学")==true){
+        $action="keyword:法学"; 
+    }elseif(ideasstrfind($articlewikied,"物理")==true){
+        $action="keyword:物理";
+    }elseif(ideasstrfind($articlewikied,"山脉")==true){
+        $action="keyword:山脉";
+    }elseif(ideasstrfind($articlewikied,"数学")==true){
+        $action="keyword:数学"; 
+    }elseif(ideasstrfind($articlewikied,"舞蹈")==true){
+        $action="keyword:舞蹈"; 
+    }elseif(ideasstrfind($articlewikied,"夏朝")==true){
+        $action="keyword:夏朝"; 
+    }elseif(ideasstrfind($articlewikied,"商朝")==true || ideasstrfind($articlewikied,"商代")==true){
+        $action="keyword:商朝,商代"; 
+    }elseif(ideasstrfind($articlewikied,"周朝")==true){
+        $action="keyword:周朝"; 
+    }elseif(ideasstrfind($articlewikied,"晋朝")==true || ideasstrfind($articlewikied,"晋代")==true){
+        $action="keyword:晋朝,晋代"; 
+    }elseif(ideasstrfind($articlewikied,"南北朝")==true){
+        $action="keyword:南北朝"; 
+    }elseif(ideasstrfind($articlewikied,"秦朝")==true || ideasstrfind($articlewikied,"秦代")==true){
+        $action="keyword:秦朝,秦代"; 
+    }elseif(ideasstrfind($articlewikied,"汉朝")==true || ideasstrfind($articlewikied,"汉代")==true){
+        $action="keyword:汉朝,汉代"; 
+    }elseif(ideasstrfind($articlewikied,"三国")==true){
+        $action="keyword:三国"; 
+    }elseif(ideasstrfind($articlewikied,"唐朝")==true || ideasstrfind($articlewikied,"唐代")==true){
+        $action="keyword:唐朝,唐代";  
+    }elseif(ideasstrfind($articlewikied,"宋朝")==true || ideasstrfind($articlewikied,"宋代")==true){
+        $action="keyword:宋朝,宋代"; 
+    }elseif(ideasstrfind($articlewikied,"元朝")==true || ideasstrfind($articlewikied,"元代")==true){
+        $action="keyword:元朝,元代"; 
+    }elseif(ideasstrfind($articlewikied,"明朝")==true || ideasstrfind($articlewikied,"明代")==true){
+        $action="keyword:明朝,明代"; 
+    }elseif(ideasstrfind($articlewikied,"清朝")==true || ideasstrfind($articlewikied,"清代")==true){
+        $action="keyword:清朝,清代"; 
+    }elseif(ideasstrfind($articlewikied,"动漫")==true){
+        $action="keyword:动漫"; 
+    }elseif(ideasstrfind($articlewikied,"列表")==true){
+        $action="keyword:列表"; 
+    }elseif(ideasstrfind($articlewikied,"出版社")==true){
+        $action="keyword:出版社"; 
+    }elseif(ideasstrfind($articlewikied,"医疗")==true){
+        $action="keyword:医疗"; 
+    }elseif(ideasstrfind($articlewikied,"辖区")==true){
+        $action="keyword:辖区"; 
+    }elseif(ideasstrfind($articlewikied,"市镇")==true){
+        $action="keyword:市镇";
+    }elseif(ideasstrfind($articlewikied,"系统")==true){
+        $action="keyword:系统"; 
+    }elseif(ideasstrfind($articlewikied,"核")==true){
+        $action="keyword:核"; 
+    }elseif(ideasstrfind($articlewikied,"特征")==true){
+        $action="keyword:特征"; 
+    }elseif(ideasstrfind($articlewikied,"学名")==true){
+        $action="keyword:学名"; 
+    }elseif(ideasstrfind($articlewikied,"朝鲜")==true){
+        $action="keyword:朝鲜"; 
+    }elseif(ideasstrfind($articlewikied,"分布")==true){
+        $action="keyword:分布"; 
+    }elseif(ideasstrfind($articlewikied,"法律")==true){
+        $action="keyword:法律"; 
+    }elseif(ideasstrfind($articlewikied,"校长")==true){
+        $action="keyword:校长"; 
+    }elseif(ideasstrfind($articlewikied,"市长")==true){
+        $action="keyword:市长"; 
+    }elseif(ideasstrfind($articlewikied,"气候")==true){
+        $action="keyword:气候";
+    }elseif(ideasstrfind($articlewikied,"气象")==true){
+        $action="keyword:气象"; 
+    }elseif(ideasstrfind($articlewikied,"向量")==true){
+        $action="keyword:向量"; 
+    }elseif(ideasstrfind($articlewikied,"歌手")==true){
+        $action="keyword:歌手"; 
+    }elseif(ideasstrfind($articlewikied,"泛音")==true){
+        $action="keyword:泛音"; 
+    }elseif(ideasstrfind($articlewikied,"社会")==true){
+        $action="keyword:社会"; 
+    }elseif(ideasstrfind($articlewikied,"冠军杯")==true){
+        $action="keyword:冠军杯"; 
+    }elseif(ideasstrfind($articlewikied,"理事会")==true){
+        $action="keyword:理事会"; 
+    }elseif(ideasstrfind($articlewikied,"表示")==true){
+        $action="keyword:表示"; 
+    }elseif(ideasstrfind($articlewikied,"大学")==true){
+        $action="keyword:大学"; 
+    }elseif(ideasstrfind($articlewikied,"基督教")==true){
+        $action="keyword:基督教"; 
+    }elseif(ideasstrfind($articlewikied,"道教")==true){
+        $action="keyword:道教"; 
+    }elseif(ideasstrfind($articlewikied,"佛教")==true){
+        $action="keyword:佛教"; 
+    }elseif(ideasstrfind($articlewikied,"中共")==true){
+        $action="keyword:中共"; 
+    }elseif(ideasstrfind($articlewikied,"六四")==true){
+        $action="keyword:六四"; 
+    }elseif(ideasstrfind($articlewikied,"镇压")==true){
+        $action="keyword:镇压"; 
+    }elseif(ideasstrfind($articlewikied,"单曲")==true){
+        $action="keyword:单曲"; 
+    }elseif(ideasstrfind($articlewikied,"歌曲")==true){
+        $action="keyword:歌曲"; 
+    }elseif(ideasstrfind($articlewikied,"乐队")==true){
+        $action="keyword:乐队"; 
+    }elseif(ideasstrfind($articlewikied,"爵士")==true){
+        $action="keyword:爵士"; 
+    }elseif(ideasstrfind($articlewikied,"媒体")==true){
+        $action="keyword:媒体"; 
+    }elseif(ideasstrfind($articlewikied,"电力")==true){
+        $action="keyword:电力"; 
+    }elseif(ideasstrfind($articlewikied,"列车")==true){
+        $action="keyword:列车"; 
+    }elseif(ideasstrfind($articlewikied,"车站")==true){
+        $action="keyword:车站"; 
+    }elseif(ideasstrfind($articlewikied,"动画")==true){
+        $action="keyword:动画";
+    }elseif(ideasstrfind($articlewikied,"漫画")==true){
+        $action="keyword:漫画";
+    }elseif(ideasstrfind($articlewikied,"逻辑")==true){
+        $action="keyword:逻辑";
+    }elseif(ideasstrfind($articlewikied,"文件")==true){
+        $action="keyword:文件"; 
+    }elseif(ideasstrfind($articlewikied,"人生")==true){
+        $action="keyword:人生"; 
+    }elseif(ideasstrfind($articlewikied,"生于")==true){
+        $action="keyword:生于"; 
+    }elseif(ideasstrfind($articlewikied,"毕业于")==true){
+        $action="keyword:毕业于"; 
+    }elseif(ideasstrfind($articlewikied,"燃烧")==true){
+        $action="keyword:燃烧"; 
+    }elseif(ideasstrfind($articlewikied,"基层")==true){
+        $action="keyword:基层"; 
+    }elseif(ideasstrfind($articlewikied,"通称")==true){
+        $action="keyword:通称"; 
+    }elseif(ideasstrfind($articlewikied,"演员")==true){
+        $action="keyword:演员"; 
+    }elseif(ideasstrfind($articlewikied,"战术")==true){
+        $action="keyword:战术"; 
+    }elseif(ideasstrfind($articlewikied,"战略")==true){
+        $action="keyword:战略"; 
+    }elseif(ideasstrfind($articlewikied,"委员")==true){
+        $action="keyword:委员"; 
+    }elseif(ideasstrfind($articlewikied,"事件")==true){
+        $action="keyword:事件"; 
+    }elseif(ideasstrfind($articlewikied,"地铁")==true){
+        $action="keyword:地铁"; 
+    }elseif(ideasstrfind($articlewikied,"机关")==true){
+        $action="keyword:机关"; 
+    }elseif(ideasstrfind($articlewikied,"法院")==true){
+        $action="keyword:法院"; 
+    }elseif(ideasstrfind($articlewikied,"临床")==true){
+        $action="keyword:临床"; 
+    }elseif(ideasstrfind($articlewikied,"细胞")==true){
+        $action="keyword:细胞"; 
+    }elseif(ideasstrfind($articlewikied,"出版")==true){
+        $action="keyword:出版"; 
+    }
+    if (ideasstrfind($articlewikied,"上市公司")==true && is_numeric($action)==true){
+        $action=$action+1;
+    }
+    if(ideasstrfind($articlewikied,"股票代码")==true && is_numeric($action)==true){
+        $action=$action+1;
+    }
+    if(ideasstrfind($articlewikied,"有限公司")==true && is_numeric($action)==true){
+        $action=$action+1;
+    }
+    if(ideasstrfind($articlewikied,"有限责任公司")==true && is_numeric($action)==true){
+        $action=$action+1;
+    }
+    if(ideasstrfind($articlewikied,"互联网")==true && is_numeric($action)==true){
+        $action=$action+1;
+    }
+    if(ideasstrfind($articlewikied,"集团")==true && is_numeric($action)==true){
+        $action=$action+1;
+    }
+    if(ideasstrfind($articlewikied,"控股")==true && is_numeric($action)==true){
+        $action=$action+1;
+    }
+    if(ideasstrfind($articlewikied,"差评")==true && is_numeric($action)==true){
+        $action=$action+1;
+    }
+    if(ideasstrfind($articlewikied,"另请参见")==true && is_numeric($action)==true){
+        $action=$action+2;
+    }
+    if(ideasstrfind($articlewikied,"[[")==true && is_numeric($action)==true){
+        $action=$action+2;
+    }
+    if(ideasstrfind($articlewikied,"'''")==true && is_numeric($action)==true){
+        $action=$action+2;
+    }
+    if(ideasstrfind($articlewikied,"旗下")==true && is_numeric($action)==true){
+        $action=$action+2;
+    }
+    if(ideasstrfind($articlewikied,"发明")==true && is_numeric($action)==true){
+        $action=$action+2;
+    }
+    if(ideasstrfind($articlewikied,"专利")==true && is_numeric($action)==true){
+        $action=$action+2;
+    }
+    if(ideasstrfind($articlewikied,"==")==true && is_numeric($action)==true){
+        $action=$action+2;
+    }
+    if(ideasstrfind($articlewikied,"失败")==true && is_numeric($action)==true){
+        $action=$action+2;
+    }
+    if(ideasstrfind($articlewikied,"贸易")==true && is_numeric($action)==true){
+        $action=$action+2;
+    }
+    if(ideasstrfind($articlewikied,"19世纪")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"参考文献")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"18世纪")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"17世纪")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"16世纪")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"慈善")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"公益")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"影响")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"捐助")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"跨国")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"国有")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"纠纷")==true && is_numeric($action)==true){
+        $action=$action+3;
+    }
+    if(ideasstrfind($articlewikied,"注释")==true && is_numeric($action)==true){
+        $action=$action+4;
+    }
+    if(ideasstrfind($articlewikied,"参考")==true && is_numeric($action)==true){
+        $action=$action+4;
+    }
+    if(ideasstrfind($articlewikied,"丑闻")==true && is_numeric($action)==true){
+        $action=$action+5;
+    }
+    if(ideasstrfind($articlewikied,"负面")==true && is_numeric($action)==true){
+        $action=$action+5;
+    }
+    if(ideasstrfind($articlewikied,"质疑")==true && is_numeric($action)==true){
+        $action=$action+5;
+    }
+    if(ideasstrfind($articlewikied,"英雄")==true && is_numeric($action)==true){
+        $action=$action-1;
+    }
         if(ideasstrfind($articlewikied,"网址")==true && is_numeric($action)==true){
             $action=$action-1;
         }
