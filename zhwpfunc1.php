@@ -172,6 +172,8 @@ function zhwp_check_ad_core($title){
             $action="keyword:法律"; 
         }elseif(ideasstrfind($articlewikied,"校长")==true){
             $action="keyword:校长"; 
+        }elseif(ideasstrfind($articlewikied,"市长")==true){
+            $action="keyword:市长"; 
         }elseif(ideasstrfind($articlewikied,"气候")==true){
             $action="keyword:气候";
         }elseif(ideasstrfind($articlewikied,"气象")==true){
