@@ -6,7 +6,7 @@
 $lgname="Botname"; //机器人账户的用户名(记录日志等操作也会用到)
 $lgpassword="Password"; //机器人账户的密码
 $url="http://zh.wikipedia.org/w/api.php"; //机器人运行MW所在MediaWiki软件api.php地址
-$useragent= "Botname,Version,by author"; //机器人的用户代理标识
+$useragent= $lgname."Version,by author"; //机器人的用户代理标识
 $cookiefilepath=getcwd()."/cookie.log"; //机器人cURL使用的cookie记录文件
 
 //日志
