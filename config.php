@@ -13,7 +13,7 @@ $defaulturl="zhwp"; //默认的站点代号
 $useragent= $lgname."Version,by author"; //机器人的用户代理标识
 $cookiefilepath=getcwd()."/cookie.log"; //机器人cURL使用的cookie记录文件
 
-//API.php
+//定义API.php位置
 $url["zhwp"]="http://zh.wikipedia.org/w/api.php"; //中文维基百科
 $url["enwp"]="http://en.wikipedia.org/w/api.php"; //英文维基百科
 $url["zhmg"]="http://zh.moegirl.org/api.php"; //中文萌娘百科
