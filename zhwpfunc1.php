@@ -721,5 +721,66 @@ function zhwp_clean_pic_sandbox(){
     }
     return;
 }
+//以下函数为测试函数,运行可能不稳定
+//以下函数为测试函数,运行可能不稳定
+//以下函数为测试函数,运行可能不稳定
+//以下函数为测试函数,运行可能不稳定
+//以下函数为测试函数,运行可能不稳定
+//以下函数为测试函数,运行可能不稳定
+
+//该函数用于基于用户贡献维基化条目
+function zhwp_wikied_from_user($user){
+    $usercontribs=ideas_get_user_contribs($user,"50");
+    $isum=count($usercontribs->query->usercontribs->item);
+    $i=0;
+    do{
+        zhwp_wikied_core($usercontribs->query->usercontribs->item[$i]->attributes()->title);
+        $i=$i+1;
+    }while($i <= ($isum-1));
+    return;
+}
+
+//该函数是页面维基化的核心函数
+function zhwp_wikied_core($title){
+    $wikied=ideasview($title);
+    $wikied2=$wikied;
+    if (ideasstrfind($wikied,$title)==true){
+        //如果条目中出现同标题的文字
+        if (ideasstrfind($wikied,"'''".$title."'''")==false){
+            //如果没有加粗
+            $wikied=ideasstrreplace($title,"'''".$title."'''",$wikied);
+            ideaslog("加粗了同标题的文字:".$title);
+        }
+    }
+    if  (ideasstrfind($wikied,"<ref>")==true){
+        //如果有注释标签
+        if (ideasstrfind($wikied,"{{reflist}}")==false){
+            //又没有{{reflist}}
+            $wikied=$wikied."\r\n{{reflist}}";
+            ideaslog("添加reflist到以下条目:".$title);
+        }
+    }
+    if ($wikied2!=$wikied){
+        //如果有改动
+        ideasedit("User:ideasBot/sandbox/".$title,$wikied,"维基化页面");
+    }
+    return;
+}
+
+//该函数用于从最近更改列表中进行反破坏
+function zhwp_anti_vandal(){
+    $arraydata=ideasgetrecentchanges();
+    $i=0;
+    $isum=count ($arraydata->query->recentchanges->rc);
+    do{
+        zhwp_anti_vandal_core($arraydata->query->recentchanges->rc[$i]->attributes()->title);
+    }while($i <= ($isum-1));
+    return;
+}
+
+//该函数是反破坏模块的核心函数
+function zhwp_anti_vandal_core($title){
+    return;
+}
 
 ?>
