@@ -56,7 +56,7 @@ function ideas_login($site=""){
         echo ($result);
         //通常的错误是wrongpassword,needtoken,wrongtoken.
         if ($result=="needtoken"){
-            echo "如果这个错误是偶尔出现的,请检查程序防止并发登录";
+            echo "如果这个错误是偶尔出现的,请检查程序防止并发登录.并确保cookie.log至少有RWRWRW权限";
             exit();
         }elseif ($result=="wrongtoken"){
             $result=ideas_login_core($lgname,$lgpassword);
