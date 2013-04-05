@@ -3,7 +3,35 @@
 
 //该函数用于将小于50kB,且无删除或速删模版的条目进行标记:{{Substub}},如果条目内容为空,则直接G1
 function zhwp_check_50() {
-//该函数的细节由于考虑到安全性并未公开,如需详细源代码请联系DGideas
+    $arraydata=ideaslist("apmaxsize=50");
+    $i=0;
+    $isum=count ($arraydata->query->allpages->p);
+    if ($isum!=0){
+        do{
+            if (ideasstrfind($arraydata->query->allpages->p[$i]->attributes()->title,"temp")==false && ideasstrfind($arraydata->query->allpages->p[$i]->attributes()->title,"tmp")==false && ideasstrfind($arraydata->query->allpages->p[$i]->attributes()->title,"测试")==false ){
+                if (ideasview($arraydata->query->allpages->p[$i]->attributes()->title)==""){
+                    //如果条目内容为空,暂停悬挂
+                    //$topwikied=ideasviewtop($arraydata->query->allpages->p[$i]->attributes()->title);
+                    //$topwikied="{{D|A1}}\r\n".$topwikied;
+                    //ideasedittop($arraydata->query->allpages->p[$i]->attributes()->title,$topwikied,"添加{{[[Template:D|A1]]}}标记到条目");
+                    //ideaslog("Add {{D|A1}} to : [[".$arraydata->query->allpages->p[$i]->attributes()->title."]]");
+                }else{
+                        if (ideasstrfind(ideasview($arraydata->query->allpages->p[$i]->attributes()->title),"{{d")==false && ideasstrfind(ideasview($arraydata->query->allpages->p[$i]->attributes()->title),"{{substub") && ideasstrfind(ideasview($arraydata->query->allpages->p[$i]->attributes()->title),"{{copyvio") ==false){
+                        $topwikied=ideasviewtop($arraydata->query->allpages->p[$i]->attributes()->title);
+                        $topwikied="{{subst:Substub/auto}}\r\n".$topwikied;
+                        ideasedittop($arraydata->query->allpages->p[$i]->attributes()->title,$topwikied,"添加[[Template:Substub|小小作品]]标记到条目");
+                        ideaslog("Add {{Substub}} to : [[".$arraydata->query->allpages->p[$i]->attributes()->title."]]");
+                    }
+                }
+        }else{
+    
+        }
+        $i=$i+1;
+        }while($i <= ($isum-1));
+    }else{
+    //没有小于50字节条目则跳过
+    }
+    return;
 }
 
 //该函数用于从最近更改中检测新创建的广告条目,并将其标记
