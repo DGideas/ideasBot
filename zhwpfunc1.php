@@ -691,7 +691,7 @@ function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
     $unixtime=ideas_deal_timestamp($timestamp,"unixtime");
     $now=time();
     $second=$now-$unixtime;
-    if ($second>="300"){
+    if ($second>=$zf_cleansandbox_min_time){
         if (ideas_get_size($sandboxname)!="267"){
             $author=ideasgetauthor($sandboxname);
             $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
@@ -719,7 +719,7 @@ function zhwp_clean_pic_sandbox(){
     $unixtime=ideas_deal_timestamp($timestamp,"unixtime");
     $now=time();
     $second=$now-$unixtime;
-    if ($second>="300"){
+    if ($second>=$zf_cleansandbox_min_time){
         if (ideas_get_size($sandboxname)!="279"){
             $author=ideasgetauthor($sandboxname);
             $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
