@@ -1,0 +1,47 @@
+<?DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>IdeasBot - 源代码说明</title>
+</head>
+<body>
+<center><big>源代码说明<p />
+更新日志:<p />
+</big>
+<hr />
+<b>2013年4月5日</b><p />
+在ideasedit,ideaseditnew,ideasedittop函数中添加了"和符号"和"问号"的处理机制<p />
+添加函数zhwp_anti_vandal()和zhwp_anti_vandal_core($title),用于中文维基百科反破坏<p />
+添加源代码注释<p />
+优化了示例页面,增强了兼容性<p />
+<hr />
+<b>2013年4月4日</b><p />
+添加ideas_get_user_contribs($user,$times="100"),用于获得指定用户的用户贡献<p />
+添加ideas_get_creator($title),用于获得页面的作者<p />
+源代码添加注释<p />
+将函数ideaslogin()易名为ideas_login()并添加相关API帮助<p />
+将函数ideasclrcookie()易名为ideas_clean_cookie()<p />
+将函数zhwp_check_ad()拆分为zhwp_check_ad()和zhwp_check_ad_core($title),从而实现更好地代用<p />
+扩充函数zhwp_check_ad_core(),使用类似递归检查一个问题条目创建者的一连串贡献<p />
+添加函数zhwp_wikied_from_user($user),基于用户贡献的页面维基化维护<p />
+添加函数zhwp_wikied_core($title),维基化核心函数<p />
+<hr />
+<b>2013年4月3日</b><p />
+优化了ideasedit,ideasedittop,ideaseditnew的程序逻辑(自动填充编辑摘要部分)<p />
+优化了ideasreport的添加签名相关代码<p />
+添加ideas_get_size($title)函数,用于获得页面大小<p />
+添加zhwp_clean_sandbox($sandboxname="Wikipedia:沙箱")函数,用于清空沙箱<p />
+<hr />
+<b>2013年3月31日</b><p />
+添加ideasstrreplace($oldstr,$newstr,$string)函数,用于替换字符,对大小写不敏感<p />
+添加ideasedit($title,$text,$summary=""),用于编辑整个条目<p />
+<hr />
+<b>2013年3月30日</b><p />
+将mwlogin($lgname,$lgpassword)易名为ideaslogin(),并取消了参数(由函数内部global关键字代替)<p />
+将zhwp_check_substub()易名为zhwp_check_50(),并增加了其他模板的标记功能<p />
+添加用户设置项:cookie位置,编辑摘要头,编辑摘要尾<p />
+添加函数ideassummary($summary),ideasrecentchanges().分别用于添加编辑摘要头尾和监视最近更改<p />
+添加了zhwp_check_ad()函数,使用某种简单算法检查并标记疑似广告的条目<p />
+</center>
+</body>
+</html>
