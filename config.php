@@ -1,7 +1,6 @@
 <?php
 //encode:UTF-8
 
-//配置文件头
 //通用
 $lgname="Botname"; //机器人账户的用户名(记录日志等操作也会用到)
 $lgpassword="Password"; //机器人账户的密码
@@ -26,6 +25,9 @@ $logformat="%Y/%m/%d %H:%M:%S"; //机器人记录日志文件时间戳的格式
 //编辑
 $editsummaryhead="[[WP:BOT|".$lgname."]]: "; //机器人编辑摘要头
 $editsummarylast="([[User_talk:".$logname."|报告错误]])"; //机器人编辑摘要尾
+
+//zhwpfunc1拓展(https://github.com/DGideas/ideasBot/blob/master/zhwpfunc1.php)
+$zf_cleansandbox_min_time=300; //最短清理沙箱时间为300秒(5分钟)
 
 //好了,请不要继续编辑,请在点击保存之后退出
 ?>
