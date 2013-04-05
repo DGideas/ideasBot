@@ -4,7 +4,7 @@
 
 
 //该函数用于cURL连接
-function ideasconnect($post="",$sitecode="") {
+function ideasconnect($post="",$site="") {
     global $url,$useragent,$cookiefilepath,$defaulturl;
     // 创建一个新cURL资源
     $ideasconnect = curl_init();
@@ -13,10 +13,10 @@ function ideasconnect($post="",$sitecode="") {
         $post=$post."&format=xml";
     }
     
-    if ($sitecode==""){
+    if ($site==""){
         curl_setopt ($ideasconnect, CURLOPT_URL, $url[$defaulturl]);
     }else{
-        curl_setopt ($ideasconnect, CURLOPT_URL, $url[$sitecode]);
+        curl_setopt ($ideasconnect, CURLOPT_URL, $url[$site]);
     }
     curl_setopt ($ideasconnect, CURLOPT_HEADER, false);
     curl_setopt ($ideasconnect, CURLOPT_ENCODING, "UTF-8" );
@@ -42,10 +42,33 @@ function echop(){
 }
 
 //该函数用于登录(用户名,密码)
-//特别注意:请不要试图并发登录!短时间内(约几秒)多次并发登录可能提示needtoken
-//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=login
-function ideas_login(){
+//已经修复一个并发连接导致的错误
+//Note:$site参数暂时不用
+function ideas_login($site=""){
     global $lgname,$lgpassword;
+    $result=ideas_login_core($lgname,$lgpassword);
+    if ($result == "Success"){
+        echo"登陆成功";
+        echop();
+    }else{
+        echo "登录失败,返回值为:";
+        echop();
+        echo ($result);
+        //通常的错误是wrongpassword,needtoken,wrongtoken.
+        if ($result=="needtoken"){
+            echo "如果这个错误是偶尔出现的,请检查程序防止并发登录";
+            exit();
+        }elseif ($result=="wrongtoken"){
+            $result=ideas_login_core($lgname,$lgpassword);
+        }
+    }
+    return;
+}
+
+//该函数是登录功能的核心模块
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=login
+//Note:$site参数暂时不用
+function ideas_login_core($username,$password,$site=""){
     ideas_clean_cookie(); //登录前先清除cookie缓存
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword;
     $data=ideasconnect($post);
@@ -55,20 +78,8 @@ function ideas_login(){
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword."&lgtoken=".$token;
     $data=ideasconnect($post);
     $xml = simplexml_load_string($data);
-    if ($xml->login[0]->attributes()->result == "Success"){
-        echo "登录成功,token和session分别为:";
-        echo $xml->login[0]->attributes()->lgtoken." , ".$xml->login[0]->attributes()->sessionid;
-        echop();
-    }else{
-        echo "登录失败,返回值为:";
-        echop();
-        echo ($xml->login[0]->attributes()->result);
-        ideaslog("Login Failed: ".$xml->login[0]->attributes()->result);
-        echo "如果这个错误是偶尔出现的,请检查程序防止并发登录";
-        exit();
-    }
     //登陆过程完成
-    return $xml->login[0]->attributes();
+    return $xml->login[0]->attributes()->result;
 }
 
 //该函数用于获取最近更改(recentchanges)的条目(查询数量,查询种类,名称空间,筛选器,额外)
