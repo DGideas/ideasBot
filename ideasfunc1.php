@@ -413,9 +413,8 @@ function ideasreport($text){
             echo "编辑频率过快,编辑失败";
             echop();
         }else{
-            echo "报告失败,详细信息为:";
+            echo "报告失败,详细信息为:".$xml->error->attributes()->code;
             ideaslog("报告失败");
-            print_r ($xml);
             echop();
         }
     }
