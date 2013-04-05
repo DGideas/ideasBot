@@ -160,6 +160,17 @@ function ideas_get_creator($title){
     //直接返回页面作者
 }
 
+//该函数用于获得页面最后的编辑时间
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+revisions
+function ideas_get_last_edit_time($title){
+    $post="action=query&prop=revisions&titles=".$title."&rvlimit=1";
+    $data=ideasconnect($post);
+    //分析数据
+    $xml = simplexml_load_string($data);
+    return $xml->query->pages->page->revisions->rev[0]->attributes()->timestamp;
+    //直接返回最后编辑时间(推荐使用ideas_deal_timestamp($timestamp,$returntype)函数处理MediaWiki格式时间戳)
+}
+
 //该函数用于获得本地维基图片用量状况(标题,名称空间)
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+imageusage
 //提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
