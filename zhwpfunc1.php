@@ -690,18 +690,21 @@ function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
     $timestamp=ideas_get_last_edit_time($title);
     $unixtime=ideas_deal_timestamp($timestamp,"unixtime");
     $now=time();
-    if (ideas_get_size($sandboxname)!="267"){
-        $author=ideasgetauthor($sandboxname);
-        $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
-        ideasedit($sandboxname,"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理沙盒");
-        ideaslog("清理了沙盒:[[".$sandboxname."]],最近编者为:".$user);
-    }else{
-            if (ideasstrfind(ideasview($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideasview($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true){
-        }else{
+    $second=$now-$unixtime;
+    if ($second>="300"){
+        if (ideas_get_size($sandboxname)!="267"){
             $author=ideasgetauthor($sandboxname);
             $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
             ideasedit($sandboxname,"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理沙盒");
             ideaslog("清理了沙盒:[[".$sandboxname."]],最近编者为:".$user);
+        }else{
+                if (ideasstrfind(ideasview($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideasview($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true){
+            }else{
+                $author=ideasgetauthor($sandboxname);
+                $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
+                ideasedit($sandboxname,"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理沙盒");
+                ideaslog("清理了沙盒:[[".$sandboxname."]],最近编者为:".$user);
+            }
         }
     }
     return;
@@ -711,18 +714,25 @@ function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
 //目前只支持大小为279字节的沙箱
 function zhwp_clean_pic_sandbox(){
     $sandboxname="File:沙盒.png";
-    if (ideas_get_size($sandboxname)!="279"){
-        $author=ideasgetauthor($sandboxname);
-        $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
-        ideasedit($sandboxname,"{{PD-self}}\r\n{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理图片沙盒描述");
-        ideaslog("清理了图片沙盒:[[".$sandboxname."]],最近编者为:".$user);
-    }else{
-            if (ideasstrfind(ideasview($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideasview($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true && ideasstrfind(ideasview($sandboxname),"{{PD-self}}")==true){
-        }else{
+    $zf_cleansandbox_min_time; //最短清理沙盒时间(秒)
+    $timestamp=ideas_get_last_edit_time($sandboxname);
+    $unixtime=ideas_deal_timestamp($timestamp,"unixtime");
+    $now=time();
+    $second=$now-$unixtime;
+    if ($second>="300"){
+        if (ideas_get_size($sandboxname)!="279"){
             $author=ideasgetauthor($sandboxname);
             $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
             ideasedit($sandboxname,"{{PD-self}}\r\n{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理图片沙盒描述");
             ideaslog("清理了图片沙盒:[[".$sandboxname."]],最近编者为:".$user);
+        }else{
+                if (ideasstrfind(ideasview($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideasview($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true && ideasstrfind(ideasview($sandboxname),"{{PD-self}}")==true){
+            }else{
+                $author=ideasgetauthor($sandboxname);
+                $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
+                ideasedit($sandboxname,"{{PD-self}}\r\n{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理图片沙盒描述");
+                ideaslog("清理了图片沙盒:[[".$sandboxname."]],最近编者为:".$user);
+            }
         }
     }
     return;
