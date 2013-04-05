@@ -362,7 +362,7 @@ function ideas_deal_timestamp($timestamp,$returntype="unixtime"){
     ereg("[0-9]{2}",$second,$reg);
     $second=$reg[0] ;
     //秒
-    if ($returntype="all"){
+    if ($returntype=="all"){
         return $year.$month.$day.$hour.$minute.$second;
     }elseif ($returntype=="year"){
         return $year;
