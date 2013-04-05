@@ -27,6 +27,7 @@ ideasBot
  您仅需使用include_once();包含相应拓展文件即可,在config.php
 
  zhwpfunc1(Chinese Wikipedia Function Plug-in 1 中文维基百科拓展函数库1):https://github.com/DGideas/ideasBot/blob/master/zhwpfunc1.php
+ 
  ideasfunc2(ideasBot Function Plug-in 2 ideasBot测试函数库2):https://github.com/DGideas/ideasBot/blob/master/ideasfunc2.php
 
 See:https://github.com/DGideas/AntiAD
