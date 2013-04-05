@@ -5,7 +5,4 @@ ideasBot
  
  It can works on MediaWiki 1.16+ Site.
  
- We'll develop it as well as we can.
- 
- 
- For many reasons, Please always use the latest version of ideasBot.
+ For many reasons, you'd better always use the latest version of ideasBot.
