@@ -67,6 +67,7 @@ function zhwp_check_ad(){
 }
 
 //广告检查函数核心(页面名称)
+//另请参见:https://github.com/DGideas/AntiAD
 function zhwp_check_ad_core($title){
         $action=0; //初始化:条目评分为0
         //先获得工作条目的完整源代码
