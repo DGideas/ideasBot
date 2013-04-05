@@ -364,23 +364,23 @@ function ideas_deal_timestamp($timestamp,$returntype="unixtime"){
     //秒
     if ($returntype="all"){
         return $year.$month.$day.$hour.$minute.$second;
-    }elseif ($returntype="year"){
+    }elseif ($returntype=="year"){
         return $year;
-    }elseif ($returntype="month"){
+    }elseif ($returntype=="month"){
         return $month;
-    }elseif ($returntype="day"){
+    }elseif ($returntype=="day"){
         return $day;
-    }elseif ($returntype="hour"){
+    }elseif ($returntype=="hour"){
         return $hour;
-    }elseif ($returntype="minute"){
+    }elseif ($returntype=="minute"){
         return $minute;
-    }elseif ($returntype="second"){
+    }elseif ($returntype=="second"){
         return $second;
-    }elseif ($returntype="unixtime"){
+    }elseif ($returntype=="unixtime"){
         $unixtime=$year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
         $unixtime=trtotime($unixtime);
         return $unixtime;
-    }elseif ($returntype="mysql"){
+    }elseif ($returntype=="mysql"){
         $mysqltime=$year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
         return $mysqltime;
     }else{
