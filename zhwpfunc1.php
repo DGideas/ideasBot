@@ -688,7 +688,7 @@ function zhwp_check_ad_core($title){
 function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
     global $zf_cleansandbox_min_time; //最短清理沙盒时间(秒)
     $timestamp=ideas_get_last_edit_time($sandboxname);
-    $unixtime=ideas_deal_timestamp($timestamp,"unixtime");
+    $unixtime=ideas_deal_timestamp($timestamp);
     $now=time();
     $second=$now-$unixtime;
     if ($second>=$zf_cleansandbox_min_time){
@@ -716,7 +716,7 @@ function zhwp_clean_pic_sandbox(){
     $sandboxname="File:沙盒.png";
     global $zf_cleansandbox_min_time; //最短清理沙盒时间(秒)
     $timestamp=ideas_get_last_edit_time("File:沙盒.png");
-    $unixtime=ideas_deal_timestamp($timestamp,"unixtime");
+    $unixtime=ideas_deal_timestamp($timestamp);
     $now=time();
     $second=$now-$unixtime;
     if ($second>=$zf_cleansandbox_min_time){
