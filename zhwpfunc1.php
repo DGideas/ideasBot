@@ -56,7 +56,7 @@ function zhwp_check_ad(){
             }while($ib <= ($isumb-1));
             if ($blacklist>2){
                 //if (ideasstrfind(ideasview("user_talk:DGideas"),$goaluser)==false){
-                    ideasreport("请注意".$goaluser."的最近50次编辑,有超过3次被机器人判定为广告");
+                    //ideasreport("请注意".$goaluser."的最近50次编辑,有超过3次被机器人判定为广告");
                 //}
             }
             //ideaslog ($goaluser.",blacklist=".$blacklist);
