@@ -370,207 +370,207 @@ function zhwp_check_ad_core($title){
     if(ideasstrfind($articlewikied,"英雄")==true && is_numeric($action)==true){
         $action=$action-1;
     }
-        if(ideasstrfind($articlewikied,"网址")==true && is_numeric($action)==true){
-            $action=$action-1;
-        }
-        if(ideasstrfind($articlewikied,"工作室")==true && is_numeric($action)==true){
-            $action=$action-1;
-        }
-        if(ideasstrfind($articlewikied,"营销")==true && is_numeric($action)==true){
-            $action=$action-1;
-        }
-        if(ideasstrfind($articlewikied,"好评")==true && is_numeric($action)==true){
-            $action=$action-1;
-        }
-        if(ideasstrfind($articlewikied,"@")==true && is_numeric($action)==true){
-            $action=$action-1;
-        }
-        if(ideasstrfind($articlewikied,"价值")==true && is_numeric($action)==true){
-            $action=$action-1;
-        }
-        if(ideasstrfind($articlewikied,"团队")==true && is_numeric($action)==true){
-            $action=$action-1;
-        }
-        if(ideasstrfind($articlewikied,"►")==true && is_numeric($action)==true){
-            $action=$action-1;
-        }
-        if(ideasstrfind($articlewikied,"质量奖")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"获奖")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"荣誉")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"特约")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"东南亚")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"编辑")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"他们")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"出席")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"东方")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"精华")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"西方")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"西式")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"欧式")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"日式")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"料理")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"广受")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"病人")==true && is_numeric($action)==true){
-            $action=$action-2;
-        }
-        if(ideasstrfind($articlewikied,"治病")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"团购")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"畅销")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"经典之作")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"绝对")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"首选")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"主营")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"几乎所有")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"首款")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"深受")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"品牌简介")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"品牌定位")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"品牌诠释")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"信赖")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"信得过")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"优惠")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"题词")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"贺电")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"贺礼")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"剪彩")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"赞助")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"特级")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"极品")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"高端")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"高贵")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"典雅")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"奢华")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"兼备")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"乐园")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"诚邀")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"顶峰")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"官网")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"享誉")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"最好")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"最新")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"最优秀")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"最给力")==true && is_numeric($action)==true){
-            $action=$action-3;
-        }
-        if(ideasstrfind($articlewikied,"电话")==true && is_numeric($action)==true){
-            $action=$action-4;
-        }
-        if(ideasstrfind($articlewikied,"我国")==true && is_numeric($action)==true){
-            $action=$action-4;
-        }
-        if(ideasstrfind($articlewikied,"我厂")==true && is_numeric($action)==true){
-            $action=$action-4;
-        }
-        if(ideasstrfind($articlewikied,"我司")==true && is_numeric($action)==true){
-            $action=$action-4;
-        }
-        if(ideasstrfind($articlewikied,"加盟")==true && is_numeric($action)==true){
-            $action=$action-4;
-        }
+    if(ideasstrfind($articlewikied,"网址")==true && is_numeric($action)==true){
+        $action=$action-1;
+    }
+    if(ideasstrfind($articlewikied,"工作室")==true && is_numeric($action)==true){
+        $action=$action-1;
+    }
+    if(ideasstrfind($articlewikied,"营销")==true && is_numeric($action)==true){
+        $action=$action-1;
+    }
+    if(ideasstrfind($articlewikied,"好评")==true && is_numeric($action)==true){
+        $action=$action-1;
+    }
+    if(ideasstrfind($articlewikied,"@")==true && is_numeric($action)==true){
+        $action=$action-1;
+    }
+    if(ideasstrfind($articlewikied,"价值")==true && is_numeric($action)==true){
+        $action=$action-1;
+    }
+    if(ideasstrfind($articlewikied,"团队")==true && is_numeric($action)==true){
+        $action=$action-1;
+    }
+    if(ideasstrfind($articlewikied,"►")==true && is_numeric($action)==true){
+        $action=$action-1;
+    }
+    if(ideasstrfind($articlewikied,"质量奖")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"获奖")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"荣誉")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"特约")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"东南亚")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"编辑")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"他们")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"出席")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"东方")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"精华")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"西方")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"西式")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"欧式")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"日式")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"料理")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"广受")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"病人")==true && is_numeric($action)==true){
+        $action=$action-2;
+    }
+    if(ideasstrfind($articlewikied,"治病")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"团购")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"畅销")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"经典之作")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"绝对")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"首选")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"主营")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"几乎所有")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"首款")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"深受")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"品牌简介")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"品牌定位")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"品牌诠释")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"信赖")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"信得过")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"优惠")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"题词")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"贺电")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"贺礼")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"剪彩")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"赞助")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"特级")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"极品")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"高端")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"高贵")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"典雅")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"奢华")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"兼备")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"乐园")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"诚邀")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"顶峰")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"官网")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"享誉")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"最好")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"最新")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"最优秀")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"最给力")==true && is_numeric($action)==true){
+        $action=$action-3;
+    }
+    if(ideasstrfind($articlewikied,"电话")==true && is_numeric($action)==true){
+        $action=$action-4;
+    }
+    if(ideasstrfind($articlewikied,"我国")==true && is_numeric($action)==true){
+        $action=$action-4;
+    }
+    if(ideasstrfind($articlewikied,"我厂")==true && is_numeric($action)==true){
+        $action=$action-4;
+    }
+    if(ideasstrfind($articlewikied,"我司")==true && is_numeric($action)==true){
+        $action=$action-4;
+    }
+    if(ideasstrfind($articlewikied,"加盟")==true && is_numeric($action)==true){
+        $action=$action-4;
+    }
     if(ideasstrfind($articlewikied,"我省")==true && is_numeric($action)==true){
             $action=$action-4;
         }
