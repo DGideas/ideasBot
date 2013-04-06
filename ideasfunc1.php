@@ -414,7 +414,7 @@ function ideasreport($text){
             echop();
         }else{
             echo "报告失败,详细信息为:".$xml->error->attributes()->code;
-            ideaslog("报告失败");
+            ideaslog("报告失败".$xml->error->attributes()->code);
             echop();
         }
     }
