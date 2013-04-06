@@ -378,7 +378,7 @@ function ideas_deal_timestamp($timestamp,$returntype="unixtime"){
         return $second;
     }elseif ($returntype=="unixtime"){
         $unixtime=$year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
-        $unixtime=trtotime($unixtime);
+        $unixtime=strtotime($unixtime);
         return $unixtime;
     }elseif ($returntype=="mysql"){
         $mysqltime=$year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
