@@ -5,11 +5,7 @@
 $lgname="Botname"; //机器人账户的用户名(记录日志等操作也会用到)
 $lgpassword="Password"; //机器人账户的密码
 $url=array(); //建立一个数组
-//zhwp:中文维基百科
-//enwp:英文维基百科
-//zhmg:中文萌娘百科
-//TFS
-$defaulturl="zhwp"; //默认的站点代号
+$defaulturl="zhwp"; //默认的站点代号,详情请参阅help/urlcode.txt
 $defaultlanguage="zh-hans"; //默认的语言,具体请参阅translation/readme.txt
 $useragent= $lgname."Version,by author"; //机器人的用户代理标识
 $cookiefilepath=getcwd()."/cookie.log"; //机器人cURL使用的cookie记录文件
