@@ -6,6 +6,9 @@
     $ideastext["zh-hans"]["done"]="完成";
     $ideastext["zh-hans"]["error"]="错误";
     $ideastext["zh-hans"]["finish"]="完成";
+    $ideastext["zh-hans"]["loginfailed"]="登录失败";
+    $ideastext["zh-hans"]["loginsuccess"]="登录成功";
+    $ideastext["zh-hans"]["needRW"]="请检查cookie临时文件是否具有RWRWRW权限";
     $ideastext["zh-hans"]["no"]="不";
     $ideastext["zh-hans"]["ok"]="完成";
     $ideastext["zh-hans"]["report"]="报告";
