@@ -27,36 +27,35 @@ $zf_cleansandbox_min_time="300"; //最短清理沙箱时间为300秒(5分钟)
 
 //如果您不了解下面设置的用法,请不要设置下面的参数
 //定义urlcode
-$url["zhwp"]="http://zh.wikipedia.org/w/api.php"; //中文维基百科
-$url["enwp"]="http://en.wikipedia.org/w/api.php"; //英文维基百科
-$url["arwp"]="http://ar.wikipedia.org/w/api.php"; //阿拉伯文维基百科
-$url["bgwp"]="http://bg.wikipedia.org/w/api.php"; //保加利亚文维基百科
-$url["cawp"]="http://ca.wikipedia.org/w/api.php"; //加泰罗尼亚文维基百科
-$url["cswp"]="http://cs.wikipedia.org/w/api.php"; //捷克文维基百科
-$url["dawp"]="http://da.wikipedia.org/w/api.php"; //丹麦文维基百科
-$url["dewp"]="http://de.wikipedia.org/w/api.php"; //德文维基百科
-$url["eswp"]="http://es.wikipedia.org/w/api.php"; //西班牙文维基百科
-$url["etwp"]="http://et.wikipedia.org/w/api.php"; //爱沙尼亚文维基百科
-$url["gawp"]="http://gan.wikipedia.org/w/api.php"; //赣语维基百科
-$url["fawp"]="http://fa.wikipedia.org/w/api.php"; //波斯文维基百科
-$url["fiwp"]="http://fi.wikipedia.org/w/api.php"; //芬兰文维基百科
-$url["frwp"]="http://fr.wikipedia.org/w/api.php"; //法文维基百科
-$url["hewp"]="http://he.wikipedia.org/w/api.php"; //希伯来文维基百科
-$url["hrwp"]="http://hr.wikipedia.org/w/api.php"; //克罗地亚文维基百科
-$url["htwp"]="http://ht.wikipedia.org/w/api.php"; //海地文维基百科
-$url["huwp"]="http://hu.wikipedia.org/w/api.php"; //匈牙利文维基百科
-$url["idwp"]="http://id.wikipedia.org/w/api.php"; //印度尼西亚文维基百科
-$url["itwp"]="http://it.wikipedia.org/w/api.php"; //意大利文维基百科
-$url["jawp"]="http://ja.wikipedia.org/w/api.php"; //日文维基百科
-$url["kowp"]="http://ko.wikipedia.org/w/api.php"; //韩文维基百科
-$url["srwp"]="http://sr.wikipedia.org/w/api.php"; //塞尔维亚文维基百科
-$url["ruwp"]="http://ru.wikipedia.org/w/api.php"; //俄文维基百科
-$url["wuwp"]="http://wuu.wikipedia.org/w/api.php"; //吴语维基百科
-$url["zcwp"]="http://zh-classical.wikipedia.org/w/api.php"; //文言维基百科
-$url["zywp"]="http://zh-yue.wikipedia.org/w/api.php"; //粤语维基百科
+$url["zhwp"]="http://zh.wikipedia.org/w/api.php"; 
+$url["enwp"]="http://en.wikipedia.org/w/api.php"; 
+$url["arwp"]="http://ar.wikipedia.org/w/api.php"; 
+$url["bgwp"]="http://bg.wikipedia.org/w/api.php"; 
+$url["cawp"]="http://ca.wikipedia.org/w/api.php"; 
+$url["cswp"]="http://cs.wikipedia.org/w/api.php"; 
+$url["dawp"]="http://da.wikipedia.org/w/api.php"; 
+$url["dewp"]="http://de.wikipedia.org/w/api.php"; 
+$url["eswp"]="http://es.wikipedia.org/w/api.php"; 
+$url["etwp"]="http://et.wikipedia.org/w/api.php"; 
+$url["gawp"]="http://gan.wikipedia.org/w/api.php"; 
+$url["fawp"]="http://fa.wikipedia.org/w/api.php"; 
+$url["fiwp"]="http://fi.wikipedia.org/w/api.php"; 
+$url["frwp"]="http://fr.wikipedia.org/w/api.php"; 
+$url["hewp"]="http://he.wikipedia.org/w/api.php"; 
+$url["hrwp"]="http://hr.wikipedia.org/w/api.php"; 
+$url["htwp"]="http://ht.wikipedia.org/w/api.php"; 
+$url["huwp"]="http://hu.wikipedia.org/w/api.php"; 
+$url["idwp"]="http://id.wikipedia.org/w/api.php"; 
+$url["itwp"]="http://it.wikipedia.org/w/api.php"; 
+$url["jawp"]="http://ja.wikipedia.org/w/api.php"; 
+$url["kowp"]="http://ko.wikipedia.org/w/api.php"; 
+$url["srwp"]="http://sr.wikipedia.org/w/api.php"; 
+$url["ruwp"]="http://ru.wikipedia.org/w/api.php"; 
+$url["wuwp"]="http://wuu.wikipedia.org/w/api.php"; 
+$url["zcwp"]="http://zh-classical.wikipedia.org/w/api.php"; 
+$url["zywp"]="http://zh-yue.wikipedia.org/w/api.php"; 
 
-
-$url["zhmg"]="http://zh.moegirl.org/api.php"; //中文萌娘百科
-$url["tfs"]="http://tfs.happylr.net/api.php"; //TFS
+$url["zhmg"]="http://zh.moegirl.org/api.php";
+$url["tfs"]="http://tfs.happylr.net/api.php"; 
 
 ?>
