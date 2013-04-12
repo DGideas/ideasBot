@@ -1,6 +1,6 @@
 <?php
 //encode:UTF-8
-
+//帮助文档:help/ideasfunc.txt
 
 
 //该函数用于cURL连接
@@ -84,7 +84,7 @@ function ideas_login_core($username,$password,$site=""){
 
 //该函数用于获取最近更改(recentchanges)的条目(查询数量,查询种类,名称空间,筛选器,额外)
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+recentchanges
-function ideasgetrecentchanges($rclimit="5000",$rctype="new",$rcnamespace="0",$rcshow="!bot|!redirect",$extra=""){
+function ideas_get_recent_changes($rclimit="5000",$rctype="new",$rcnamespace="0",$rcshow="!bot|!redirect",$extra=""){
     if ($extra=""){
         $post="action=query&list=recentchanges&rctype=".$rctype."&rclimit=".$rclimit."&rcnamespace=".$rcnamespace."&rcshow=".$rcshow;
     }else{
