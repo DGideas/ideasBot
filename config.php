@@ -8,7 +8,7 @@ $url=array(); //建立一个数组
 $defaulturl="zhwp"; //默认的站点代号,详情请参阅help/urlcode.txt
 $defaultlanguage="zh-hans"; //默认的语言,具体请参阅translation/readme.txt
 $useragent= $lgname."Version,by author"; //机器人的用户代理标识
-$cookiefilepath=getcwd()."/cookie.log"; //机器人cURL使用的cookie记录文件
+$cookiefilepath=getcwd()."/cookie.log"; //机器人使用的cookie记录文件
 
 //日志
 $logname="Username"; //机器人使用ideasreport()报告到的用户名
