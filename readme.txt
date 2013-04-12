@@ -5,4 +5,5 @@ IdeasBot是一个使用PHP书写的机器人脚本
 我们也非常欢迎您为我们的脚本提提意见
 
 部分灵感来自
-pywikipediabot
+pywikipediabot https://www.mediawiki.org/wiki/Manual:Pywikipediabot
+wikibot https://www.mediawiki.org/wiki/Manual:Wikibot
