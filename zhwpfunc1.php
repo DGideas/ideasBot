@@ -782,20 +782,4 @@ function zhwp_wikied_core($title){
     return;
 }
 
-//该函数用于从最近更改列表中进行反破坏
-function zhwp_anti_vandal(){
-    $arraydata=ideas_get_recent_changes();
-    $i=0;
-    $isum=count ($arraydata->query->recentchanges->rc);
-    do{
-        zhwp_anti_vandal_core($arraydata->query->recentchanges->rc[$i]->attributes()->title);
-    }while($i <= ($isum-1));
-    return;
-}
-
-//该函数是反破坏模块的核心函数
-function zhwp_anti_vandal_core($title){
-    return;
-}
-
 ?>
