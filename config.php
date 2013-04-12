@@ -56,6 +56,9 @@ $url["zcwp"]="http://zh-classical.wikipedia.org/w/api.php";
 $url["zywp"]="http://zh-yue.wikipedia.org/w/api.php"; 
 
 $url["zhmg"]="http://zh.moegirl.org/api.php";
+$url["enmg"]="http://en.moegirl.org/api.php";
+$url["jpmg"]="http://jp.moegirl.org/api.php";
+
 $url["tfs"]="http://tfs.happylr.net/api.php"; 
 
 ?>
