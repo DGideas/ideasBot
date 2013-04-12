@@ -30,3 +30,9 @@ urlcode采用简短的英文来替代一个Wiki站点api.php的位置
  wuwp 吴语维基百科
  zcwp 文言维基百科
  zywp 粤语维基百科
+萌娘百科
+ zhmg 中文萌娘百科
+ enmg 英文萌娘百科
+ jpmg 日文萌娘百科
+其他
+ tfs Team Foundation Server
