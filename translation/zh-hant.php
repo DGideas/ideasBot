@@ -1,5 +1,5 @@
 <?php
-    //请务必同时更新其他语言版本的翻译,即使留空
+    //請務必同時更新其他語言版本的翻譯,即使留空
     $ideastext=array();
     $ideastext["ad"]="广告";
     $ideastext["bot"]="机器人";
