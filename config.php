@@ -10,6 +10,7 @@ $url=array(); //建立一个数组
 //zhmg:中文萌娘百科
 //TFS
 $defaulturl="zhwp"; //默认的站点代号
+$defaultlanguage="zh-hans"; //默认的语言,具体请参阅translation/readme.txt
 $useragent= $lgname."Version,by author"; //机器人的用户代理标识
 $cookiefilepath=getcwd()."/cookie.log"; //机器人cURL使用的cookie记录文件
 
