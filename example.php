@@ -3,10 +3,9 @@
 include_once ('include.php');
 ideas_login();
 
-zhwp_check_50();
-zhwp_check_ad();
-zhwp_clean_sandbox();
-zhwp_clean_pic_sandbox();
+//将您的代码置于此处
+ideasreport("it works");
+ideaslog("it works");
 
 
 ?>
