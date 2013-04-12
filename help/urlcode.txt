@@ -1,0 +1,4 @@
+urlcode是ideasBot多Wiki和多语言支持的一部分
+urlcode采用简短的英文来替代一个Wiki站点api.php的位置
+目前支持的urlcode有:
+
