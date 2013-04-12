@@ -102,7 +102,8 @@ function ideas_get_recent_changes($rclimit="5000",$rctype="new",$rcnamespace="0"
 
 //该函数用于基于关键字的简单搜索(关键字,名称空间代码)
 //提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
-function ideassearch($searchtext,$namespace="0"){
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+search
+function ideas_search($searchtext,$namespace="0"){
     $post="action=query&list=search&srsearch=".$searchtext."&srnamespace=".$namespace;
     $data=ideasconnect($post);
     //分析数据
