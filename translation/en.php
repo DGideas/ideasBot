@@ -6,6 +6,9 @@
     $ideastext["en"]["done"]="done";
     $ideastext["en"]["error"]="error";
     $ideastext["en"]["finish"]="finish";
+    $ideastext["en"]["loginfailed"]="Login failed";
+    $ideastext["en"]["loginsuccess"]="Login success";
+    $ideastext["en"]["needRW"]="Please set cookie tmp file as RWRWRW";
     $ideastext["en"]["no"]="no";
     $ideastext["en"]["ok"]="ok";
     $ideastext["en"]["report"]="report";
