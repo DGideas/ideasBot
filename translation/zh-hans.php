@@ -1,15 +1,15 @@
 <?php
     //请务必同时更新其他语言版本的翻译,即使留空
     $ideastext=array();
-    $ideastext["ad"]="广告";
-    $ideastext["bot"]="机器人";
-    $ideastext["done"]="完成";
-    $ideastext["error"]="错误";
-    $ideastext["finish"]="完成";
-    $ideastext["no"]="不";
-    $ideastext["ok"]="完成";
-    $ideastext["report"]="报告";
-    $ideastext["user"]="用户";
-    $ideastext["warning"]="警告";
-    $ideastext["yes"]="是";
+    $ideastext["zh-hans"]["ad"]="广告";
+    $ideastext["zh-hans"]["bot"]="机器人";
+    $ideastext["zh-hans"]["done"]="完成";
+    $ideastext["zh-hans"]["error"]="错误";
+    $ideastext["zh-hans"]["finish"]="完成";
+    $ideastext["zh-hans"]["no"]="不";
+    $ideastext["zh-hans"]["ok"]="完成";
+    $ideastext["zh-hans"]["report"]="报告";
+    $ideastext["zh-hans"]["user"]="用户";
+    $ideastext["zh-hans"]["warning"]="警告";
+    $ideastext["zh-hans"]["yes"]="是";
 ?>
