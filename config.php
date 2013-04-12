@@ -10,12 +10,6 @@ $defaultlanguage="zh-hans"; //默认的语言,具体请参阅translation/readme.
 $useragent= $lgname."Version,by author"; //机器人的用户代理标识
 $cookiefilepath=getcwd()."/cookie.log"; //机器人cURL使用的cookie记录文件
 
-//定义API.php位置
-$url["zhwp"]="http://zh.wikipedia.org/w/api.php"; //中文维基百科
-$url["enwp"]="http://en.wikipedia.org/w/api.php"; //英文维基百科
-$url["zhmg"]="http://zh.moegirl.org/api.php"; //中文萌娘百科
-$url["tfs"]="http://tfs.happylr.net/api.php"; //TFS
-
 //日志
 $logname="Username"; //机器人使用ideasreport()报告到的用户名
 $logfile="log.log"; //机器人日志文件的文件名,不需要可以无视
@@ -29,4 +23,13 @@ $editsummarylast="([[User_talk:".$logname."|有问题?]])"; //机器人编辑摘
 $zf_cleansandbox_min_time="300"; //最短清理沙箱时间为300秒(5分钟)
 
 //好了,请不要继续编辑,请在点击保存之后退出
+
+
+//如果您不了解下面设置的用法,请不要设置下面的参数
+//定义urlcode
+$url["zhwp"]="http://zh.wikipedia.org/w/api.php"; //中文维基百科
+$url["enwp"]="http://en.wikipedia.org/w/api.php"; //英文维基百科
+$url["zhmg"]="http://zh.moegirl.org/api.php"; //中文萌娘百科
+$url["tfs"]="http://tfs.happylr.net/api.php"; //TFS
+
 ?>
