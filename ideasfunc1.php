@@ -68,7 +68,7 @@ function ideas_login($site=""){
 //该函数是登录功能的核心模块
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=login
 //Note:$site参数暂时不用
-function ideas_login_core($username,$password,$site=""){
+function ideas_login_core($lgname,$lgpassword,$site=""){
     ideas_clean_cookie(); //登录前先清除cookie缓存
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword;
     $data=ideas_connect($post);
