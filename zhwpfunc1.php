@@ -36,7 +36,7 @@ function zhwp_check_50() {
 
 //该函数用于从最近更改中检测新创建的广告条目,并将其标记
 function zhwp_check_ad(){
-    $arraydata=ideasgetrecentchanges();
+    $arraydata=ideas_get_recent_changes();
     $i=0;
     $isum=count ($arraydata->query->recentchanges->rc);
     do{
@@ -784,7 +784,7 @@ function zhwp_wikied_core($title){
 
 //该函数用于从最近更改列表中进行反破坏
 function zhwp_anti_vandal(){
-    $arraydata=ideasgetrecentchanges();
+    $arraydata=ideas_get_recent_changes();
     $i=0;
     $isum=count ($arraydata->query->recentchanges->rc);
     do{
