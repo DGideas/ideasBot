@@ -26,6 +26,8 @@ urlcode采用简短的英文来替代一个Wiki站点api.php的位置
  jawp 日文维基百科
  kowp 韩文维基百科
  srwp 塞尔维亚文维基百科
+ test 测试维基百科
+ test2 测试维基百科2
  ruwp 俄文维基百科
  wuwp 吴语维基百科
  zcwp 文言维基百科
