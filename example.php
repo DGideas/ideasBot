@@ -7,5 +7,5 @@ ideas_login();
 ideasreport("it works");
 ideaslog("it works");
 
-
+echo "finish";
 ?>
