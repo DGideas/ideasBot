@@ -4,4 +4,4 @@
 
 en English
 zh-hans 简体中文
-zh-hant 繁体中文
+zh-hant 繁體中文
