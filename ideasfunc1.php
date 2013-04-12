@@ -19,7 +19,7 @@ function ideas_connect($post="",$site="") {
         curl_setopt ($ideasconnect, CURLOPT_URL, $url[$site]);
     }
     curl_setopt ($ideasconnect, CURLOPT_HEADER, false);
-    curl_setopt ($ideasconnect, CURLOPT_ENCODING, "UTF-8" );
+    curl_setopt ($ideasconnect, CURLOPT_ENCODING, "UTF-8");
     curl_setopt ($ideasconnect, CURLOPT_USERAGENT, $useragent);
     curl_setopt ($ideasconnect, CURLOPT_POST, true); 
     curl_setopt ($ideasconnect, CURLOPT_POSTFIELDS,$post);
