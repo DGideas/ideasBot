@@ -4,7 +4,7 @@
 
 
 //该函数用于cURL连接
-function ideasconnect($post="",$site="") {
+function ideas_connect($post="",$site="") {
     global $url,$useragent,$cookiefilepath,$defaulturl;
     // 创建一个新cURL资源
     $ideasconnect = curl_init();
@@ -71,12 +71,12 @@ function ideas_login($site=""){
 function ideas_login_core($username,$password,$site=""){
     ideas_clean_cookie(); //登录前先清除cookie缓存
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword;
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     $token = $xml->login[0]->attributes()->token;
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword."&lgtoken=".$token;
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     $xml = simplexml_load_string($data);
     //登陆过程完成
     return $xml->login[0]->attributes()->result;
@@ -90,7 +90,7 @@ function ideas_get_recent_changes($rclimit="5000",$rctype="new",$rcnamespace="0"
     }else{
         $post="action=query&list=recentchanges&rctype=".$rctype."&rclimit=".$rclimit."&rcnamespace=".$rcnamespace."&rcshow=".$rcshow.$extra;
     }
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml;
@@ -105,7 +105,7 @@ function ideas_get_recent_changes($rclimit="5000",$rctype="new",$rcnamespace="0"
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+search
 function ideas_search($searchtext,$namespace="0"){
     $post="action=query&list=search&srsearch=".$searchtext."&srnamespace=".$namespace;
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml;
@@ -121,7 +121,7 @@ function ideaslist($extension){
     }else{
         $post="action=query&list=allpages&aplimit=5000&apfilterredir=nonredirects&".$extension;
     }
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml;
@@ -132,7 +132,7 @@ function ideaslist($extension){
 //该函数用于获得特定单个页的Wikied文本(页面名称)
 function ideasview($pagename){
     $post="action=query&prop=revisions&rvprop=content&format=xml&titles=".$pagename;
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     $wikied=$xml->xpath("//rev");
@@ -142,7 +142,7 @@ function ideasview($pagename){
 //该函数用于获得第0段的Wikied文本(页面名称)
 function ideasviewtop($pagename){
     $post="action=query&prop=revisions&rvsection=0&rvprop=content&format=xml&titles=".$pagename;
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     $wikied=$xml->xpath("//rev");
@@ -153,7 +153,7 @@ function ideasviewtop($pagename){
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+revisions
 function ideasgetauthor($title){
     $post="action=query&prop=revisions&titles=".$title."&rvlimit=15&rvprop=user";
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml;
@@ -165,7 +165,7 @@ function ideasgetauthor($title){
 //WARNING:本函数请酌情使用!!!由于历史原因可能无法准确获取页面的真实作者(如首页)
 function ideas_get_creator($title){
     $post="action=query&prop=revisions&titles=".$title."&rvlimit=1&rvdir=newer";
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml->query->pages->page->revisions->rev[0]->attributes()->user;
@@ -176,7 +176,7 @@ function ideas_get_creator($title){
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+revisions
 function ideas_get_last_edit_time($title){
     $post="action=query&prop=revisions&titles=".$title."&rvlimit=1";
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml->query->pages->page->revisions->rev[0]->attributes()->timestamp;
@@ -188,7 +188,7 @@ function ideas_get_last_edit_time($title){
 //提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
 function ideasgetimageusage($iutitle,$iunamespace="0"){
     $post="action=query&list=imageusage&iulimit=5000&iufilterredir=nonredirects&iunamespace=".$iunamespace."&iutitle=".$iutitle;
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml;
@@ -208,7 +208,7 @@ function ideasstrfind($str,$keyword){
 //该函数用于获取页面的大小
 function ideas_get_size($title){
     $post="action=query&prop=revisions&titles=".$title."&rvprop=size";
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml->query->pages->page[0]->revisions->rev->attributes()->size;
@@ -217,7 +217,7 @@ function ideas_get_size($title){
 //该函数用于获取执行相应动作的token(标题,动作)
 function ideasgettoken($title,$intoken="edit"){
     $post="action=query&prop=info&titles=".$title."&intoken=".$intoken;
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml->query->pages->page[0]->attributes()->edittoken;
@@ -237,7 +237,7 @@ function ideasedittop($title,$text,$summary=""){
         $summary=ideassummary($summary); //处理编辑摘要头尾
         $post="action=edit&title=".$title."&section=0&text=".$text."&token=".$edittokenhtml."&summary=".$summary;
     }
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml;
@@ -257,7 +257,7 @@ function ideasedit($title,$text,$summary=""){
         $summary=ideassummary($summary); //处理编辑摘要头尾
         $post="action=edit&title=".$title."&text=".$text."&token=".$edittokenhtml."&summary=".$summary;
     }
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml;
@@ -278,7 +278,7 @@ function ideaseditnew($title,$sectiontitle,$text,$summary=""){
         $summary=ideassummary($summary); //处理编辑摘要头尾
         $post="action=edit&title=".$title."&section=new&sectiontitle=".$sectiontitle."&text=".$text."&token=".$edittokenhtml."&summary=".$summary;
     }
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml;
@@ -303,7 +303,7 @@ function ideasstrreplace($oldstr,$newstr,$string){
 //提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
 function ideas_get_user_contribs($user,$times="100"){
     $post="action=query&list=usercontribs&ucuser=".$user."&uclimit=".$times."&ucnamespace=0";
-    $data=ideasconnect($post);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml;
