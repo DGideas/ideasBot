@@ -335,34 +335,14 @@ function ideas_clean_cookie(){
 //all:堆积:20130405152100
 //该函数会对$returntype进行检查,如果请求的不是预期的格式,则返回false
 function ideas_deal_timestamp($timestamp,$returntype="unixtime"){
-    ereg("[0-9]{4}",$timestamp,$reg);
-    $year=$reg[0] ;
-    //年
-    ereg("-[0-9]{2}-",$timestamp,$reg);
-    $month=$reg[0] ;
-    ereg("[0-9]{2}",$month,$reg);
-    $month=$reg[0] ;
-    //月
-    ereg("-[0-9]{2}T",$timestamp,$reg);
-    $day=$reg[0] ;
-    ereg("[0-9]{2}",$day,$reg);
-    $day=$reg[0] ;
-    //日
-    ereg("T[0-9]{2}",$timestamp,$reg);
-    $hour=$reg[0] ;
-    ereg("[0-9]{2}",$hour,$reg);
-    $hour=$reg[0] ;
-    //时
-    ereg(":[0-9]{2}:",$timestamp,$reg);
-    $minute=$reg[0] ;
-    ereg("[0-9]{2}",$minute,$reg);
-    $minute=$reg[0] ;
-    //分
-    ereg(":[0-9]{2}Z",$timestamp,$reg);
-    $second=$reg[0] ;
-    ereg("[0-9]{2}",$second,$reg);
-    $second=$reg[0] ;
-    //秒
+    ereg("([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})Z",$timestamp,$reg);
+    $year=$reg[1] ;//年
+    $month=$reg[2] ;//月
+    $day=$reg[3] ;//日
+    $hour=$reg[4] ;//时
+    $minute=$reg[5] ;//分
+    $second=$reg[6] ;//秒
+    //test passed, by DGideas, 20130413
     if ($returntype=="all"){
         return $year.$month.$day.$hour.$minute.$second;
     }elseif ($returntype=="year"){
