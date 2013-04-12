@@ -1,0 +1,1 @@
+ideasfunc1.php是ideasBot最基本的函数集,包含以下函数:
