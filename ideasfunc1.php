@@ -115,7 +115,8 @@ function ideas_search($searchtext,$namespace="0"){
 
 //该函数用于基于条件查询条目(非重定向)列表(条件)
 //提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
-function ideaslist($extension){
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+allpages
+function ideas_list($extension){
     if ($extension==""){
         $post="action=query&list=allpages&aplimit=5000&apfilterredir=nonredirects";
     }else{
