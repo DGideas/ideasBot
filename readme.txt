@@ -10,5 +10,3 @@ pywikipediabot https://www.mediawiki.org/wiki/Manual:Pywikipediabot
 wikibot https://www.mediawiki.org/wiki/Manual:Wikibot
 
 MediaWiki:https://www.mediawiki.org/wiki/MediaWiki
-
-代码测试通过:20130413   By:DGideas
