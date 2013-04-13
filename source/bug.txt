@@ -1,0 +1,5 @@
+-使用Cron运行ideasBot时,易出现NoName等情况.By DGideas
+
+-ideasgettoken只能获得edittoken.By DGideas
+
+-全域翻译不清.By DGideas
