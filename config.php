@@ -19,7 +19,6 @@ $logformat="%Y/%m/%d %H:%M:%S"; //机器人记录日志文件时间戳的格式
 $editsummaryhead="[[User:".$lgname."|".$lgname."]]: "; //机器人编辑摘要头
 $editsummarylast="([[User_talk:".$logname."|任何问题?]])"; //机器人编辑摘要尾
 
-$zf_cleansandbox_min_time="300"; //最短清理沙箱时间为300秒(5分钟)
 
 //好了,请不要继续编辑,请在点击保存之后退出
 
