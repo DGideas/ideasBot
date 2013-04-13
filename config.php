@@ -25,6 +25,13 @@ $editsummarylast="([[User_talk:".$logname."|任何问题?]])"; //机器人编辑
 
 //如果您不了解下面设置的用法,请不要设置下面的参数
 //定义urlcode
+$url["meta"]="http://meta.wikimedia.org/w/api.php"; 
+$url["labs"]="http://wikitech.wikimedia.org/w/api.php"; 
+$url["tech"]="http://wikitech.wikimedia.org/w/api.php"; 
+$url["species"]="http://species.wikimedia.org/w/api.php"; 
+$url["commons"]="http://commons.wikimedia.org/w/api.php"; 
+$url["data"]="http://www.wikidata.org/w/api.php"; 
+
 $url["zhwp"]="http://zh.wikipedia.org/w/api.php"; 
 $url["enwp"]="http://en.wikipedia.org/w/api.php"; 
 $url["arwp"]="http://ar.wikipedia.org/w/api.php"; 
