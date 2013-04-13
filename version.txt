@@ -1,2 +1,1 @@
-20130413 0.0.1 Aurora
-Test done by DGideas, 20130413
+20130413 0.1 Aurora
