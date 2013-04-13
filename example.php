@@ -5,7 +5,6 @@ ideas_login();
 
 //将您的代码置于此处
 ideasreport("it works");
-ideaslog("it works");
 
 echo "finish";
 ?>
