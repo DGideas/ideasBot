@@ -7,7 +7,7 @@ $lgpassword="Password"; //机器人账户的密码
 $url=array(); //建立一个数组
 $defaulturl="zhwp"; //默认的站点代号,详情请参阅help/urlcode.txt
 $defaultlanguage="zh-hans"; //默认的语言,具体请参阅translation/readme.txt
-$useragent= $lgname."Version,by author"; //机器人的用户代理标识
+$useragent= $lgname."Version,by DGideas"; //机器人的用户代理标识
 $cookiefilepath=getcwd()."/cookie.log"; //机器人使用的cookie记录文件
 
 //日志
@@ -16,8 +16,8 @@ $logfile="log.log"; //机器人日志文件的文件名,不需要可以无视
 $logformat="%Y/%m/%d %H:%M:%S"; //机器人记录日志文件时间戳的格式
 
 //编辑
-$editsummaryhead="[[WP:BOT|".$lgname."]]: "; //机器人编辑摘要头
-$editsummarylast="([[User_talk:".$logname."|有问题?]])"; //机器人编辑摘要尾
+$editsummaryhead="[[User:".$lgname."|".$lgname."]]: "; //机器人编辑摘要头
+$editsummarylast="([[User_talk:".$logname."|任何问题?]])"; //机器人编辑摘要尾
 
 $zf_cleansandbox_min_time="300"; //最短清理沙箱时间为300秒(5分钟)
 
