@@ -1,5 +1,5 @@
 -使用Cron运行ideasBot时,易出现NoName等情况.By DGideas
-
+初步查实,是Getcwd()受运行环境限制,如果程序和Cron不在同一目录则NoName.
 -ideasgettoken只能获得edittoken.By DGideas
 
 -全域翻译不清.By DGideas
