@@ -42,7 +42,7 @@ function echop(){
 }
 
 //该函数用于登录(用户名,密码)
-//已经修复一个并发连接导致的错误
+//BUG:cron+PHP5 env has a NoName error, DGideas.
 //Note:$site参数暂时不用
 function ideas_login($site=""){
     global $lgname,$lgpassword,$ideastext,$defaultlanguage;
