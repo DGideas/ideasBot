@@ -1,5 +1,6 @@
 <?php
     //请务必同时更新其他语言版本的翻译,即使留空
+    $ideastext=array();
     $GLOBALS["ideastext"]["zh-hans"]["ad"]="广告";
     $GLOBALS["ideastext"]["zh-hans"]["bot"]="机器人";
     $GLOBALS["ideastext"]["zh-hans"]["done"]="完成";
