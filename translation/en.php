@@ -1,18 +1,17 @@
 <?php
     //Please update other translation, even it is null
-    $ideastext=array();
-    $ideastext["en"]["ad"]="advertisement";
-    $ideastext["en"]["bot"]="bot";
-    $ideastext["en"]["done"]="done";
-    $ideastext["en"]["error"]="error";
-    $ideastext["en"]["finish"]="finish";
-    $ideastext["en"]["loginfailed"]="Login failed";
-    $ideastext["en"]["loginsuccess"]="Login success";
-    $ideastext["en"]["needRW"]="Please set cookie tmp file as RWRWRW";
-    $ideastext["en"]["no"]="no";
-    $ideastext["en"]["ok"]="ok";
-    $ideastext["en"]["report"]="report";
-    $ideastext["en"]["user"]="user";
-    $ideastext["en"]["warning"]="warning";
-    $ideastext["en"]["yes"]="yes";
+    $GLOBALS["ideastext"]["en"]["ad"]="advertisement";
+    $GLOBALS["ideastext"]["en"]["bot"]="bot";
+    $GLOBALS["ideastext"]["en"]["done"]="done";
+    $GLOBALS["ideastext"]["en"]["error"]="error";
+    $GLOBALS["ideastext"]["en"]["finish"]="finish";
+    $GLOBALS["ideastext"]["en"]["loginfailed"]="Login failed";
+    $GLOBALS["ideastext"]["en"]["loginsuccess"]="Login success";
+    $GLOBALS["ideastext"]["en"]["needRW"]="Please set cookie tmp file as RWRWRW";
+    $GLOBALS["ideastext"]["en"]["no"]="no";
+    $GLOBALS["ideastext"]["en"]["ok"]="ok";
+    $GLOBALS["ideastext"]["en"]["report"]="report";
+    $GLOBALS["ideastext"]["en"]["user"]="user";
+    $GLOBALS["ideastext"]["en"]["warning"]="warning";
+    $GLOBALS["ideastext"]["en"]["yes"]="yes";
 ?>
