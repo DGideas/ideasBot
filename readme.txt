@@ -9,4 +9,4 @@ IdeasBot是一个使用PHP书写的机器人脚本
 pywikipediabot https://www.mediawiki.org/wiki/Manual:Pywikipediabot
 wikibot https://www.mediawiki.org/wiki/Manual:Wikibot
 
-代码测试通过:20130413,By:DGideas
+代码测试通过:20130413   By:DGideas
