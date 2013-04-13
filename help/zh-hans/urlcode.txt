@@ -1,6 +1,13 @@
 urlcode是ideasBot多Wiki和多语言支持的一部分
 urlcode采用简短的英文来替代一个Wiki站点api.php的位置
 目前支持的urlcode有
+维基媒体
+ meta 元维基
+ labs 实验室
+ tech Wikitech
+ species 维基物种
+ commons 维基共享资源
+ data 维基数据
 
 维基百科
  zhwp 中文维基百科
