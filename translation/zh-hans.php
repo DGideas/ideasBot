@@ -1,18 +1,17 @@
 <?php
     //请务必同时更新其他语言版本的翻译,即使留空
-    $ideastext=array();
-    $ideastext["zh-hans"]["ad"]="广告";
-    $ideastext["zh-hans"]["bot"]="机器人";
-    $ideastext["zh-hans"]["done"]="完成";
-    $ideastext["zh-hans"]["error"]="错误";
-    $ideastext["zh-hans"]["finish"]="完成";
-    $ideastext["zh-hans"]["loginfailed"]="登录失败";
-    $ideastext["zh-hans"]["loginsuccess"]="登录成功";
-    $ideastext["zh-hans"]["needRW"]="请检查cookie临时文件是否具有RWRWRW权限";
-    $ideastext["zh-hans"]["no"]="不";
-    $ideastext["zh-hans"]["ok"]="完成";
-    $ideastext["zh-hans"]["report"]="报告";
-    $ideastext["zh-hans"]["user"]="用户";
-    $ideastext["zh-hans"]["warning"]="警告";
-    $ideastext["zh-hans"]["yes"]="是";
+    $GLOBALS["ideastext"]["zh-hans"]["ad"]="广告";
+    $GLOBALS["ideastext"]["zh-hans"]["bot"]="机器人";
+    $GLOBALS["ideastext"]["zh-hans"]["done"]="完成";
+    $GLOBALS["ideastext"]["zh-hans"]["error"]="错误";
+    $GLOBALS["ideastext"]["zh-hans"]["finish"]="完成";
+    $GLOBALS["ideastext"]["zh-hans"]["loginfailed"]="登录失败";
+    $GLOBALS["ideastext"]["zh-hans"]["loginsuccess"]="登录成功";
+    $GLOBALS["ideastext"]["zh-hans"]["needRW"]="请检查cookie临时文件是否具有RWRWRW权限";
+    $GLOBALS["ideastext"]["zh-hans"]["no"]="不";
+    $GLOBALS["ideastext"]["zh-hans"]["ok"]="完成";
+    $GLOBALS["ideastext"]["zh-hans"]["report"]="报告";
+    $GLOBALS["ideastext"]["zh-hans"]["user"]="用户";
+    $GLOBALS["ideastext"]["zh-hans"]["warning"]="警告";
+    $GLOBALS["ideastext"]["zh-hans"]["yes"]="是";
 ?>
