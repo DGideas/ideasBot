@@ -3,4 +3,5 @@
 使用dirname(__FILE__)替代,Done.
 -ideasgettoken只能获得edittoken.By DGideas
 
--全域翻译不清.By DGideas
+-翻译数组用量不清.By DGideas
+提示坏数组名
