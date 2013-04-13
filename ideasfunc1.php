@@ -48,15 +48,15 @@ function ideas_login($site=""){
     global $lgname,$lgpassword,$ideastext,$defaultlanguage;
     $result=ideas_login_core($lgname,$lgpassword);
     if ($result == "Success"){
-        echo $ideastext[$defaultlanguage]["loginsuccess"];
+        echo $GLOBALS["ideastext"][$defaultlanguage]["loginsuccess"];
         echop();
     }else{
-        echo $ideastext[$defaultlanguage]["loginfailed"];
+        echo $GLOBALS["ideastext"][$defaultlanguage]["loginfailed"];
         echop();
         echo ($result);
         //通常的错误是wrongpassword,needtoken,wrongtoken.
         if ($result=="needtoken"){
-            echo $ideastext[$defaultlanguage]["needRW"];
+            echo $GLOBALS["ideastext"][$defaultlanguage]["needRW"];
             exit();
         }elseif ($result=="wrongtoken"){
             $result=ideas_login_core($lgname,$lgpassword);
