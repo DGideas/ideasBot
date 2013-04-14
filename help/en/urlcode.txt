@@ -8,7 +8,7 @@ Wikimedia
  commons Wiki commons
  data Wiki data
 
-维基百科
+Wikipedia
  zhwp zh Wikipedia
  enwp en Wikipedia
  arwp ar Wikipedia
@@ -42,5 +42,5 @@ Moegirl Pedia
  zhmg Chinese Moegirl Pedia
  enmg English Moegirl Pedia
  jpmg Jepanese Moegirl Pedia
-其他
+Other
  tfs Team Foundation Server
