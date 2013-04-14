@@ -262,7 +262,7 @@ function ideasedittop($title,$text,$summary=""){
     if ($summary==""){
         $post="action=edit&title=".$title."&section=0&text=".$text."&token=".$edittokenhtml;
     }else{
-        $summary=ideassummary($summary); //处理编辑摘要头尾
+        $summary=ideas_summary($summary); //处理编辑摘要头尾
         $post="action=edit&title=".$title."&section=0&text=".$text."&token=".$edittokenhtml."&summary=".$summary;
     }
     $data=ideas_connect($post);
@@ -285,7 +285,7 @@ function ideasedit($title,$text,$summary=""){
     if ($summary==""){
         $post="action=edit&title=".$title."&text=".$text."&token=".$edittokenhtml;
     }else{
-        $summary=ideassummary($summary); //处理编辑摘要头尾
+        $summary=ideas_summary($summary); //处理编辑摘要头尾
         $post="action=edit&title=".$title."&text=".$text."&token=".$edittokenhtml."&summary=".$summary;
     }
     $data=ideas_connect($post);
@@ -311,7 +311,7 @@ function ideaseditnew($title,$sectiontitle,$text,$summary=""){
     if ($summary==""){
         $post="action=edit&title=".$title."&section=new&sectiontitle=".$sectiontitle."&text=".$text."&token=".$edittokenhtml;
     }else{
-        $summary=ideassummary($summary); //处理编辑摘要头尾
+        $summary=ideas_summary($summary); //处理编辑摘要头尾
         $post="action=edit&title=".$title."&section=new&sectiontitle=".$sectiontitle."&text=".$text."&token=".$edittokenhtml."&summary=".$summary;
     }
     $data=ideas_connect($post);
