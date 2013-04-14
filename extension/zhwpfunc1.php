@@ -11,7 +11,7 @@ function zhwp_check_50() {
             if (ideasstrfind($arraydata->query->allpages->p[$i]->attributes()->title,"temp")==false && ideasstrfind($arraydata->query->allpages->p[$i]->attributes()->title,"tmp")==false && ideasstrfind($arraydata->query->allpages->p[$i]->attributes()->title,"测试")==false ){
                 if (ideas_view($arraydata->query->allpages->p[$i]->attributes()->title)==""){
                     //如果条目内容为空,暂停悬挂
-                    //$topwikied=ideasviewtop($arraydata->query->allpages->p[$i]->attributes()->title);
+                    //$topwikied=ideas_view_top($arraydata->query->allpages->p[$i]->attributes()->title);
                     //$topwikied="{{D|A1}}\r\n".$topwikied;
                     //ideasedittop($arraydata->query->allpages->p[$i]->attributes()->title,$topwikied,"添加{{[[Template:D|A1]]}}标记到条目");
                     //ideaslog("Add {{D|A1}} to : [[".$arraydata->query->allpages->p[$i]->attributes()->title."]]");
@@ -55,7 +55,7 @@ function zhwp_check_ad(){
                 $ib=$ib+1;
             }while($ib <= ($isumb-1));
             if ($blacklist>2){
-                //if (ideasstrfind(ideasview("user_talk:DGideas"),$goaluser)==false){
+                //if (ideasstrfind(ideas_view("user_talk:DGideas"),$goaluser)==false){
                     //ideasreport("请注意".$goaluser."的最近50次编辑,有超过3次被机器人判定为广告");
                 //}
             }
@@ -698,7 +698,7 @@ function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
             ideasedit($sandboxname,"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理沙盒");
             ideaslog("清理了沙盒:[[".$sandboxname."]],最近编者为:".$user);
         }else{
-                if (ideasstrfind(ideas_view($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideasview($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true){
+                if (ideasstrfind(ideas_view($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideas_view($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true){
             }else{
                 $author=ideasgetauthor($sandboxname);
                 $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
