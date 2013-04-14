@@ -105,7 +105,7 @@ function ideas_log($text){
 function ideas_report($text){
     global $logname;
     $text=$text."\r\n\r\n~~~~";//添加签名
-    $xml=ideaseditnew("User_talk:".$logname,"报告 :".time(),$text);
+    $xml=ideas_edit_new("User_talk:".$logname,"报告 :".time(),$text);
     if ($xml->edit->attributes()->result=="Success"){
         echo "成功报告,在".time();
         echop();
