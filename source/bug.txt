@@ -1,7 +1,6 @@
 -ideasgettoken只能获得edittoken.By DGideas
 
--翻译数组用量不清.By DGideas
-提示坏数组名
-
--Undefined index(zh-hans),at ideasfunc1.php line 51.DGideas
-
++翻译数组用量不清.By DGideas
+Done,重复定义数组
++Undefined index(zh-hans),at ideasfunc1.php line 51.DGideas
+Done,同上
