@@ -103,19 +103,19 @@ function ideas_log($text){
 
 //该函数用于向主人报告,自动添加标题和签名(文本)
 function ideas_report($text){
-    global $logname;
+    global $logname,$dfl;
     $text=$text."\r\n\r\n~~~~";//添加签名
-    $xml=ideas_edit_new("User_talk:".$logname,"报告 :".time(),$text);
+    $xml=ideas_edit_new("User_talk:".$logname,$GLOBALS["ideastext"][$dfl]["report"].": ".time(),$text);
     if ($xml->edit->attributes()->result=="Success"){
-        echo "成功报告,在".time();
+        echo $GLOBALS["ideastext"][$dfl]["reportsuccess"];
         echop();
     }else{
         if ($xml->error->attributes()->code=="ratelimited"){
-            echo "编辑频率过快,编辑失败";
+            echo $GLOBALS["ideastext"][$dfl]["reportfailed"];
             echop();
         }else{
-            echo "报告失败,详细信息为:".$xml->error->attributes()->code;
-            ideaslog("报告失败".$xml->error->attributes()->code);
+            echo $GLOBALS["ideastext"][$dfl]["reportfailed"].": ".$xml->error->attributes()->code;
+            ideaslog($GLOBALS["ideastext"][$dfl]["reportfailed"].$xml->error->attributes()->code);
             echop();
         }
     }
