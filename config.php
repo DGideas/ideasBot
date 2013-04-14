@@ -4,15 +4,15 @@
 //通用
 $lgname="Botname"; //机器人账户的用户名(记录日志等操作也会用到)
 $lgpassword="Password"; //机器人账户的密码
-$url=array(); //建立一个数组
-$defaulturl="zhwp"; //默认的站点代号,详情请参阅help/urlcode.txt
-$defaultlanguage="zh-hans"; //默认的语言,具体请参阅translation/readme.txt
-$useragent= $lgname."Version,by DGideas"; //机器人的用户代理标识
-$cookiefilepath=dirname(__FILE__)."/cookie.log"; //机器人使用的cookie记录文件
+$author="Username"; //您自己的用户名,用于机器人报告等多种用途
+$defaulturl="zhwp"; //默认的站点代号,请参阅help/urlcode.txt
+$defaultlanguage="zh-hans"; //默认的语言,请参阅translation/readme.txt
+$useragent= $lgname."Version,by ideasBot based."; //机器人的用户代理标识(useragent)
+$cookiefilepath=dirname(__FILE__)."/cookie.log"; //机器人使用的cookie临时文件,需要RWRWRW权限,使用绝对路径
 
 //日志
-$logname="Username"; //机器人使用ideasreport()报告到的用户名
-$logfile=dirname(__FILE__)."log.log"; //机器人日志文件的文件名,不需要可以无视
+$logname=$author; //机器人使用ideas_report()报告到的用户名
+$logfile=dirname(__FILE__)."log.log"; //机器人日志文件,不需要可以无视
 $logformat="%Y/%m/%d %H:%M:%S"; //机器人记录日志文件时间戳的格式
 
 //编辑
@@ -23,8 +23,11 @@ $editsummarylast="([[User_talk:".$logname."|任何问题?]])"; //机器人编辑
 //好了,请不要继续编辑,请在点击保存之后退出
 
 
+
 //如果您不了解下面设置的用法,请不要设置下面的参数
 //定义urlcode
+$url=array(); //建立一个数组
+
 $url["meta"]="http://meta.wikimedia.org/w/api.php"; 
 $url["labs"]="http://wikitech.wikimedia.org/w/api.php"; 
 $url["tech"]="http://wikitech.wikimedia.org/w/api.php"; 
