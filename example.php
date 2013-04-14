@@ -4,7 +4,7 @@ include_once ('include.php');
 ideas_login();
 
 //将您的代码置于此处
-ideasreport("it works");
+ideas_report("it works");
 
 echo "finish";
 ?>
