@@ -90,7 +90,7 @@ function ideas_deal_timestamp($timestamp,$returntype="unixtime"){
 }
 
 //该函数用于记录运行日志.自动添加时间戳和换行,部分兼容Wikied格式(文本)
-function ideaslog($text){
+function ideas_log($text){
     global $logfile,$logformat;
     $text="* ".strftime($logformat).": ".$text."\r\n";
     //写文件
