@@ -12,6 +12,8 @@
     $GLOBALS["ideastext"]["zh-hans"]["no"]="不";
     $GLOBALS["ideastext"]["zh-hans"]["ok"]="完成";
     $GLOBALS["ideastext"]["zh-hans"]["report"]="报告";
+    $GLOBALS["ideastext"]["zh-hans"]["reportsuccess"]="成功报告";
+    $GLOBALS["ideastext"]["zh-hans"]["reportfailed"]="报告失败";
     $GLOBALS["ideastext"]["zh-hans"]["user"]="用户";
     $GLOBALS["ideastext"]["zh-hans"]["warning"]="警告";
     $GLOBALS["ideastext"]["zh-hans"]["yes"]="是";
