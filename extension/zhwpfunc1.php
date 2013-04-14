@@ -9,15 +9,15 @@ function zhwp_check_50() {
     if ($isum!=0){
         do{
             if (ideasstrfind($arraydata->query->allpages->p[$i]->attributes()->title,"temp")==false && ideasstrfind($arraydata->query->allpages->p[$i]->attributes()->title,"tmp")==false && ideasstrfind($arraydata->query->allpages->p[$i]->attributes()->title,"测试")==false ){
-                if (ideasview($arraydata->query->allpages->p[$i]->attributes()->title)==""){
+                if (ideas_view($arraydata->query->allpages->p[$i]->attributes()->title)==""){
                     //如果条目内容为空,暂停悬挂
                     //$topwikied=ideasviewtop($arraydata->query->allpages->p[$i]->attributes()->title);
                     //$topwikied="{{D|A1}}\r\n".$topwikied;
                     //ideasedittop($arraydata->query->allpages->p[$i]->attributes()->title,$topwikied,"添加{{[[Template:D|A1]]}}标记到条目");
                     //ideaslog("Add {{D|A1}} to : [[".$arraydata->query->allpages->p[$i]->attributes()->title."]]");
                 }else{
-                        if (ideasstrfind(ideasview($arraydata->query->allpages->p[$i]->attributes()->title),"{{d")==false && ideasstrfind(ideasview($arraydata->query->allpages->p[$i]->attributes()->title),"{{substub") && ideasstrfind(ideasview($arraydata->query->allpages->p[$i]->attributes()->title),"{{copyvio") ==false){
-                        $topwikied=ideasviewtop($arraydata->query->allpages->p[$i]->attributes()->title);
+                        if (ideasstrfind(ideas_view($arraydata->query->allpages->p[$i]->attributes()->title),"{{d")==false && ideasstrfind(ideas_view($arraydata->query->allpages->p[$i]->attributes()->title),"{{substub") && ideasstrfind(ideas_view($arraydata->query->allpages->p[$i]->attributes()->title),"{{copyvio") ==false){
+                        $topwikied=ideas_view_top($arraydata->query->allpages->p[$i]->attributes()->title);
                         $topwikied="{{subst:Substub/auto}}\r\n".$topwikied;
                         ideasedittop($arraydata->query->allpages->p[$i]->attributes()->title,$topwikied,"添加[[Template:Substub|小小作品]]标记到条目");
                         ideaslog("Add {{Substub}} to : [[".$arraydata->query->allpages->p[$i]->attributes()->title."]]");
@@ -71,7 +71,7 @@ function zhwp_check_ad(){
 function zhwp_check_ad_core($title){
     $action=0; //初始化:条目评分为0
     //先获得工作条目的完整源代码
-    $articlewikied=ideasview($title);
+    $articlewikied=ideas_view($title);
     echo $articlewikied;
     echo $title." : ";
     echop();
@@ -662,16 +662,16 @@ function zhwp_check_ad_core($title){
         if (is_numeric($action)==true && $action< 0){
             if (is_numeric($action)==true && $action< -5){
                 //悬挂模版G10
-                if (ideasstrfind(ideasview($title),"{{d")==false && ideasstrfind(ideasview($title),"{{advert") ==false){
-                    $topwikied=ideasviewtop($title);
+                if (ideasstrfind(ideas_view($title),"{{d")==false && ideasstrfind(ideas_view($title),"{{advert") ==false){
+                    $topwikied=ideas_view_top($title);
                     $topwikied="{{D|G11}}\r\n".$topwikied;
                     ideasedittop($title,$topwikied,"使用[[Template:D|G11模版]]标记疑似广告的编辑(条目评分:".$action.")");
                     ideaslog("Add {{D|G11}} to : [[".$title."]],条目评分: ".$action);
                 }
             }else{
                 //悬挂模版advert
-                if (ideasstrfind(ideasview($title),"{{d")==false && ideasstrfind(ideasview($title),"{{advert") ==false){
-                    $topwikied=ideasviewtop($title);
+                if (ideasstrfind(ideas_view($title),"{{d")==false && ideasstrfind(ideas_view($title),"{{advert") ==false){
+                    $topwikied=ideas_view_top($title);
                     $topwikied="{{subst:Advert/auto}}\r\n".$topwikied;
                     ideasedittop($title,$topwikied,"使用[[Template:advert]]标记疑似广告的编辑(条目评分:".$action.")");
                     ideaslog("Add {{advert}} to : [[".$title."]],条目评分: ".$action);
@@ -698,7 +698,7 @@ function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
             ideasedit($sandboxname,"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理沙盒");
             ideaslog("清理了沙盒:[[".$sandboxname."]],最近编者为:".$user);
         }else{
-                if (ideasstrfind(ideasview($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideasview($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true){
+                if (ideasstrfind(ideas_view($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideasview($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true){
             }else{
                 $author=ideasgetauthor($sandboxname);
                 $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
@@ -726,7 +726,7 @@ function zhwp_clean_pic_sandbox(){
             ideasedit($sandboxname,"{{PD-self}}\r\n{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理图片沙盒描述");
             ideaslog("清理了图片沙盒:[[".$sandboxname."]],最近编者为:".$user);
         }else{
-                if (ideasstrfind(ideasview($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideasview($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true && ideasstrfind(ideasview($sandboxname),"{{PD-self}}")==true){
+                if (ideasstrfind(ideas_view($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideas_view($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true && ideasstrfind(ideas_view($sandboxname),"{{PD-self}}")==true){
             }else{
                 $author=ideasgetauthor($sandboxname);
                 $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
@@ -757,7 +757,7 @@ function zhwp_wikied_from_user($user){
 
 //该函数是页面维基化的核心函数
 function zhwp_wikied_core($title){
-    $wikied=ideasview($title);
+    $wikied=ideas_view($title);
     $wikied2=$wikied;
     if (ideasstrfind($wikied,$title)==true){
         //如果条目中出现同标题的文字
