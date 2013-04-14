@@ -140,7 +140,7 @@ function ideas_search($searchtext,$namespace="0"){
 
 //该函数用于获得特定单个页的Wikied文本(页面名称)
 //$pagename:指明了目标页面名称,这个参数是必需的
-function ideasview($pagename){
+function ideas_view($pagename){
     $post="action=query&prop=revisions&rvprop=content&format=xml&titles=".$pagename;
     $data=ideas_connect($post);
     //分析数据
@@ -151,7 +151,7 @@ function ideasview($pagename){
 
 //该函数用于获得第0段的Wikied文本(页面名称)
 //$pagename:指明了目标页面名称,这个参数是必需的
-function ideasviewtop($pagename){
+function ideas_view_top($pagename){
     $post="action=query&prop=revisions&rvsection=0&rvprop=content&format=xml&titles=".$pagename;
     $data=ideas_connect($post);
     //分析数据
