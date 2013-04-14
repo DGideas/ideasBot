@@ -12,7 +12,7 @@ $cookiefilepath=dirname(__FILE__)."/cookie.log"; //机器人使用的cookie记�
 
 //日志
 $logname="Username"; //机器人使用ideasreport()报告到的用户名
-$logfile="log.log"; //机器人日志文件的文件名,不需要可以无视
+$logfile=dirname(__FILE__)."log.log"; //机器人日志文件的文件名,不需要可以无视
 $logformat="%Y/%m/%d %H:%M:%S"; //机器人记录日志文件时间戳的格式
 
 //编辑
