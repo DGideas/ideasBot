@@ -10,3 +10,6 @@ The way to countribution translation:
  1.Fork this repo
  2.add new translation file
  3.put a Pull Request
+
+The way to using the translation:
+ 1.add $GLOBALS["ideastext"][$defaultlanguage][<相应代码>]; to code.
