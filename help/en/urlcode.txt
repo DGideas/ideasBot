@@ -1,0 +1,46 @@
+urlcode is a part of multilanguage supporting.
+Now support:
+Wikimedia
+ meta Meta Wiki
+ labs Labs
+ tech Wikitech
+ species Wiki species
+ commons Wiki commons
+ data Wiki data
+
+维基百科
+ zhwp zh Wikipedia
+ enwp en Wikipedia
+ arwp ar Wikipedia
+ bgwp bg Wikipedia
+ cawp ca Wikipedia
+ cswp cs Wikipedia
+ dawp da Wikipedia
+ dewp de Wikipedia
+ eswp es Wikipedia
+ etwp et Wikipedia
+ fawp fa Wikipedia
+ fiwp fi Wikipedia
+ frwp fr Wikipedia
+ gawp ga Wikipedia
+ hewp he Wikipedia
+ hrwp hr Wikipedia
+ htwp ht Wikipedia
+ huwp hu Wikipedia
+ idwp id Wikipedia
+ itwp it Wikipedia
+ jawp ja Wikipedia
+ kowp ko Wikipedia
+ srwp sr Wikipedia
+ test test Wikipedia
+ test2 test2 Wikipedia
+ ruwp ru Wikipedia
+ wuwp wuu Wikipedia
+ zcwp zc Wikipedia
+ zywp zy Wikipedia
+Moegirl Pedia
+ zhmg Chinese Moegirl Pedia
+ enmg English Moegirl Pedia
+ jpmg Jepanese Moegirl Pedia
+其他
+ tfs Team Foundation Server
