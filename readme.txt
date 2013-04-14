@@ -1,9 +1,12 @@
-IdeasBot是一个使用PHP书写的基于MediaWiki软件的机器人脚本
-我们乐意您花上三分钟时间下载并部署该机器人脚本
-您会很快上手,并感到乐趣无穷
+IdeasBot是一个使用PHP书写的基于MediaWiki软件的脚本
+我们非常乐意您花上三分钟时间下载并部署这个机器人
 具体地,请参阅这个页面:http://dgideas.github.io/ideasBot
-有任何问题吗?请首先参阅help/目录下的文件,希望可以帮到你
-我们也非常欢迎您为我们的脚本提提意见
+任何问题?请首先参阅help/目录下的文件,希望可以帮到你
+如果您发现BUG,请电邮用户dgideaswikipedia@gmail.com
+
+
+
+
 
 部分灵感来自
 pywikipediabot https://www.mediawiki.org/wiki/Manual:Pywikipediabot
