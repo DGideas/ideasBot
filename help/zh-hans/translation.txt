@@ -12,4 +12,4 @@ ideasBot设计为多语言支持,您可以在translation/readme.txt中找到目�
  3.提交Pull Request请求
 
 使用翻译的方法:
- 1.在对应的代码中添加$GLOBALS["ideastext"][$defaulturl][<相应代码>];
+ 1.在对应的代码中添加$GLOBALS["ideastext"][$defaultlanguage][<相应代码>];
