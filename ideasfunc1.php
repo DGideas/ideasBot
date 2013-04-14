@@ -35,12 +35,6 @@ function ideas_connect($post="",$site="") {
     return $data;
 }
 
-//该函数用于输出空行
-function echop(){
-    echo "<p />\r\n";
-    return;
-}
-
 //该函数用于登录(用户名,密码)
 //BUG:cron+PHP5 env has a NoName error, DGideas.
 //Note:$site参数暂时不用
@@ -196,16 +190,6 @@ function ideasgetimageusage($iutitle,$iunamespace="0"){
     //目标页面标题:query->imageusage->iu[$i]->attributes()->title
 }
 
-//该函数用于搜索文本中的关键字,是stristr的拓展,返回值类型为bool(字符串,关键字)
-function ideasstrfind($str,$keyword){
-    $return=stristr($str,$keyword);
-    if ($return==false){
-        return false;
-    }else{
-        return true;
-    }
-}
-
 //该函数用于获取页面的大小
 function ideas_get_size($title){
     $post="action=query&prop=revisions&titles=".$title."&rvprop=size";
@@ -285,20 +269,6 @@ function ideaseditnew($title,$sectiontitle,$text,$summary=""){
     return $xml;
 }
 
-//该函数用于填充编辑摘要
-//通过config.php的用户相关设置
-function ideassummary($editsummary){
-    global $editsummaryhead,$editsummarylast;
-    $editsummary=$editsummaryhead.$editsummary.$editsummarylast;
-    return $editsummary;
-}
-
-//该函数用于进行关键词替换(基于str_ireplace,自动替换多次)
-function ideasstrreplace($oldstr,$newstr,$string){
-    $string=str_ireplace($oldstr,$newstr,$string);
-    return $string;
-}
-
 //该函数用于获得特定用户的主页面名称空间用户贡献(用户名,编辑次数(默认为100))
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+usercontribs
 //提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
@@ -311,96 +281,6 @@ function ideas_get_user_contribs($user,$times="100"){
     //所撰条目:query->usercontribs->item[$i]->attributes()->title
     //编辑时间:query->usercontribs->item[$i]->attributes()->timestamp
     //名称空间:query->usercontribs->item[$i]->attributes()->ns
-}
-
-//该函数用于清除cookie缓存
-function ideas_clean_cookie(){
-    global $cookiefilepath;
-    $filehandle2=fopen($cookiefilepath,"w");
-    fwrite($filehandle2,"");
-    fclose($filehandle2);
-    return;
-}
-
-//该函数用于处理MediaWiki格式时间戳,基于正则表达式.接受形如:2013-04-05T15:21:00Z
-//含有两个参数:$timestamp:需要处理的时间戳
-//$returntype:返回类型
-//unixtime(类似于UNIX时间戳,默认):1365175260
-//mysql:MYSQL格式:2013-04-05 15:21:00
-//year:仅年:2013
-//month:仅月:04
-//day:仅日:05
-//hour:仅小时:15
-//minute:仅分钟:21
-//second:仅秒:00
-//all:堆积:20130405152100
-//该函数会对$returntype进行检查,如果请求的不是预期的格式,则返回false
-function ideas_deal_timestamp($timestamp,$returntype="unixtime"){
-    ereg("([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})Z",$timestamp,$reg);
-    $year=$reg[1] ;//年
-    $month=$reg[2] ;//月
-    $day=$reg[3] ;//日
-    $hour=$reg[4] ;//时
-    $minute=$reg[5] ;//分
-    $second=$reg[6] ;//秒
-    //test passed, by DGideas, 20130413
-    if ($returntype=="all"){
-        return $year.$month.$day.$hour.$minute.$second;
-    }elseif ($returntype=="year"){
-        return $year;
-    }elseif ($returntype=="month"){
-        return $month;
-    }elseif ($returntype=="day"){
-        return $day;
-    }elseif ($returntype=="hour"){
-        return $hour;
-    }elseif ($returntype=="minute"){
-        return $minute;
-    }elseif ($returntype=="second"){
-        return $second;
-    }elseif ($returntype=="unixtime"){
-        $unixtime=$year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
-        $unixtime=strtotime($unixtime);
-        return $unixtime;
-    }elseif ($returntype=="mysql"){
-        $mysqltime=$year."-".$month."-".$day." ".$hour.":".$minute.":".$second;
-        return $mysqltime;
-    }else{
-        return false;
-    }
-}
-
-//该函数用于记录运行日志.自动添加时间戳和换行,部分兼容Wikied格式(文本)
-function ideaslog($text){
-    global $logfile,$logformat;
-    $text="* ".strftime($logformat).": ".$text."\r\n";
-    //写文件
-    $filehandle=fopen($logfile,"a");
-    fwrite($filehandle,$text);
-    fclose($filehandle);
-    //file_put_contents($logfile,$text);
-    return;
-}
-
-//该函数用于向主人报告,自动添加标题和签名(文本)
-function ideasreport($text){
-    global $logname;
-    $text=$text."\r\n\r\n~~~~";//添加签名
-    $xml=ideaseditnew("User_talk:".$logname,"报告 :".time(),$text);
-    if ($xml->edit->attributes()->result=="Success"){
-        echo "成功报告,在".time();
-        echop();
-    }else{
-        if ($xml->error->attributes()->code=="ratelimited"){
-            echo "编辑频率过快,编辑失败";
-            echop();
-        }else{
-            echo "报告失败,详细信息为:".$xml->error->attributes()->code;
-            ideaslog("报告失败".$xml->error->attributes()->code);
-            echop();
-        }
-    }
-    return;
 }
 
 ?>
