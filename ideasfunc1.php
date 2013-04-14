@@ -205,7 +205,7 @@ function ideas_get_last_edit_time($title){
 //提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
 //$iutitle:指明了目标图片名称,这个参数是必需的
 //$iunamespace:指明了需要搜索的名称空间,默认为主名称空间
-function ideasgetimageusage($iutitle,$iunamespace="0"){
+function ideas_get_image_usage($iutitle,$iunamespace="0"){
     $post="action=query&list=imageusage&iulimit=5000&iufilterredir=nonredirects&iunamespace=".$iunamespace."&iutitle=".$iutitle;
     $data=ideas_connect($post);
     //分析数据
@@ -261,7 +261,7 @@ function ideas_get_token($title,$intoken="edit"){
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=edit
 function ideas_edit($title,$text,$summary=""){
     //步骤1:获得edittoken
-    $edittoken=ideasgettoken($title,"edit");
+    $edittoken=ideas_get_token($title,"edit");
     $edittokenhtml=str_ireplace("+\\","%2B%5C",$edittoken); //自动将末尾+\ HTML编码为%2B%5C
     $text=urlencode($text);//HTML编码
     $summary=urlencode($summary);//HTML编码
@@ -286,7 +286,7 @@ function ideas_edit($title,$text,$summary=""){
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=edit
 function ideas_edit_top($title,$text,$summary=""){
     //步骤1:获得edittoken
-    $edittoken=ideasgettoken($title,"edit");
+    $edittoken=ideas_get_token($title,"edit");
     $edittokenhtml=str_ireplace("+\\","%2B%5C",$edittoken); //自动将末尾+\ HTML编码为%2B%5C
     $text=urlencode($text);//HTML编码
     $summary=urlencode($summary);//HTML编码
@@ -312,7 +312,7 @@ function ideas_edit_top($title,$text,$summary=""){
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=edit
 function ideas_edit_new($title,$sectiontitle,$text,$summary=""){
     //步骤1:获得edittoken
-    $edittoken=ideasgettoken($title,"edit");
+    $edittoken=ideas_get_token($title,"edit");
     $edittokenhtml=str_ireplace("+\\","%2B%5C",$edittoken); //自动将末尾+\ HTML编码为%2B%5C
     $summary=urlencode($summary);//HTML编码
     $text=urlencode($text);//HTML编码
