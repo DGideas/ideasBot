@@ -10,7 +10,7 @@ function zhmg_clean_sandbox($sandboxname="Help:沙盒"){
         ideasedit($sandboxname,"{{沙盒顶部}}","清理沙盒");
         ideaslog("清理了沙盒:[[".$sandboxname."]],最近编者为:".$user);
     }else{
-            if (ideasstrfind(ideasview($sandboxname),"{{沙盒顶部}}")==true){
+            if (ideasstrfind(ideas_view($sandboxname),"{{沙盒顶部}}")==true){
         }else{
             $author=ideasgetauthor($sandboxname);
             $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
