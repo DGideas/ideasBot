@@ -1,4 +1,4 @@
-ideasfunc1.php is the basic functions of ideasBot, it includes:
+ideasfuncx.php is the basic functions of ideasBot, it includes:
 
 cURL POST action
 ideasBot login
