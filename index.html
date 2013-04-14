@@ -62,6 +62,11 @@
 <p>请尝试将<code>cookie.tmp</code>(或者相应的cookie临时文件)权限设置为<code>RWRWRW</code>,并设置为绝对路径.</p>
 </li>
 <li>
+<p>机器人登录的时候总提示<code>NoName</code></p>
+
+<p>请检查工作目录(<code>getcwd()</code>)是否为当前目录,您可以使用dirname(__FILE__)后再试.</p>
+</li>
+<li>
 <p>我发现了一个BUG</p>
 
 <p>请直接Pull Request.</p>
