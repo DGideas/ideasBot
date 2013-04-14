@@ -3,7 +3,7 @@
 
 //该函数用于将小于50kB,且无删除或速删模版的条目进行标记:{{Substub}},如果条目内容为空,则直接G1
 function zhwp_check_50() {
-    $arraydata=ideaslist("apmaxsize=50");
+    $arraydata=ideas_list("apmaxsize=50");
     $i=0;
     $isum=count ($arraydata->query->allpages->p);
     if ($isum!=0){
@@ -19,8 +19,8 @@ function zhwp_check_50() {
                         if (ideasstrfind(ideas_view($arraydata->query->allpages->p[$i]->attributes()->title),"{{d")==false && ideasstrfind(ideas_view($arraydata->query->allpages->p[$i]->attributes()->title),"{{substub") && ideasstrfind(ideas_view($arraydata->query->allpages->p[$i]->attributes()->title),"{{copyvio") ==false){
                         $topwikied=ideas_view_top($arraydata->query->allpages->p[$i]->attributes()->title);
                         $topwikied="{{subst:Substub/auto}}\r\n".$topwikied;
-                        ideasedittop($arraydata->query->allpages->p[$i]->attributes()->title,$topwikied,"添加[[Template:Substub|小小作品]]标记到条目");
-                        ideaslog("Add {{Substub}} to : [[".$arraydata->query->allpages->p[$i]->attributes()->title."]]");
+                        ideas_edit_top($arraydata->query->allpages->p[$i]->attributes()->title,$topwikied,"添加[[Template:Substub|小小作品]]标记到条目");
+                        ideas_log("Add {{Substub}} to : [[".$arraydata->query->allpages->p[$i]->attributes()->title."]]");
                     }
                 }
         }else{
@@ -56,10 +56,10 @@ function zhwp_check_ad(){
             }while($ib <= ($isumb-1));
             if ($blacklist>2){
                 //if (ideasstrfind(ideas_view("user_talk:DGideas"),$goaluser)==false){
-                    //ideasreport("请注意".$goaluser."的最近50次编辑,有超过3次被机器人判定为广告");
+                    //ideas_report("请注意".$goaluser."的最近50次编辑,有超过3次被机器人判定为广告");
                 //}
             }
-            //ideaslog ($goaluser.",blacklist=".$blacklist);
+            //ideas_log ($goaluser.",blacklist=".$blacklist);
         }
         $i=$i+1;
     }while($i <= ($isum-1));
@@ -665,16 +665,16 @@ function zhwp_check_ad_core($title){
                 if (ideasstrfind(ideas_view($title),"{{d")==false && ideasstrfind(ideas_view($title),"{{advert") ==false){
                     $topwikied=ideas_view_top($title);
                     $topwikied="{{D|G11}}\r\n".$topwikied;
-                    ideasedittop($title,$topwikied,"使用[[Template:D|G11模版]]标记疑似广告的编辑(条目评分:".$action.")");
-                    ideaslog("Add {{D|G11}} to : [[".$title."]],条目评分: ".$action);
+                    ideas_edit_top($title,$topwikied,"使用[[Template:D|G11模版]]标记疑似广告的编辑(条目评分:".$action.")");
+                    ideas_log("Add {{D|G11}} to : [[".$title."]],条目评分: ".$action);
                 }
             }else{
                 //悬挂模版advert
                 if (ideasstrfind(ideas_view($title),"{{d")==false && ideasstrfind(ideas_view($title),"{{advert") ==false){
                     $topwikied=ideas_view_top($title);
                     $topwikied="{{subst:Advert/auto}}\r\n".$topwikied;
-                    ideasedittop($title,$topwikied,"使用[[Template:advert]]标记疑似广告的编辑(条目评分:".$action.")");
-                    ideaslog("Add {{advert}} to : [[".$title."]],条目评分: ".$action);
+                    ideas_edit_top($title,$topwikied,"使用[[Template:advert]]标记疑似广告的编辑(条目评分:".$action.")");
+                    ideas_log("Add {{advert}} to : [[".$title."]],条目评分: ".$action);
                 }
             }
         }
@@ -693,17 +693,17 @@ function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
     $second=$now-$unixtime;
     if ($second>=$zf_cleansandbox_min_time){
         if (ideas_get_size($sandboxname)!="267"){
-            $author=ideasgetauthor($sandboxname);
+            $author=ideas_get_author($sandboxname);
             $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
-            ideasedit($sandboxname,"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理沙盒");
-            ideaslog("清理了沙盒:[[".$sandboxname."]],最近编者为:".$user);
+            ideas_edit($sandboxname,"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理沙盒");
+            ideas_log("清理了沙盒:[[".$sandboxname."]],最近编者为:".$user);
         }else{
                 if (ideasstrfind(ideas_view($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideas_view($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true){
             }else{
-                $author=ideasgetauthor($sandboxname);
+                $author=ideas_get_author($sandboxname);
                 $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
-                ideasedit($sandboxname,"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理沙盒");
-                ideaslog("清理了沙盒:[[".$sandboxname."]],最近编者为:".$user);
+                ideas_edit($sandboxname,"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理沙盒");
+                ideas_log("清理了沙盒:[[".$sandboxname."]],最近编者为:".$user);
             }
         }
     }
@@ -721,17 +721,17 @@ function zhwp_clean_pic_sandbox(){
     $second=$now-$unixtime;
     if ($second>=$zf_cleansandbox_min_time){
         if (ideas_get_size($sandboxname)!="279"){
-            $author=ideasgetauthor($sandboxname);
+            $author=ideas_get_author($sandboxname);
             $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
-            ideasedit($sandboxname,"{{PD-self}}\r\n{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理图片沙盒描述");
-            ideaslog("清理了图片沙盒:[[".$sandboxname."]],最近编者为:".$user);
+            ideas_edit($sandboxname,"{{PD-self}}\r\n{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理图片沙盒描述");
+            ideas_log("清理了图片沙盒:[[".$sandboxname."]],最近编者为:".$user);
         }else{
                 if (ideasstrfind(ideas_view($sandboxname),"{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}")==true && ideasstrfind(ideas_view($sandboxname),"{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}")==true && ideasstrfind(ideas_view($sandboxname),"{{PD-self}}")==true){
             }else{
-                $author=ideasgetauthor($sandboxname);
+                $author=ideas_get_author($sandboxname);
                 $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
-                ideasedit($sandboxname,"{{PD-self}}\r\n{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理图片沙盒描述");
-                ideaslog("清理了图片沙盒:[[".$sandboxname."]],最近编者为:".$user);
+                ideas_edit($sandboxname,"{{PD-self}}\r\n{{請注意：請在這行文字底下進行您的測試，請不要刪除或變更這行文字以及這行文字以上的部份。}}\r\n{{请注意：请在这行文字底下进行您的测试，请不要删除或变更这行文字以及这行文字以上的部分。}}","清理图片沙盒描述");
+                ideas_log("清理了图片沙盒:[[".$sandboxname."]],最近编者为:".$user);
             }
         }
     }
@@ -764,7 +764,7 @@ function zhwp_wikied_core($title){
         if (ideasstrfind($wikied,"'''".$title."'''")==false){
             //如果没有加粗
             $wikied=ideasstrreplace($title,"'''".$title."'''",$wikied);
-            ideaslog("加粗了同标题的文字:".$title);
+            ideas_log("加粗了同标题的文字:".$title);
         }
     }
     if  (ideasstrfind($wikied,"<ref>")==true){
@@ -772,12 +772,12 @@ function zhwp_wikied_core($title){
         if (ideasstrfind($wikied,"{{reflist}}")==false){
             //又没有{{reflist}}
             $wikied=$wikied."\r\n{{reflist}}";
-            ideaslog("添加reflist到以下条目:".$title);
+            ideas_log("添加reflist到以下条目:".$title);
         }
     }
     if ($wikied2!=$wikied){
         //如果有改动
-        ideasedit("User:ideasBot/sandbox/".$title,$wikied,"维基化页面");
+        ideas_edit("User:ideasBot/sandbox/".$title,$wikied,"维基化页面");
     }
     return;
 }
