@@ -1,6 +1,5 @@
 <?php
     //Please update other translation, even it is null
-    $ideastext=array();
     $GLOBALS["ideastext"]["en"]["ad"]="advertisement";
     $GLOBALS["ideastext"]["en"]["bot"]="bot";
     $GLOBALS["ideastext"]["en"]["done"]="done";
