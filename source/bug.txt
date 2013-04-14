@@ -11,4 +11,5 @@
 Done.
 -Undefined index(zh-hans),at ideasfunc1.php line 51.DGideas
 
--记录log位置不对.DGideas
++记录log位置不对.DGideas
+Done,add dirname(__FILE__).
