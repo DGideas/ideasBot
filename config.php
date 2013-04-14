@@ -69,6 +69,6 @@ $url["zhmg"]="http://zh.moegirl.org/api.php";
 $url["enmg"]="http://en.moegirl.org/api.php";
 $url["jpmg"]="http://jp.moegirl.org/api.php";
 
-$url["tfs"]="http://tfs.happylr.net/api.php"; 
+$url["tfs"]="http://test.happylr.net/api.php"; 
 
 ?>
