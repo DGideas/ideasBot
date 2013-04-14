@@ -167,7 +167,7 @@ function ideas_view_top($pagename){
 //该函数用于获得页面最近的编者(页面名称)
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+revisions
 //$title:指明了目标页面名称,这个参数是必需的
-function ideasgetauthor($title){
+function ideas_get_author($title){
     $post="action=query&prop=revisions&titles=".$title."&rvlimit=15&rvprop=user";
     $data=ideas_connect($post);
     //分析数据
