@@ -6,6 +6,7 @@
 //该函数用于cURL POST连接
 //$post:指明了附加POST的内容,默认为空
 //$site:指明了连接到的站点,默认为$defaulturl
+//API帮助:https://www.mediawiki.org/wiki/API:Main_page
 function ideas_connect($post="",$site="") {
     global $url,$useragent,$cookiefilepath,$defaulturl;
     // 创建一个新cURL资源
@@ -41,6 +42,7 @@ function ideas_connect($post="",$site="") {
 //BUG:cron+PHP5 env has a NoName error, DGideas.
 //Note:$site参数暂时不用
 //$site:指明了要登陆到的站点,默认为空
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=login
 function ideas_login($site=""){
     global $lgname,$lgpassword,$ideastext,$defaultlanguage;
     $result=ideas_login_core($lgname,$lgpassword);
@@ -140,6 +142,7 @@ function ideas_search($searchtext,$namespace="0"){
 
 //该函数用于获得特定单个页的Wikied文本(页面名称)
 //$pagename:指明了目标页面名称,这个参数是必需的
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+revisions
 function ideas_view($pagename){
     $post="action=query&prop=revisions&rvprop=content&format=xml&titles=".$pagename;
     $data=ideas_connect($post);
@@ -151,6 +154,7 @@ function ideas_view($pagename){
 
 //该函数用于获得第0段的Wikied文本(页面名称)
 //$pagename:指明了目标页面名称,这个参数是必需的
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+revisions
 function ideas_view_top($pagename){
     $post="action=query&prop=revisions&rvsection=0&rvprop=content&format=xml&titles=".$pagename;
     $data=ideas_connect($post);
@@ -212,6 +216,7 @@ function ideasgetimageusage($iutitle,$iunamespace="0"){
 
 //该函数用于获取页面的大小
 //$title:指明了目标页面名称,这个参数是必需的
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+revisions
 function ideas_get_size($title){
     $post="action=query&prop=revisions&titles=".$title."&rvprop=size";
     $data=ideas_connect($post);
@@ -239,6 +244,7 @@ function ideas_get_user_contribs($user,$times="100"){
 //该函数用于获取执行相应动作的token(标题,动作)
 //$title:指明了目标页面,这个参数是必需的
 //$intoken:指明了需要获得的令牌种类,默认为edit
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+info
 function ideasgettoken($title,$intoken="edit"){
     $post="action=query&prop=info&titles=".$title."&intoken=".$intoken;
     $data=ideas_connect($post);
@@ -252,6 +258,7 @@ function ideasgettoken($title,$intoken="edit"){
 //$title:指明了目标页面的标题,这个参数是必需的
 //$text:指明了第0段的内容
 //$summary:指明了编辑摘要,默认为空
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=edit
 function ideasedittop($title,$text,$summary=""){
     //步骤1:获得edittoken
     $edittoken=ideasgettoken($title,"edit");
@@ -275,6 +282,7 @@ function ideasedittop($title,$text,$summary=""){
 //$title:指明了目标页面的标题,这个参数是必需的
 //$text:指明了页面的内容
 //$summary:指明了编辑摘要,默认为空
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=edit
 function ideasedit($title,$text,$summary=""){
     //步骤1:获得edittoken
     $edittoken=ideasgettoken($title,"edit");
@@ -301,6 +309,7 @@ function ideasedit($title,$text,$summary=""){
 //$sectiontitle:指明了段落的标题
 //$text:指明了页面的内容
 //$summary:指明了编辑摘要,默认为空
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=edit
 function ideaseditnew($title,$sectiontitle,$text,$summary=""){
     //步骤1:获得edittoken
     $edittoken=ideasgettoken($title,"edit");
