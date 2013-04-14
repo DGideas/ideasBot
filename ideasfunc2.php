@@ -102,7 +102,7 @@ function ideaslog($text){
 }
 
 //该函数用于向主人报告,自动添加标题和签名(文本)
-function ideasreport($text){
+function ideas_report($text){
     global $logname;
     $text=$text."\r\n\r\n~~~~";//添加签名
     $xml=ideaseditnew("User_talk:".$logname,"报告 :".time(),$text);
