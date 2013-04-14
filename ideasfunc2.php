@@ -20,7 +20,7 @@ function ideasstrfind($str,$keyword){
 
 //该函数用于填充编辑摘要
 //通过config.php的用户相关设置
-function ideassummary($editsummary){
+function ideas_summary($editsummary){
     global $editsummaryhead,$editsummarylast;
     $editsummary=$editsummaryhead.$editsummary.$editsummarylast;
     return $editsummary;
