@@ -3,7 +3,7 @@ ideasBot设计为多语言支持,您可以在translation/readme.txt中找到目�
 
 安装翻译的方法:
  1.将与ideasBot兼容的翻译文件置于translation/目录中
- 2.修改include.php,包含相应语言版本的php文件
+ 2.修改translation.php,包含相应语言版本的php文件
  3.在config.php中设置使用的语言版本代码
 
 贡献翻译的方法:
