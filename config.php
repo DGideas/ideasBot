@@ -23,7 +23,8 @@ $editsummarylast="([[User_talk:".$logname."|任何问题?]])"; //机器人编辑
 //好了,请不要继续编辑,请在点击保存之后退出
 
 
-
+//简化参数
+$dfl=$defaultlanguage;
 //如果您不了解下面设置的用法,请不要设置下面的参数
 //定义urlcode
 $url=array(); //建立一个数组
