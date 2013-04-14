@@ -105,21 +105,6 @@ function ideas_get_recent_changes($rclimit="5000",$rctype="new",$rcnamespace="0"
     //其他的属性:pageid,revid,timestamp......
 }
 
-//该函数用于基于关键字的简单搜索(关键字,名称空间代码)
-//提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
-//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+search
-//$searchtext:指明了需要搜索的内容
-//$namespace:指明了需要搜索的名称空间
-function ideas_search($searchtext,$namespace="0"){
-    $post="action=query&list=search&srsearch=".$searchtext."&srnamespace=".$namespace;
-    $data=ideas_connect($post);
-    //分析数据
-    $xml = simplexml_load_string($data);
-    return $xml;
-    //搜索条数为:query->searchinfo->attributes()->totalhits
-    //搜索内容为:query->search->p[$i]->attributes()->title
-}
-
 //该函数用于基于条件查询条目(非重定向)列表(条件)
 //提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+allpages
@@ -136,6 +121,21 @@ function ideas_list($extra){
     return $xml;
     //请注意,如果没有搜索到任何结果,使用返回值可能造成不可预料的后果
     //搜索内容为:query->allpages->p[$i]->attributes()->title
+}
+
+//该函数用于基于关键字的简单搜索(关键字,名称空间代码)
+//提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+search
+//$searchtext:指明了需要搜索的内容
+//$namespace:指明了需要搜索的名称空间
+function ideas_search($searchtext,$namespace="0"){
+    $post="action=query&list=search&srsearch=".$searchtext."&srnamespace=".$namespace;
+    $data=ideas_connect($post);
+    //分析数据
+    $xml = simplexml_load_string($data);
+    return $xml;
+    //搜索条数为:query->searchinfo->attributes()->totalhits
+    //搜索内容为:query->search->p[$i]->attributes()->title
 }
 
 //该函数用于获得特定单个页的Wikied文本(页面名称)
@@ -220,6 +220,22 @@ function ideas_get_size($title){
     return $xml->query->pages->page[0]->revisions->rev->attributes()->size;
 }
 
+//该函数用于获得特定用户的主页面名称空间用户贡献(用户名,编辑次数(默认为100))
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+usercontribs
+//提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
+//$user:指明了目标用户,这个参数是必需的
+//$times:指明了要查询的条目数,默认为100
+function ideas_get_user_contribs($user,$times="100"){
+    $post="action=query&list=usercontribs&ucuser=".$user."&uclimit=".$times."&ucnamespace=0";
+    $data=ideas_connect($post);
+    //分析数据
+    $xml = simplexml_load_string($data);
+    return $xml;
+    //所撰条目:query->usercontribs->item[$i]->attributes()->title
+    //编辑时间:query->usercontribs->item[$i]->attributes()->timestamp
+    //名称空间:query->usercontribs->item[$i]->attributes()->ns
+}
+
 //该函数用于获取执行相应动作的token(标题,动作)
 //$title:指明了目标页面,这个参数是必需的
 //$intoken:指明了需要获得的令牌种类,默认为edit
@@ -302,22 +318,6 @@ function ideaseditnew($title,$sectiontitle,$text,$summary=""){
     //分析数据
     $xml = simplexml_load_string($data);
     return $xml;
-}
-
-//该函数用于获得特定用户的主页面名称空间用户贡献(用户名,编辑次数(默认为100))
-//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+usercontribs
-//提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
-//$user:指明了目标用户,这个参数是必需的
-//$times:指明了要查询的条目数,默认为100
-function ideas_get_user_contribs($user,$times="100"){
-    $post="action=query&list=usercontribs&ucuser=".$user."&uclimit=".$times."&ucnamespace=0";
-    $data=ideas_connect($post);
-    //分析数据
-    $xml = simplexml_load_string($data);
-    return $xml;
-    //所撰条目:query->usercontribs->item[$i]->attributes()->title
-    //编辑时间:query->usercontribs->item[$i]->attributes()->timestamp
-    //名称空间:query->usercontribs->item[$i]->attributes()->ns
 }
 
 ?>
