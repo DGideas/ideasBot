@@ -1,15 +1,7 @@
-+使用Cron运行ideasBot时,易出现NoName等情况.By DGideas
-初步查实,是Getcwd()受运行环境限制,如果程序和Cron不在同一目录则NoName.
-使用dirname(__FILE__)替代,Done.
 -ideasgettoken只能获得edittoken.By DGideas
 
 -翻译数组用量不清.By DGideas
 提示坏数组名
-+Cron运行提示NoName,手动正常.DGideas
-使用dirname(__FILE__)替代include原型,Done.
-+Undefined ver(edittoken),at ideasfunc1.php line 389.DGideas
-Done.
+
 -Undefined index(zh-hans),at ideasfunc1.php line 51.DGideas
 
-+记录log位置不对.DGideas
-Done,add dirname(__FILE__).
