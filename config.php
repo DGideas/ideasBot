@@ -74,6 +74,7 @@ $url["zhmg"]="http://zh.moegirl.org/api.php";
 $url["enmg"]="http://en.moegirl.org/api.php";
 $url["jpmg"]="http://jp.moegirl.org/api.php";
 
+$url["filezilla"]="http://wiki.filezilla-project.org/wiki/api.php";
 $url["tfs"]="http://test.happylr.net/api.php"; 
 
 ?>
