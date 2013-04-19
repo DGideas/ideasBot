@@ -55,7 +55,7 @@ function ideas_clean_cookie(){
 //all:堆积:20130405152100
 //该函数会对$returntype进行检查,如果请求的不是预期的格式,则返回false
 function ideas_deal_timestamp($timestamp,$returntype="unixtime"){
-    ereg("([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})Z",$timestamp,$reg);
+    preg_match("/([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})Z/",$timestamp,$reg);
     $year=$reg[1] ;//年
     $month=$reg[2] ;//月
     $day=$reg[3] ;//日
