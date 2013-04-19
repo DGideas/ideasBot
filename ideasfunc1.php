@@ -8,7 +8,7 @@
 //$site:指明了连接到的站点,默认为$defaulturl
 //API帮助:https://www.mediawiki.org/wiki/API:Main_page
 function ideas_connect($post="",$site="") {
-    global $url,$useragent,$cookiefilepath,$defaulturl;
+    global $url,$useragent,$cookiefilepath;
     // 创建一个新cURL资源
     $ideasconnect = curl_init();
     // 设置XML格式
@@ -17,7 +17,7 @@ function ideas_connect($post="",$site="") {
     }
     
     if ($site==""){
-        curl_setopt ($ideasconnect, CURLOPT_URL, $url[$defaulturl]);
+        curl_setopt ($ideasconnect, CURLOPT_URL, $url[$GLOBALS["wiki"]]);
     }else{
         curl_setopt ($ideasconnect, CURLOPT_URL, $url[$site]);
     }
@@ -41,11 +41,15 @@ function ideas_connect($post="",$site="") {
 //该函数用于登录(用户名,密码)
 //BUG:cron+PHP5 env has a NoName error, DGideas.
 //Note:$site参数暂时不用
-//$site:指明了要登陆到的站点,默认为空
+//$site:指明了要登陆到的站点,默认为$GLOBALS["wiki"]
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=login
-function ideas_login($site=""){
+function ideas_login($wiki="",$username,$password){
     global $lgname,$lgpassword,$ideastext,$defaultlanguage;
-    $result=ideas_login_core($lgname,$lgpassword);
+    if (!isset($username)){
+        $result=ideas_login_core($lgname,$lgpassword,$wiki);
+    }else{
+        $result=ideas_login_core($username,$password,$wiki);
+    }
     if ($result == "Success"){
         echo $GLOBALS["ideastext"][$defaultlanguage]["loginsuccess"];
         echop();
@@ -58,7 +62,7 @@ function ideas_login($site=""){
             echo $GLOBALS["ideastext"][$defaultlanguage]["needRW"];
             exit();
         }elseif ($result=="wrongtoken"){
-            $result=ideas_login_core($lgname,$lgpassword);
+            $result=ideas_login_core($lgname,$lgpassword,$wiki);
         }
     }
     return;
@@ -69,16 +73,16 @@ function ideas_login($site=""){
 //Note:$site参数暂时不用
 //$lgname:指明了登录的用户名
 //$lgpassword:指明了用户名对应的密码
-//$site:指明了使用的站点(暂时无用)
+//$site:指明了使用的站点
 function ideas_login_core($lgname,$lgpassword,$site=""){
     ideas_clean_cookie(); //登录前先清除cookie缓存
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword;
-    $data=ideas_connect($post);
+    $data=ideas_connect($post,$site);
     //分析数据
     $xml = simplexml_load_string($data);
     $token = $xml->login[0]->attributes()->token;
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword."&lgtoken=".$token;
-    $data=ideas_connect($post);
+    $data=ideas_connect($post,$site);
     $xml = simplexml_load_string($data);
     //登陆过程完成
     return $xml->login[0]->attributes()->result;
