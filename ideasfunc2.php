@@ -9,7 +9,7 @@ function echop(){
 }
 
 //该函数用于搜索文本中的关键字,是stristr的拓展,返回值类型为bool(字符串,关键字)
-function ideasstrfind($str,$keyword){
+function ideas_str_find($str,$keyword){
     $return=stristr($str,$keyword);
     if ($return==false){
         return false;
