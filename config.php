@@ -6,6 +6,7 @@ $lgname="Botname"; //机器人账户的用户名(记录日志等操作也会用�
 $lgpassword="Password"; //机器人账户的密码
 $author="Username"; //您自己的用户名,用于机器人报告等多种用途
 $defaulturl="zhwp"; //默认的站点代号,请参阅help/urlcode.txt
+$wiki="zhwp"; //指定初始的预设工作维基,请参阅help/workwiki.txt
 $defaultlanguage="zh-hans"; //默认的语言,请参阅translation/readme.txt
 $useragent= $lgname."Version,by ideasBot based."; //机器人的用户代理标识(useragent)
 $cookiefilepath=dirname(__FILE__)."/cookie.log"; //机器人使用的cookie临时文件,需要RWRWRW权限,使用绝对路径
