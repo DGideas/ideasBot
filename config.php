@@ -23,7 +23,8 @@ $editsummarylast="([[User_talk:".$logname."|任何问题?]])"; //机器人编辑
 
 //好了,请不要继续编辑,请在点击保存之后退出
 
-
+//设定版本
+$version="0.1 Aurora";
 //简化参数
 $dfl=$defaultlanguage;
 //更换工作目录
