@@ -1,0 +1,6 @@
+Join for feedback project is a way to help with ideasBot.
+In config.php, set $feedback=true to join this proj. Default is true.
+We won't collect your primary information. And we won't use your information in other ways.
+
+ This function will disturb my own work?
+:This function using mail() to send automaticly feedback. If it's wrong, will made up a E_WARNING error.
