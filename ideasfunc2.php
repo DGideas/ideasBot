@@ -129,5 +129,4 @@ function ideas_feedback($feedback,$title="IdeasBot - Feedback"){
     return;
 }
 
-}
 ?>
