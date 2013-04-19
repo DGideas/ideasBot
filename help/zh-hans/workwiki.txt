@@ -1,0 +1,23 @@
+ideasBot引入了工作维基(workwiki)的概念,这表明您可以在同一段代码中在多个wiki工作.
+带有$wiki参数的ideas_login,ideas_connect函数不受工作维基设定的影响.
+
+设置:
+ config.php中$wiki可以设置初始的工作维基.在任意代码中使用$GLOBALS["wiki"]也可以设置工作维基.
+
+实例:
+ 下面一段代码展示了您被容许在多个Wiki使用不同的账户登录的两种方法:
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+ <?php
+ include_once ('include.php');
+ ideas_login("zhwp","username1","password1"); //使用带有用户名和密码参数的ideas_login登录到中文维基百科
+ ideas_login("enwp"); //使用在config.php设置的缺省用户名和密码登录英文维基百科
+ //ideas_login登录成功与否不改变$wiki的设置
+ $GLOBALS["wiki"]="zhwp"; //设置默认维基为中文维基百科
+ //将您的代码置于此处
+ ideas_report("it works"); //这将在中文维基百科报告运行成功的信息
+ 
+ echo "finish";
+ ?>
+
+注意:
+ ideas_login登录其它维基后,$wiki并不改变(仍然为登录之前的工作维基)
