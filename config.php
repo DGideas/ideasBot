@@ -76,6 +76,6 @@ $url["jpmg"]="http://jp.moegirl.org/api.php";
 
 $url["filezilla"]="http://wiki.filezilla-project.org/wiki/api.php";
 $url["tfs"]="http://test.happylr.net/api.php"; 
-$url["feedback"]="bots.wmflabs.org/~dgideas/ideasBot/feedback.php";
+$url["feedback"]="http://bots.wmflabs.org/~dgideas/ideasBot/feedback.php";
 
 ?>
