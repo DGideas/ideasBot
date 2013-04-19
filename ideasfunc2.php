@@ -124,11 +124,8 @@ function ideas_report($text){
 
 //该函数用于发送用户反馈信息
 function ideas_feedback($feedback,$title="IdeasBot - Feedback"){
-    $workwiki=$GLOBALS["wiki"];
-    $GLOBALS["wiki"]="feedback";
     $post="version=".$GLOBALS["version"]."&feedback=".$feedback."&title=".$title;
-    $data=ideas_connect($post);
-    $GLOBALS["wiki"]=$workwiki;
+    $data=ideas_connect($post,"feedback");
     return;
 }
 
