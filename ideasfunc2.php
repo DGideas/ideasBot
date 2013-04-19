@@ -122,4 +122,12 @@ function ideas_report($text){
     return;
 }
 
+//该函数用于发送用户反馈信息
+function ideas_feedback($feedback,$title="IdeasBot - Feedback"){
+    $post="version=".$GLOBALS["version"]."&feedback=".$feedback."&title=".$title;
+    $data=ideas_connect($post);
+    return;
+}
+
+}
 ?>
