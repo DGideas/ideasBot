@@ -115,7 +115,7 @@ function ideas_report($text){
             echop();
         }else{
             echo $GLOBALS["ideastext"][$dfl]["reportfailed"].": ".$xml->error->attributes()->code;
-            ideaslog($GLOBALS["ideastext"][$dfl]["reportfailed"].$xml->error->attributes()->code);
+            ideas_log($GLOBALS["ideastext"][$dfl]["reportfailed"].$xml->error->attributes()->code);
             echop();
         }
     }
