@@ -1,6 +1,10 @@
 <?php
 //encode:UTF-8
 
+//更换工作目录
+chdir(dirname(__FILE__));
+
+//请在下方进行您的设定
 //通用
 $lgname="Botname"; //机器人账户的用户名(记录日志等操作也会用到)
 $lgpassword="Password"; //机器人账户的密码
@@ -28,8 +32,7 @@ $version="0.1 Aurora";
 //简化参数
 $dfl=$defaultlanguage;
 $lang=$defaultlanguage;
-//更换工作目录
-chdir(dirname(__FILE__));
+
 //如果您不了解下面设置的用法,请不要设置下面的参数
 //定义urlcode(参见help/urlcode.txt)
 $url=array(); //建立一个数组
