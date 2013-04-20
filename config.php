@@ -29,6 +29,8 @@ $editsummarylast="([[User_talk:".$logname."|任何问题?]])"; //机器人编辑
 
 //设定版本
 $version="0.1 Aurora";
+//初始化登录状态
+$islogin=false;
 //简化参数
 $dfl=$defaultlanguage;
 $lang=$defaultlanguage;
