@@ -48,5 +48,6 @@ urlcode采用简短的英文来替代一个Wiki站点api.php的位置
  smmw 赛门铁克MediaWiki
  bioedu 生物学维基百科
  filezilla FileZilla Wiki
+ mozilla Mozilla Wiki
  tfs Team Foundation Server
  feedback ideasBot用户反馈API
