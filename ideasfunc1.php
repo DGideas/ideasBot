@@ -3,41 +3,6 @@
 //帮助文档:help/ideasfunc.txt
 
 
-//该函数用于cURL POST连接
-//$post:指明了附加POST的内容,默认为空
-//$site:指明了连接到的站点,默认为$defaulturl
-//API帮助:https://www.mediawiki.org/wiki/API:Main_page
-function ideas_connect($post="",$site="") {
-    global $url,$useragent,$cookiefilepath;
-    // 创建一个新cURL资源
-    $ideasconnect = curl_init();
-    // 设置XML格式
-    if ($post!=""){
-        $post=$post."&format=xml";
-    }
-    
-    if ($site==""){
-        curl_setopt ($ideasconnect, CURLOPT_URL, $url[$GLOBALS["wiki"]]);
-    }else{
-        curl_setopt ($ideasconnect, CURLOPT_URL, $url[$site]);
-    }
-    curl_setopt ($ideasconnect, CURLOPT_HEADER, false);
-    curl_setopt ($ideasconnect, CURLOPT_ENCODING, "UTF-8");
-    curl_setopt ($ideasconnect, CURLOPT_USERAGENT, $useragent);
-    curl_setopt ($ideasconnect, CURLOPT_POST, true); 
-    curl_setopt ($ideasconnect, CURLOPT_POSTFIELDS,$post);
-    curl_setopt ($ideasconnect, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt ($ideasconnect, CURLOPT_COOKIEFILE, $cookiefilepath);
-    curl_setopt ($ideasconnect, CURLOPT_COOKIEJAR, $cookiefilepath);
-    
-    // 抓取URL并把它传递给浏览器
-    $data=curl_exec($ideasconnect);
-    
-    // 关闭cURL资源，并且释放系统资源
-    //curl_close($ideasconnect);
-    return $data;
-}
-
 //该函数用于获取最近更改(recentchanges)的条目(查询数量,查询种类,名称空间,筛选器,额外)
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+recentchanges
 //$rclimit:指明了返回最近更改的数量,默认为5000
