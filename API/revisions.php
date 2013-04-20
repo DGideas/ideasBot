@@ -61,5 +61,16 @@ function ideas_get_last_edit_time($title){
     //直接返回最后编辑时间(推荐使用ideas_deal_timestamp($timestamp,$returntype)函数处理MediaWiki格式时间戳)
 }
 
+//该函数用于获取页面的大小
+//$title:指明了目标页面名称,这个参数是必需的
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+revisions
+function ideas_get_size($title){
+    $post="action=query&prop=revisions&titles=".$title."&rvprop=size";
+    $data=ideas_connect($post);
+    //分析数据
+    $xml = simplexml_load_string($data);
+    return $xml->query->pages->page[0]->revisions->rev->attributes()->size;
+}
+
 
 ?>
