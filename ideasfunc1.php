@@ -52,6 +52,7 @@ function ideas_login($wiki="",$username,$password){
     }
     if ($result == "Success"){
         echo $GLOBALS["ideastext"][$defaultlanguage]["loginsuccess"];
+        $GLOBALS["islogin"]=true;
         echop();
     }else{
         echo $GLOBALS["ideastext"][$defaultlanguage]["loginfailed"];
