@@ -4,6 +4,7 @@
     $GLOBALS["ideastext"]["zh-hans"]["bot"]="机器人";
     $GLOBALS["ideastext"]["zh-hans"]["done"]="完成";
     $GLOBALS["ideastext"]["zh-hans"]["error"]="错误";
+    $GLOBALS["ideastext"]["zh-hans"]["feedback"]="反馈";
     $GLOBALS["ideastext"]["zh-hans"]["finish"]="完成";
     $GLOBALS["ideastext"]["zh-hans"]["loginfailed"]="登录失败";
     $GLOBALS["ideastext"]["zh-hans"]["loginsuccess"]="登录成功";
