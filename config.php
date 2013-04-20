@@ -27,6 +27,7 @@ $editsummarylast="([[User_talk:".$logname."|任何问题?]])"; //机器人编辑
 $version="0.1 Aurora";
 //简化参数
 $dfl=$defaultlanguage;
+$lang=$defaultlanguage;
 //更换工作目录
 chdir(dirname(__FILE__));
 //如果您不了解下面设置的用法,请不要设置下面的参数
