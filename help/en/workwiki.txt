@@ -1,0 +1,23 @@
+ideasBot has a content about workwiki, it admit you can work in many wikis in one script.
+With $wiki, ideas_login,ideas_connect won't be effect with workwiki.
+
+Config:
+ In config.php, $wiki can be set as default wiki. Using $GLOBALS["wiki"] can also set workwiki.
+
+Examples:
+ The following code can login with multi-wiki:
+ <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+ <?php
+ include_once ('include.php');
+ ideas_login("zhwp","username1","password1"); //Using ideas_login with username, password info
+ ideas_login("enwp"); //Using the conf in config.php to login
+ //ideas_login won't change the $wiki
+ $GLOBALS["wiki"]="zhwp"; //Set $wiki to Chinese Wikipedia
+ //Put your code here
+ ideas_report("it works"); //It will echo a success information in Chinese Wikipedia
+ 
+ echo "finish";
+ ?>
+
+Note:
+ After using ideas_login, $wiki won't changed.
