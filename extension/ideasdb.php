@@ -11,6 +11,8 @@ function ext_get_ideasdb_conf(){
     $GLOBALS["ideasdb"]["dbusername"]=$reg[1];
     preg_match("/\s*.*dbpassword:(.*)\s*.*/",$get,$reg);
     $GLOBALS["ideasdb"]["dbpassword"]=$reg[1];
+    preg_match("/\s*.*dbversion:(.*)\s*.*/",$get,$reg);
+    $GLOBALS["ideasdb"]["dbversion"]=$reg[1];
     return;
 }
 ?>
