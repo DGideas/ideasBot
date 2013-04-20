@@ -3,7 +3,7 @@
 
 //该函数用于清空TFS沙盒
 //目前只支持大小为46字节的沙箱
-function tfs_clean_sandbox($sandboxname="Sandbox"){
+function ext_tfs_clean_sandbox($sandboxname="Sandbox"){
     if (ideas_get_size($sandboxname)!="46"){
         $author=ideas_get_author($sandboxname);
         $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
