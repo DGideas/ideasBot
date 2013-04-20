@@ -8,6 +8,7 @@ Wikimedia
  species Wiki species
  commons Wiki commons
  data Wiki data
+ mw(mediawiki) Mediawiki
 Wikipedia
  zhwp zh Wikipedia
  enwp en Wikipedia
@@ -43,6 +44,8 @@ Moegirl Pedia
  enmg English Moegirl Pedia
  jpmg Jepanese Moegirl Pedia
 Other
- tfs Team Foundation Server
  filezilla FileZilla Wiki
+ smmw Semantic Mediawiki
+ bioedu Biology Wikipedia
+ tfs Team Foundation Server
  feedback ideasBot user feedback API
