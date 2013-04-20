@@ -4,6 +4,7 @@
     $GLOBALS["ideastext"]["en"]["bot"]="bot";
     $GLOBALS["ideastext"]["en"]["done"]="done";
     $GLOBALS["ideastext"]["en"]["error"]="error";
+    $GLOBALS["ideastext"]["en"]["feedback"]="feedback";
     $GLOBALS["ideastext"]["en"]["finish"]="finish";
     $GLOBALS["ideastext"]["en"]["loginfailed"]="Login failed";
     $GLOBALS["ideastext"]["en"]["loginsuccess"]="Login success";
