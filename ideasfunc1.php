@@ -57,6 +57,7 @@ function ideas_login($wiki="",$username,$password){
         echo $GLOBALS["ideastext"][$defaultlanguage]["loginfailed"];
         echop();
         echo ($result);
+        ideas_feedback($GLOBALS["ideastext"][$defaultlanguage]["loginfailed"].":".$result);
         //通常的错误是wrongpassword,needtoken,wrongtoken.
         if ($result=="needtoken"){
             echo $GLOBALS["ideastext"][$defaultlanguage]["needRW"];
