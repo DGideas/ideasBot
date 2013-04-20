@@ -6,9 +6,9 @@
 //Note:$site参数暂时不用
 //$site:指明了要登陆到的站点,默认为$GLOBALS["wiki"]
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=login
-function ideas_login($wiki="",$username,$password){
+function ideas_login($wiki="",$username="",$password=""){
     global $lgname,$lgpassword,$ideastext,$defaultlanguage;
-    if (!isset($username)){
+    if ($username==""){
         $result=ideas_login_core($lgname,$lgpassword,$wiki);
     }else{
         $result=ideas_login_core($username,$password,$wiki);
