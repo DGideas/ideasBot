@@ -30,7 +30,7 @@ $dfl=$defaultlanguage;
 //更换工作目录
 chdir(dirname(__FILE__));
 //如果您不了解下面设置的用法,请不要设置下面的参数
-//定义urlcode
+//定义urlcode(参见help/urlcode.txt)
 $url=array(); //建立一个数组
 
 $url["meta"]="http://meta.wikimedia.org/w/api.php"; 
@@ -39,6 +39,8 @@ $url["tech"]="http://wikitech.wikimedia.org/w/api.php";
 $url["species"]="http://species.wikimedia.org/w/api.php"; 
 $url["commons"]="http://commons.wikimedia.org/w/api.php"; 
 $url["data"]="http://www.wikidata.org/w/api.php"; 
+$url["mw"]="http://www.mediawiki.org/w/api.php";
+$url["mediawiki"]=$url["mw"];
 
 $url["zhwp"]="http://zh.wikipedia.org/w/api.php"; 
 $url["enwp"]="http://en.wikipedia.org/w/api.php"; 
@@ -75,6 +77,8 @@ $url["enmg"]="http://en.moegirl.org/api.php";
 $url["jpmg"]="http://jp.moegirl.org/api.php";
 
 $url["filezilla"]="http://wiki.filezilla-project.org/wiki/api.php";
+$url["smmw"]="http://www.semantic-mediawiki.org/w/api.php";
+$url["bioedu"]="http://bio.cug.edu.cn/w/api.php";
 $url["tfs"]="http://test.happylr.net/api.php"; 
 $url["feedback"]="http://bots.wmflabs.org/~dgideas/ideasbot/feedback.php";
 
