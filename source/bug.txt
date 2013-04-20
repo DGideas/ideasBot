@@ -1,7 +1,4 @@
 -ideasgettoken只能获得edittoken.By DGideas
 
-+翻译数组用量不清.By DGideas
-Done,重复定义数组
-+Undefined index(zh-hans),at ideasfunc1.php line 51.DGideas
-Done,同上
 -Edit系列函数bug.byDGideas
+
