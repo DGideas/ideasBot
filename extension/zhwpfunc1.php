@@ -2,7 +2,7 @@
 //encode:UTF-8
 
 //该函数用于将小于50kB,且无删除或速删模版的条目进行标记:{{Substub}},如果条目内容为空,则直接G1
-function zhwp_check_50() {
+function ext_zhwp_check_50() {
     $arraydata=ideas_list("apmaxsize=50");
     $i=0;
     $isum=count ($arraydata->query->allpages->p);
@@ -35,7 +35,7 @@ function zhwp_check_50() {
 }
 
 //该函数用于从最近更改中检测新创建的广告条目,并将其标记
-function zhwp_check_ad(){
+function ext_zhwp_check_ad(){
     $arraydata=ideas_get_recent_changes();
     $i=0;
     $isum=count ($arraydata->query->recentchanges->rc);
@@ -68,7 +68,7 @@ function zhwp_check_ad(){
 
 //广告检查函数核心(页面名称)
 //另请参见:https://github.com/DGideas/AntiAD
-function zhwp_check_ad_core($title){
+function ext_zhwp_check_ad_core($title){
     $action=0; //初始化:条目评分为0
     //先获得工作条目的完整源代码
     $articlewikied=ideas_view($title);
@@ -685,7 +685,7 @@ function zhwp_check_ad_core($title){
 
 //该函数用于清空中文维基百科沙盒
 //目前只支持大小为267字节的沙箱
-function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
+function ext_zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
     $zf_cleansandbox_min_time="300"; //最短清理沙箱时间为300秒(5分钟)
     $timestamp=ideas_get_last_edit_time($sandboxname);
     $unixtime=ideas_deal_timestamp($timestamp);
@@ -712,7 +712,7 @@ function zhwp_clean_sandbox($sandboxname="Wikipedia:沙盒"){
 
 //该函数用于清空中文维基百科图片沙盒
 //目前只支持大小为279字节的沙箱
-function zhwp_clean_pic_sandbox(){
+function ext_zhwp_clean_pic_sandbox(){
     $sandboxname="File:沙盒.png";
     $zf_cleansandbox_min_time="300"; //最短清理沙箱时间为300秒(5分钟)
     $timestamp=ideas_get_last_edit_time("File:沙盒.png");
@@ -744,7 +744,7 @@ function zhwp_clean_pic_sandbox(){
 //WARNING:以下函数为测试函数,运行可能不稳定!!!
 
 //该函数用于基于用户贡献维基化条目
-function zhwp_wikied_from_user($user){
+function ext_zhwp_wikied_from_user($user){
     $usercontribs=ideas_get_user_contribs($user,"50");
     $isum=count($usercontribs->query->usercontribs->item);
     $i=0;
@@ -756,7 +756,7 @@ function zhwp_wikied_from_user($user){
 }
 
 //该函数是页面维基化的核心函数
-function zhwp_wikied_core($title){
+function ext_zhwp_wikied_core($title){
     $wikied=ideas_view($title);
     $wikied2=$wikied;
     if (ideas_str_find($wikied,$title)==true){
