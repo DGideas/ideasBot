@@ -138,4 +138,9 @@ function ideas_feedback($feedback,$title=""){
     return;
 }
 
+//该函数用于更改工作维基,是$GLOBALS["wiki"]的变通方法
+function set_wiki($workwiki){
+    $GLOBALS["wiki"]=$workwiki;
+    return;
+}
 ?>
