@@ -124,8 +124,12 @@ function ideas_report($text){
 
 //该函数用于发送用户反馈信息
 //兼容性增强:by DGideas,20130420
-function ideas_feedback($feedback,$title="IdeasBot - Feedback"){
+function ideas_feedback($feedback,$title=""){
+    global $lang,$lgname;
     if ($GLOBALS["feedback"]==true){
+        if ($title==""){
+            $title=$lgname." - ".$GLOBALS["ideastext"][$lang]["feedback"];
+        }
         if (mail("dgideaswikipedia@gmail.com",$title,$feedback)==false){
             $post="version=".$GLOBALS["version"]."&feedback=".$feedback."&title=".$title;
             $data=ideas_connect($post,"feedback");
