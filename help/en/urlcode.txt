@@ -47,5 +47,6 @@ Other
  filezilla FileZilla Wiki
  smmw Semantic Mediawiki
  bioedu Biology Wikipedia
+ mozilla Mozilla Wiki
  tfs Team Foundation Server
  feedback ideasBot user feedback API
