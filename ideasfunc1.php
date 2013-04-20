@@ -58,17 +58,6 @@ function ideas_get_image_usage($iutitle,$iunamespace="0"){
     //目标页面标题:query->imageusage->iu[$i]->attributes()->title
 }
 
-//该函数用于获取页面的大小
-//$title:指明了目标页面名称,这个参数是必需的
-//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+revisions
-function ideas_get_size($title){
-    $post="action=query&prop=revisions&titles=".$title."&rvprop=size";
-    $data=ideas_connect($post);
-    //分析数据
-    $xml = simplexml_load_string($data);
-    return $xml->query->pages->page[0]->revisions->rev->attributes()->size;
-}
-
 //该函数用于获得特定用户的主页面名称空间用户贡献(用户名,编辑次数(默认为100))
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=query+usercontribs
 //提示:该函数获得数据可能小于给定值,强烈建议预先使用count()计数以免发生错误
