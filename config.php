@@ -17,7 +17,7 @@ $feedback=true; //设为true以参加用户反馈计划,以帮助我们改善.�
 
 //日志
 $logname=$author; //机器人使用ideas_report()报告到的用户名
-$logfile=dirname(__FILE__)."log.log"; //机器人日志文件,不需要可以无视
+$logfile=dirname(__FILE__)."/log.log"; //机器人日志文件,不需要可以无视
 $logformat="%Y/%m/%d %H:%M:%S"; //机器人记录日志文件时间戳的格式
 
 //编辑
