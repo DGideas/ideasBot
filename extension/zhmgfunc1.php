@@ -3,7 +3,7 @@
 
 //该函数用于清空中文萌娘百科沙盒
 //目前只支持大小为16字节的沙箱
-function zhmg_clean_sandbox($sandboxname="Help:沙盒"){
+function ext_zhmg_clean_sandbox($sandboxname="Help:沙盒"){
     if (ideas_get_size($sandboxname)!="16"){
         $author=ideas_get_author($sandboxname);
         $user=$author->query->pages->page->revisions->rev[0]->attributes()->user;
