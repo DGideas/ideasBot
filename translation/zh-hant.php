@@ -15,6 +15,7 @@
     $GLOBALS["ideastext"]["zh-hant"]["reportsuccess"]="成功报告";
     $GLOBALS["ideastext"]["zh-hant"]["reportfailed"]="报告失败";
     $GLOBALS["ideastext"]["zh-hant"]["user"]="用户";
+    $GLOBALS["ideastext"]["zh-hant"]["usingunknownstr"]="使用了未知字符串";
     $GLOBALS["ideastext"]["zh-hant"]["warning"]="警告";
     $GLOBALS["ideastext"]["zh-hant"]["yes"]="是";
 ?>
