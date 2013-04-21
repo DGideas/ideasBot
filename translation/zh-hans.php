@@ -6,6 +6,7 @@
     $GLOBALS["ideastext"]["zh-hans"]["error"]="错误";
     $GLOBALS["ideastext"]["zh-hans"]["feedback"]="反馈";
     $GLOBALS["ideastext"]["zh-hans"]["finish"]="完成";
+    $GLOBALS["ideastext"]["zh-hans"]["importwiki"]="跨维基导入";
     $GLOBALS["ideastext"]["zh-hans"]["loginfailed"]="登录失败";
     $GLOBALS["ideastext"]["zh-hans"]["loginsuccess"]="登录成功";
     $GLOBALS["ideastext"]["zh-hans"]["needRW"]="请检查cookie临时文件是否具有RWRWRW权限";
