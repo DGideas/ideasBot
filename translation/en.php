@@ -6,6 +6,7 @@
     $GLOBALS["ideastext"]["en"]["error"]="error";
     $GLOBALS["ideastext"]["en"]["feedback"]="feedback";
     $GLOBALS["ideastext"]["en"]["finish"]="finish";
+    $GLOBALS["ideastext"]["zh-hant"]["importwiki"]="Interwiki import";
     $GLOBALS["ideastext"]["en"]["loginfailed"]="Login failed";
     $GLOBALS["ideastext"]["en"]["loginsuccess"]="Login success";
     $GLOBALS["ideastext"]["en"]["needRW"]="Please set cookie tmp file as RWRWRW";
