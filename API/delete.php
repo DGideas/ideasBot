@@ -6,7 +6,7 @@
 //$reason:指明了删除页面的原因
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=delete
 function ideas_delete($title,$reason=""){
-    //步骤1:获得edittoken
+    //步骤1:获得令牌
     $edittokenhtml=ideas_get_token($title,"delete");
     //步骤2:删除页面
     if ($reason==""){
