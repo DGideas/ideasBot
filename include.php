@@ -7,6 +7,7 @@
     include_once ("API/edit.php");
     include_once ("API/login.php");
     include_once ("API/revisions.php");
+    include_once ("API/info.php");
     include_once ("API/search.php");
     //将您使用的拓展置于此处
     //include_once ("extension/ideasdb.php"); //取消注释以启用该拓展
