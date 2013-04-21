@@ -24,7 +24,7 @@ function ideas_get_token($title,$intoken="edit"){
         $rtn=str_ireplace("+\\","%2B%5C",$xml->query->pages->page[0]->attributes()->emailtoken); //自动将末尾+\ HTML编码为%2B%5C
         return $rtn;
     }elseif ($intoken=="move"){
-        $rtn=str_ireplace("+\\","%2B%5C",$xml->query->pages->page[0]->attributes()->deletetoken); //自动将末尾+\ HTML编码为%2B%5C
+        $rtn=str_ireplace("+\\","%2B%5C",$xml->query->pages->page[0]->attributes()->movetoken); //自动将末尾+\ HTML编码为%2B%5C
         return $rtn;
     }elseif ($intoken=="watch"){
         $rtn=str_ireplace("+\\","%2B%5C",$xml->query->pages->page[0]->attributes()->watchtoken); //自动将末尾+\ HTML编码为%2B%5C
