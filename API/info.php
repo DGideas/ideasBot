@@ -10,7 +10,19 @@ function ideas_get_token($title,$intoken="edit"){
     $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
-    return $xml->query->pages->page[0]->attributes()->edittoken;
+    if ($intoken=="edit"){
+        return $xml->query->pages->page[0]->attributes()->edittoken;
+    }elseif ($intoken=="protect"){
+        return $xml->query->pages->page[0]->attributes()->protecttoken;
+    }elseif ($intoken=="delete"){
+        return $xml->query->pages->page[0]->attributes()->deletetoken;
+    }elseif ($intoken=="email"){
+        return $xml->query->pages->page[0]->attributes()->emailtoken;
+    }elseif ($intoken=="move"){
+        return $xml->query->pages->page[0]->attributes()->deletetoken;
+    }elseif ($intoken=="watch"){
+        return $xml->query->pages->page[0]->attributes()->watchtoken;
+    }
 }
 
 ?>
