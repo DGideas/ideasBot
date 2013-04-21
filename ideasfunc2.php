@@ -143,4 +143,16 @@ function set_wiki($workwiki){
     $GLOBALS["wiki"]=$workwiki;
     return;
 }
+
+//该函数用于以Web方式运行脚本时的用户身份验证,参见:help/webverify.txt
+function ideas_webverify(){
+    global $getname,$getpassword,$lang;
+    if(isset($_GET[$getname])&&$_GET[$getname]==$getpassword){
+    }else{
+        echo $GLOBALS["ideastext"][$lang]["error"];
+        exit();
+    }
+    return;
+}
+
 ?>
