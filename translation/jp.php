@@ -6,6 +6,7 @@
     $GLOBALS["ideastext"]["jp"]["error"]="エラー";
     $GLOBALS["ideastext"]["jp"]["feedback"]="フィードバック";
     $GLOBALS["ideastext"]["jp"]["finish"]="終える";
+    $GLOBALS["ideastext"]["jp"]["importwiki"]="クロスウィキのインポート";
     $GLOBALS["ideastext"]["jp"]["loginfailed"]="ログインに失敗しました";
     $GLOBALS["ideastext"]["jp"]["loginsuccess"]="成功ログイン";
     $GLOBALS["ideastext"]["jp"]["needRW"]="RWRWRWとしてクッキーtmpファイルを設定してください";
