@@ -2,7 +2,7 @@
 //encode:UTF-8
 
 //该函数用于编辑条目(标题,内容,摘要)(覆盖!)
-//WARNING:本函数会覆盖!页面原有内容
+//WARNING:本函数会覆盖页面原有内容
 //$title:指明了目标页面的标题,这个参数是必需的
 //$text:指明了页面的内容
 //$summary:指明了编辑摘要,默认为空
@@ -27,7 +27,6 @@ function ideas_edit($title,$text,$summary=""){
 }
 
 //该函数用于编辑条目顶部(添加管理模版等)(标题,内容,摘要)
-//WARNING:函数不稳定
 //$title:指明了目标页面的标题,这个参数是必需的
 //$text:指明了第0段的内容
 //$summary:指明了编辑摘要,默认为空
@@ -52,7 +51,6 @@ function ideas_edit_top($title,$text,$summary=""){
 }
 
 //该函数用于添加新段落(标题,段落标题,内容,编辑摘要)
-//WARNING:函数不稳定
 //$title:指明了目标页面的标题,这个参数是必需的
 //$sectiontitle:指明了段落的标题
 //$text:指明了页面的内容
