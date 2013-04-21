@@ -12,17 +12,23 @@ function ideas_get_token($title,$intoken="edit"){
     //分析数据
     $xml = simplexml_load_string($data);
     if ($intoken=="edit"){
-        return $xml->query->pages->page[0]->attributes()->edittoken;
+        $rtn=str_ireplace("+\\","%2B%5C",$xml->query->pages->page[0]->attributes()->edittoken); //自动将末尾+\ HTML编码为%2B%5C
+        return $rtn;
     }elseif ($intoken=="protect"){
-        return $xml->query->pages->page[0]->attributes()->protecttoken;
+        $rtn=str_ireplace("+\\","%2B%5C",$xml->query->pages->page[0]->attributes()->protecttoken); //自动将末尾+\ HTML编码为%2B%5C
+        return $rtn;
     }elseif ($intoken=="delete"){
-        return $xml->query->pages->page[0]->attributes()->deletetoken;
+        $rtn=str_ireplace("+\\","%2B%5C",$xml->query->pages->page[0]->attributes()->deletetoken); //自动将末尾+\ HTML编码为%2B%5C
+        return $rtn;
     }elseif ($intoken=="email"){
-        return $xml->query->pages->page[0]->attributes()->emailtoken;
+        $rtn=str_ireplace("+\\","%2B%5C",$xml->query->pages->page[0]->attributes()->emailtoken); //自动将末尾+\ HTML编码为%2B%5C
+        return $rtn;
     }elseif ($intoken=="move"){
-        return $xml->query->pages->page[0]->attributes()->deletetoken;
+        $rtn=str_ireplace("+\\","%2B%5C",$xml->query->pages->page[0]->attributes()->deletetoken); //自动将末尾+\ HTML编码为%2B%5C
+        return $rtn;
     }elseif ($intoken=="watch"){
-        return $xml->query->pages->page[0]->attributes()->watchtoken;
+        $rtn=str_ireplace("+\\","%2B%5C",$xml->query->pages->page[0]->attributes()->watchtoken); //自动将末尾+\ HTML编码为%2B%5C
+        return $rtn;
     }else{
         ideas_feedback($GLOBALS["ideastext"][$lang]["usingunknownstr"].":".$intoken);
     }
