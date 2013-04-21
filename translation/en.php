@@ -15,6 +15,7 @@
     $GLOBALS["ideastext"]["en"]["reportsuccess"]="Successful report";
     $GLOBALS["ideastext"]["en"]["reportfailed"]="Report failed";
     $GLOBALS["ideastext"]["en"]["user"]="user";
+    $GLOBALS["ideastext"]["en"]["usingunknownstr"]="Using unknown string";
     $GLOBALS["ideastext"]["en"]["warning"]="warning";
     $GLOBALS["ideastext"]["en"]["yes"]="yes";
 ?>
