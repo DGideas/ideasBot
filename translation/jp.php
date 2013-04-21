@@ -15,6 +15,7 @@
     $GLOBALS["ideastext"]["jp"]["reportsuccess"]="成功したレポート";
     $GLOBALS["ideastext"]["jp"]["reportfailed"]="レポートには、失敗した";
     $GLOBALS["ideastext"]["jp"]["user"]="利用者";
+    $GLOBALS["ideastext"]["jp"]["usingunknownstr"]="未知の文字列を使用して";
     $GLOBALS["ideastext"]["jp"]["warning"]="警告";
     $GLOBALS["ideastext"]["jp"]["yes"]="はい";
 ?>
