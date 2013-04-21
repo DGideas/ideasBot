@@ -4,6 +4,7 @@
     include_once ("ideasfunc1.php");
     include_once ("ideasfunc2.php");
     include_once ("API/connect.php");
+    include_once ("API/delete.php");
     include_once ("API/edit.php");
     include_once ("API/login.php");
     include_once ("API/revisions.php");
