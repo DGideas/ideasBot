@@ -24,6 +24,9 @@ $logformat="%Y/%m/%d %H:%M:%S"; //机器人记录日志文件时间戳的格式
 $editsummaryhead="[[User:".$lgname."|".$lgname."]]: "; //机器人编辑摘要头
 $editsummarylast="([[User_talk:".$logname."|任何问题?]])"; //机器人编辑摘要尾
 
+//Web触发
+$getname=$lgname; //设置从网页运行脚本时,URL后作为密码的参数名称
+$getpassword=$lgpassword; //设置从网页运行脚本时,URL后作为密码的参数值
 
 //好了,请不要继续编辑,请在点击保存之后退出
 
