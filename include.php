@@ -7,6 +7,7 @@
     include_once ("API/delete.php");
     include_once ("API/edit.php");
     include_once ("API/login.php");
+    include_once ("API/move.php");
     include_once ("API/revisions.php");
     include_once ("API/info.php");
     include_once ("API/search.php");
