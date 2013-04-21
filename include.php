@@ -13,6 +13,7 @@
     include_once ("API/search.php");
     //将您使用的拓展置于此处
     //include_once ("extension/ideasdb.php"); //取消注释以启用该拓展
+    //include_once ("extension/import.php"); //取消注释以启用该拓展
     //include_once ("extension/tfsfunc1.php"); //取消注释以启用该拓展
     //include_once ("extension/zhwpfunc1.php"); //取消注释以启用该拓展
     //include_once ("extension/zhmgfunc1.php"); //取消注释以启用该拓展
