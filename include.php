@@ -18,4 +18,6 @@
     //include_once ("extension/zhwpfunc1.php"); //取消注释以启用该拓展
     //include_once ("extension/zhmgfunc1.php"); //取消注释以启用该拓展
     include_once ("extension/example.php"); //这是一个例子,您可以覆盖它或者仿照它添加拓展
+    
+    ideas_webverify();
 ?>
