@@ -1,23 +1,19 @@
 <?php
 //encode:UTF-8
 
-//该函数用于删除条目(标题,内容,摘要)(覆盖!)
-//WARNING:本函数会覆盖页面原有内容
+//该函数用于删除页面(标题,原因)
 //$title:指明了目标页面的标题,这个参数是必需的
-//$text:指明了页面的内容
-//$summary:指明了编辑摘要,默认为空
-//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=edit
-function ideas_edit($title,$text,$summary=""){
+//$reason:指明了删除页面的原因
+//API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=delete
+function ideas_delete($title,$reason=""){
     //步骤1:获得edittoken
-    $edittokenhtml=ideas_get_token($title,"edit");
-    $text=urlencode($text);//HTML编码
-    $summary=urlencode($summary);//HTML编码
-    //步骤2:添加新段落
-    if ($summary==""){
-        $post="action=edit&title=".$title."&text=".$text."&token=".$edittokenhtml;
+    $edittokenhtml=ideas_get_token($title,"delete");
+    //步骤2:删除页面
+    if ($reason==""){
+        $post="action=delete&title=".$title."&token=".$edittokenhtml;
     }else{
-        $summary=ideas_summary($summary); //处理编辑摘要头尾
-        $post="action=edit&title=".$title."&text=".$text."&token=".$edittokenhtml."&summary=".$summary;
+        $reason=ideas_summary($reason); //处理编辑摘要头尾
+        $post="action=delete&title=".$title."&token=".$edittokenhtml."&reason=".$reason;
     }
     $data=ideas_connect($post);
     //分析数据
