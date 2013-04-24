@@ -7,12 +7,13 @@
     include_once ("API/connect.php");
     include_once ("API/delete.php");
     include_once ("API/edit.php");
+    include_once ("API/imageusage.php");
+    include_once ("API/info.php");
     include_once ("API/login.php");
     include_once ("API/move.php");
     include_once ("API/recentchanges.php");
     include_once ("API/revisions.php");
-    include_once ("API/imageusage.php");
-    include_once ("API/info.php");
+    include_once ("API/usercontribs.php");
     include_once ("API/search.php");
     //include_once ("labs/cluster.php") //取消注释以启用测试功能
     //将您使用的拓展置于此处
