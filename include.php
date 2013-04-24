@@ -3,6 +3,7 @@
     include_once ("translation.php");
     include_once ("ideasfunc1.php");
     include_once ("ideasfunc2.php");
+    include_once ("API/allpages.php");
     include_once ("API/connect.php");
     include_once ("API/delete.php");
     include_once ("API/edit.php");
