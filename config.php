@@ -11,7 +11,6 @@ $lgpassword="Password"; //机器人账户的密码
 $author="Username"; //您自己的用户名,用于机器人报告等多种用途
 $wiki="zhwp"; //指定初始的预设工作维基,请参阅help/workwiki.txt.默认的站点代号,请参阅help/urlcode.txt
 $defaultlanguage="zh-hans"; //默认的语言,请参阅translation/readme.txt
-$useragent= $lgname."Version,by ideasBot based."; //机器人的用户代理标识(useragent)
 $cookiefilepath=dirname(__FILE__)."/cookie.log"; //机器人使用的cookie临时文件,需要RWRWRW权限,使用绝对路径
 $feedback=true; //设为true以参加用户反馈计划,以帮助我们改善.我们不会收集您的隐私信息.请参见help/feedback.txt
 
@@ -31,6 +30,7 @@ $getpassword=$lgpassword; //设置从网页运行脚本时,URL后作为密码的
 
 //好了,请不要继续编辑,请在点击保存之后退出
 
+$useragent= $lgname."Version,by ideasBot based."; //机器人的用户代理标识(useragent)
 //设定版本
 $version="0.1 Aurora";
 //初始化登录状态
