@@ -40,7 +40,7 @@ function ext_zhwp_check_ad(){
     $i=0;
     $isum=count ($arraydata->query->recentchanges->rc);
     do{
-        $actionresult=zhwp_check_ad_core($arraydata->query->recentchanges->rc[$i]->attributes()->title);
+        $actionresult=ext_check_ad($arraydata->query->recentchanges->rc[$i]->attributes()->title);
         //针对创建低质条目的用户进行审查
         if (is_numeric($actionresult)==true && $actionresult< -3){
             $goaluser=ideas_get_creator($arraydata->query->recentchanges->rc[$i]->attributes()->title);
@@ -49,7 +49,7 @@ function ext_zhwp_check_ad(){
             $ib=0;
             $blacklist=0; //用户黑名单记录初始化
             do{
-                if (zhwp_check_ad_core($goalusercontribs->query->usercontribs->item[$ib]->attributes()->title)<0){
+                if (ext_check_ad($goalusercontribs->query->usercontribs->item[$ib]->attributes()->title)<0){
                     $blacklist=$blacklist+1;
                 }
                 $ib=$ib+1;
