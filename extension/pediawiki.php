@@ -1,6 +1,13 @@
 <?php
 //encode:UTF-8
 //定义的变量:pwtitle:pediawiki系列函数共享条目名
+$pwtitle;
+
+//该函数是pediawiki功能的主函数(条目标题,条目加粗)
+function ext_pediawiki($title,$titlebols=true){
+    $GLOBALS["pwtitle"]=$title;
+    ext_pw_titlebold();
+}
 
 //该函数用于在条目正文第一次出现条目名时将其加粗
 function ext_pw_titlebold(){
