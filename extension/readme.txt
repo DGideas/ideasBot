@@ -1,7 +1,7 @@
-本文件夹包含了适用于本机器人的拓展脚本
-脚本的用法会在各自文件中注明
+脚本的用法在各自文件中注明
 使用时,请在include.php中包含相应拓展
 
+checkad.php 广告内容检查,作者:DGideas
 example.php 示例文件
 ideasDB.php 小型基于文件的数据库拓展,作者:DGideas
 import.php 跨维基导入页面,作者:DGideas
