@@ -18,5 +18,6 @@
     $GLOBALS["ideastext"]["en"]["user"]="user";
     $GLOBALS["ideastext"]["en"]["usingunknownstr"]="Using unknown string";
     $GLOBALS["ideastext"]["en"]["warning"]="warning";
+    $GLOBALS["ideastext"]["en"]["wikied"]="Wikied";
     $GLOBALS["ideastext"]["en"]["yes"]="yes";
 ?>
