@@ -18,5 +18,6 @@
     $GLOBALS["ideastext"]["zh-hans"]["user"]="用户";
     $GLOBALS["ideastext"]["zh-hans"]["usingunknownstr"]="使用了未知字符串";
     $GLOBALS["ideastext"]["zh-hans"]["warning"]="警告";
+    $GLOBALS["ideastext"]["zh-hans"]["wikied"]="维基化";
     $GLOBALS["ideastext"]["zh-hans"]["yes"]="是";
 ?>
