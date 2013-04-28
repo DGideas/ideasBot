@@ -18,5 +18,6 @@
     $GLOBALS["ideastext"]["jp"]["user"]="利用者";
     $GLOBALS["ideastext"]["jp"]["usingunknownstr"]="未知の文字列を使用して";
     $GLOBALS["ideastext"]["jp"]["warning"]="警告";
+    $GLOBALS["ideastext"]["jp"]["wikied"]="维基化";
     $GLOBALS["ideastext"]["jp"]["yes"]="はい";
 ?>
