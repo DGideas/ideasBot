@@ -40,12 +40,12 @@ function ideas_login($wiki="",$username="",$password=""){
 function ideas_login_core($lgname,$lgpassword){
     ideas_clean_cookie(); //登录前先清除cookie缓存
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword;
-    $data=ideas_connect($post,$site);
+    $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
     $token = $xml->login[0]->attributes()->token;
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword."&lgtoken=".$token;
-    $data=ideas_connect($post,$site);
+    $data=ideas_connect($post);
     $xml = simplexml_load_string($data);
     //登陆过程完成
     return $xml->login[0]->attributes()->result;
