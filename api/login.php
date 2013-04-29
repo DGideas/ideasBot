@@ -2,16 +2,14 @@
 //encode:UTF-8
 
 //该函数用于登录(用户名,密码)
-//BUG:cron+PHP5 env has a NoName error, DGideas.
-//Note:$site参数暂时不用
 //$site:指明了要登陆到的站点,默认为$GLOBALS["wiki"]
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=login
 function ideas_login($wiki="",$username="",$password=""){
     global $lgname,$lgpassword,$ideastext,$defaultlanguage;
     if ($username==""){
-        $result=ideas_login_core($lgname,$lgpassword,$wiki);
+        $result=ideas_login_core($lgname,$lgpassword);
     }else{
-        $result=ideas_login_core($username,$password,$wiki);
+        $result=ideas_login_core($username,$password);
     }
     if ($result == "Success"){
         echo $GLOBALS["ideastext"][$defaultlanguage]["loginsuccess"];
@@ -39,18 +37,18 @@ function ideas_login($wiki="",$username="",$password=""){
 //$lgname:指明了登录的用户名
 //$lgpassword:指明了用户名对应的密码
 //$site:指明了使用的站点
-function ideas_login_core($lgname,$lgpassword,$site=""){
+function ideas_login_core($lgname,$lgpassword){
     ideas_clean_cookie(); //登录前先清除cookie缓存
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword;
     $data=ideas_connect($post,$site);
     //分析数据
     $xml = simplexml_load_string($data);
-    $token = $xml->login[0]->attributes()->token;
+    $token = $xml->login->attributes()->token;
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword."&lgtoken=".$token;
     $data=ideas_connect($post,$site);
     $xml = simplexml_load_string($data);
     //登陆过程完成
-    return $xml->login[0]->attributes()->result;
+    return $xml->login->attributes()->result;
 }
 
 ?>
