@@ -27,7 +27,7 @@ function ideas_summary($editsummary){
 }
 
 //该函数用于进行关键词替换(基于str_ireplace,自动替换多次)
-function ideasstrreplace($oldstr,$newstr,$string){
+function ideas_str_replace($oldstr,$newstr,$string){
     $string=str_ireplace($oldstr,$newstr,$string);
     return $string;
 }
