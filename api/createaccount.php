@@ -13,7 +13,7 @@ function ideas_reg($username,$password){
         echo $GLOBALS["ideastext"][$lang]["error"];
         echop();
         echo $result;
-        ideas_feedback($GLOBALS["ideastext"][$defaultlanguage]["loginfailed"].":".$result);
+        ideas_feedback($GLOBALS["ideastext"][$lang]["loginfailed"].":".$result);
         //通常的错误是wrongpassword,needtoken,wrongtoken.
     }
     return;
@@ -26,12 +26,12 @@ function ideas_reg_core($name,$password){
     $data=ideas_connect($post);
     //分析数据
     $xml = simplexml_load_string($data);
-    $token = $xml->createaccount->attributes()->token;
+    $token = $xml->createaccount[0]->attributes()->token;
     $post="action=createaccount&name=".$name."&password=".$password."&lgtoken=".$token;
     $data=ideas_connect($post);
     $xml = simplexml_load_string($data);
     //登陆过程完成
-    return $xml->createaccount->attributes()->result;
+    return $xml->createaccount[0]->attributes()->result;
 }
 
 
