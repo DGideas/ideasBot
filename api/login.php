@@ -43,12 +43,12 @@ function ideas_login_core($lgname,$lgpassword){
     $data=ideas_connect($post,$site);
     //分析数据
     $xml = simplexml_load_string($data);
-    $token = $xml->login->attributes()->token;
+    $token = $xml->login[0]->attributes()->token;
     $post="action=login&lgname=".$lgname."&lgpassword=".$lgpassword."&lgtoken=".$token;
     $data=ideas_connect($post,$site);
     $xml = simplexml_load_string($data);
     //登陆过程完成
-    return $xml->login->attributes()->result;
+    return $xml->login[0]->attributes()->result;
 }
 
 ?>
