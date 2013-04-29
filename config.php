@@ -35,10 +35,10 @@ $written=true; //仅供调试时使用!写入锁定,防止误操作.
 //请不要改动下面的参数,除非您非常明白它的工作原理
 
 //设定版本
-$version="0.1 Aurora";
+$version="0.2 Aurora";
 
 //机器人的用户代理标识
-$useragent= $lgname.$version."based on ideasBot framework."; 
+$useragent= $lgname."based on ideasBot framework".$version."."; 
 
 //初始化登录状态
 $islogin=false;
@@ -58,7 +58,7 @@ $url["species"]="http://species.wikimedia.org/w/api.php";
 $url["commons"]="http://commons.wikimedia.org/w/api.php"; 
 $url["data"]="http://www.wikidata.org/w/api.php"; 
 $url["mw"]="http://www.mediawiki.org/w/api.php";
-$url["mediawiki"]=$url["mw"];
+$url["mediawiki"]=&$url["mw"];
 
 $url["zhwp"]="http://zh.wikipedia.org/w/api.php"; 
 $url["enwp"]="http://en.wikipedia.org/w/api.php"; 
