@@ -5,7 +5,7 @@
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=createaccount
 function ideas_reg($username,$password){
     global $lgname,$lgpassword,$lang;
-    $result=ideas_login_core($username,$password);
+    $result=ideas_reg_core($username,$password);
     if ($result == "Success"){
         echo $GLOBALS["ideastext"][$lang]["ok"];
         echop();
