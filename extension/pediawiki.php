@@ -15,7 +15,7 @@ function ext_pw_titlebold(){
     $tbtext=ideas_view($GLOBALS["pwtitle"]);
     if (ideas_str_find($tbtext,"'''".$GLOBALS["pwtitle"]."'''")==false){
         if (ideas_str_find($tbtext,"<b>".$GLOBALS["pwtitle"]."</b>")==false){
-            preg_replace($GLOBALS["pwtitle"],"'''".$GLOBALS["pwtitle"]."'''",$tbtext,"1");
+            $tbtext=preg_replace("/".$GLOBALS["pwtitle"]."/","'''".$GLOBALS["pwtitle"]."'''",$tbtext,"1");
         }
     }
     ideas_edit($GLOBALS["pwtitle"],$tbtext,$GLOBALS["ideastext"][$lang]["wikied"]);
