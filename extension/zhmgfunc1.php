@@ -58,7 +58,7 @@ function ext_zhmg_clean_b(){
 //该函数用于将条目中的{{用户信息}}替换为{{人物信息}}
 //https://zh.moegirl.org/index.php?title=User_talk:Baskice&oldid=106897
 function ext_zhmg_clean_c(){
-    $result=ideas_get_recent_changes("10");
+    $result=ideas_get_recent_changes("20");
     $i=0;
     $isum=count($result->query->recentchanges->rc);
     do{
@@ -75,14 +75,43 @@ function ext_zhmg_clean_c(){
 //该函数用于将条目名包含一个中文冒号：时自动将其换为英文冒号:并且不保留重定向
 //https://zh.moegirl.org/index.php?title=User_talk:Baskice&oldid=106897
 function ext_zhmg_clean_d(){
-    $result=ideas_get_recent_changes("10");
+    $result=ideas_get_recent_changes("20");
     $i=0;
     $isum=count($result->query->recentchanges->rc);
     do{
         $title=$result->query->recentchanges->rc[$i]->attributes()->title;
         if(ideas_str_find($title,"：")==true){
             $titlenew=ideas_str_replace("：",":",$title);
-            ideas_move_noredirect($title,$titlenew,$reason="条目名包含一个中文冒号：时自动将其换为英文冒号:并且不保留重定向");
+            ideas_move_noredirect($title,$titlenew,$reason="条目名包含一个中文冒号：时自动将其换为英文冒号:不留重定向");
+        }
+        $i=$i+1;
+    }while($i <= ($isum-1));
+    return;
+}
+
+//该函数用于条目名包含中文括号（）时,自动将其换为英文括号().如果有人保持维基习惯,写_(的,去掉_
+//https://zh.moegirl.org/index.php?title=User_talk:Baskice&oldid=106897
+function ext_zhmg_clean_e(){
+    $result=ideas_get_recent_changes("20");
+    $i=0;
+    $isum=count($result->query->recentchanges->rc);
+    $change=false;
+    do{
+        $title=$result->query->recentchanges->rc[$i]->attributes()->title;
+        if(ideas_str_find($title,"（")==true){
+            $titlenew=ideas_str_replace("（","(",$title);
+            $change=true;
+        }
+        if(ideas_str_find($title,"）")==true){
+            $titlenew=ideas_str_replace("）",")",$title);
+            $change=true;
+        }
+        if(ideas_str_find($title,"_(")==true){
+            $titlenew=ideas_str_replace("_(","(",$title);
+            $change=true;
+        }
+        if($change=true){
+            ideas_move_noredirect($title,$titlenew,$reason="修改条目名,并移动,不留重定向");
         }
         $i=$i+1;
     }while($i <= ($isum-1));
