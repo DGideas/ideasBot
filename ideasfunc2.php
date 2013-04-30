@@ -125,6 +125,9 @@ function ideas_report($text){
 //该函数用于发送用户反馈信息
 //兼容性增强:by DGideas,20130420
 function ideas_feedback($feedback,$title=""){
+    if ($GLOBALS["isfeedback"]==true){
+        return;
+    }
     global $lang,$lgname;
     if ($GLOBALS["feedback"]==true){
         if ($title==""){
