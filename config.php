@@ -41,8 +41,9 @@ $version="0.2 Aurora";
 //机器人的用户代理标识
 $useragent= $lgname."based on ideasBot framework".$version."."; 
 
-//初始化登录状态
-$islogin=false;
+//初始化变量
+$islogin=false; //用户登录状态
+$isfeedback=false; //反馈状态
 
 //简化参数
 $dfl=$defaultlanguage;
