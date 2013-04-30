@@ -22,7 +22,7 @@ $logformat="%Y/%m/%d %H:%M:%S"; //机器人记录日志文件时间戳的格式
 
 //编辑
 $editsummaryhead="[[User:".$lgname."|".$lgname."]]: "; //机器人编辑摘要头
-$editsummarylast="([[User_talk:".$logname."|任何问题?]])"; //机器人编辑摘要尾
+$editsummarylast="([[User_talk:".$lgname."|任何问题?]])"; //机器人编辑摘要尾
 
 //Web触发
 $getverify=false; //设置为true以检查URL后作为密码的参数.请不要在本地运行时开启.
