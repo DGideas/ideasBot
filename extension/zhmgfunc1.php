@@ -55,4 +55,21 @@ function ext_zhmg_clean_b(){
     return;
 }
 
+//该函数用于将条目中的{{用户信息}}替换为{{人物信息}}
+//https://zh.moegirl.org/index.php?title=User_talk:Baskice&oldid=106897
+function ext_zhmg_clean_c(){
+    $result=ideas_get_recent_changes("10");
+    $i=0;
+    $isum=count($result->query->recentchanges->rc);
+    do{
+        $wikied=ideas_view($result->query->recentchanges->rc[$i]->attributes()->title);
+        if(ideas_str_find($wikied,"{{用户信息")==true){
+            $wikied=ideas_str_replace("{{用户信息","{{人物信息",$wikied);
+            ideas_edit($result->query->recentchanges->rc[$i]->attributes()->title,$wikied,"将条目中的{{用户信息}}替换为{{人物信息}}");
+        }
+        $i=$i+1;
+    }while($i <= ($isum-1));
+    return;
+}
+
 ?>
