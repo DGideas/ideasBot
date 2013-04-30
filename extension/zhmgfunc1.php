@@ -98,19 +98,20 @@ function ext_zhmg_clean_e(){
     $change=false;
     do{
         $title=$result->query->recentchanges->rc[$i]->attributes()->title;
-        if(ideas_str_find($title,"（")==true){
-            $titlenew=ideas_str_replace("（","(",$title);
+        $titlenew=$title;
+        if(ideas_str_find($titlenew,"（")==true){
+            $titlenew=ideas_str_replace("（","(",$titlenew);
             $change=true;
         }
-        if(ideas_str_find($title,"）")==true){
-            $titlenew=ideas_str_replace("）",")",$title);
+        if(ideas_str_find($titlenew,"）")==true){
+            $titlenew=ideas_str_replace("）",")",$titlenew);
             $change=true;
         }
-        if(ideas_str_find($title,"_(")==true){
-            $titlenew=ideas_str_replace("_(","(",$title);
+        if(ideas_str_find($titlenew,"_(")==true){
+            $titlenew=ideas_str_replace("_(","(",$titlenew);
             $change=true;
         }
-        if($change=true){
+        if($change==true){
             ideas_move_noredirect($title,$titlenew,$reason="修改条目名,并移动,不留重定向");
         }
         $i=$i+1;
