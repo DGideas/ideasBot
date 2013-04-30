@@ -13,6 +13,7 @@ $wiki="zhwp"; //指定初始的预设工作维基,请参阅help/workwiki.txt.默
 $defaultlanguage="zh-hans"; //默认的语言,请参阅translation/readme.txt
 $cookiefilepath=dirname(__FILE__)."/cookie.log"; //机器人使用的cookie临时文件,需要RWRWRW权限,使用绝对路径
 $feedback=true; //设为true以参加用户反馈.我们不会收集您的隐私信息.请参见help/feedback.txt
+$maxexecutiontime="300"; //设定代码最大执行时间,在安全模式中无效
 
 //日志
 $logname=&$author; //机器人使用ideas_report()报告到的用户名
@@ -47,7 +48,9 @@ $islogin=false;
 $dfl=$defaultlanguage;
 $lang=$defaultlanguage;
 
-//如果您不了解下面设置的用法,请不要设置下面的参数
+//设定代码最大执行时间
+ini_set("max_execution_time",$maxexecutiontime);
+
 //定义urlcode(参见help/urlcode.txt)
 $url=array(); //建立一个数组
 
