@@ -95,8 +95,8 @@ function ext_zhmg_clean_e(){
     $result=ideas_get_recent_changes("20");
     $i=0;
     $isum=count($result->query->recentchanges->rc);
-    $change=false;
     do{
+        $change=false;
         $title=$result->query->recentchanges->rc[$i]->attributes()->title;
         $titlenew=$title;
         if(ideas_str_find($titlenew,"（")==true){
