@@ -72,4 +72,21 @@ function ext_zhmg_clean_c(){
     return;
 }
 
+//该函数用于将条目名包含一个中文冒号：时自动将其换为英文冒号:并且不保留重定向
+//https://zh.moegirl.org/index.php?title=User_talk:Baskice&oldid=106897
+function ext_zhmg_clean_d(){
+    $result=ideas_get_recent_changes("10");
+    $i=0;
+    $isum=count($result->query->recentchanges->rc);
+    do{
+        $title=$result->query->recentchanges->rc[$i]->attributes()->title;
+        if(ideas_str_find($title,"：")==true){
+            $titlenew=ideas_str_replace("：",":",$title);
+            ideas_move_noredirect($title,$titlenew,$reason="条目名包含一个中文冒号：时自动将其换为英文冒号:并且不保留重定向");
+        }
+        $i=$i+1;
+    }while($i <= ($isum-1));
+    return;
+}
+
 ?>
