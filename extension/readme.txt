@@ -6,7 +6,7 @@ example.php 示例文件
 ideasDB.php 小型基于文件的数据库拓展,作者:DGideas
 import.php 跨维基导入页面,作者:DGideas
 pediawiki.php 维护百科Wiki相关函数,作者:DGideas
-tfsfunc1.php TFS拓展函数库1,作者:DGideas
+testfunc1.php ideasBot TEST Wiki拓展函数库1,作者:DGideas
 zhwpfunc1.php 中文维基百科拓展函数库1,作者:DGideas
 zhmgfunc1.php 中文萌娘百科拓展函数库1,作者:DGideas
 
