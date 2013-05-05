@@ -10,6 +10,7 @@
 function ideas_edit($title,$text,$summary=""){
     //步骤1:获得edittoken
     $edittokenhtml=ideas_get_token($title,"edit");
+    $title=urlencode($title);//HTML编码
     $text=urlencode($text);//HTML编码
     $summary=urlencode($summary);//HTML编码
     //步骤2:添加新段落
@@ -33,6 +34,7 @@ function ideas_edit($title,$text,$summary=""){
 function ideas_edit_top($title,$text,$summary=""){
     //步骤1:获得edittoken
     $edittokenhtml=ideas_get_token($title,"edit");
+    $title=urlencode($title);//HTML编码
     $text=urlencode($text);//HTML编码
     $summary=urlencode($summary);//HTML编码
     //步骤2:添加新段落
@@ -57,6 +59,7 @@ function ideas_edit_top($title,$text,$summary=""){
 function ideas_edit_new($title,$sectiontitle,$text,$summary=""){
     //步骤1:获得edittoken
     $edittokenhtml=ideas_get_token($title,"edit");
+    $title=urlencode($title);//HTML编码
     $summary=urlencode($summary);//HTML编码
     $text=urlencode($text);//HTML编码
     //步骤2:添加新段落
