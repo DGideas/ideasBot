@@ -36,10 +36,10 @@ $written=true; //仅供调试时使用!写入锁定,防止误操作.
 //请不要改动下面的参数,除非您非常明白它的工作原理
 
 //设定版本
-$version="0.2 Aurora";
+$version="0.9 Beta";
 
 //机器人的用户代理标识
-$useragent= $lgname."based on ideasBot framework".$version."."; 
+$useragent= " By IdeasBot framework, version:".$version; 
 
 //初始化变量
 $islogin=false; //用户登录状态
