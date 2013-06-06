@@ -1,5 +1,5 @@
 <?php
-    //Please update other translation at the same time, even it is null
+    //Please update other translation, even it is null
     $GLOBALS["ideastext"]["en"]["ad"]="advertisement";
     $GLOBALS["ideastext"]["en"]["bot"]="bot";
     $GLOBALS["ideastext"]["en"]["done"]="done";

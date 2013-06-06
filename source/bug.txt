@@ -1,4 +1,0 @@
--ideasgettoken只能获得edittoken.By DGideas
-
--Edit系列函数bug.byDGideas
-

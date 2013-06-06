@@ -508,112 +508,114 @@ function ext_check_ad($title){
     }
     if(ideas_str_find($articlewikied,"我省")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"我市")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"省长")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"市长")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"委员长")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"推荐")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"数百年来")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"座驾")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"豪华")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"商务")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"成功")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"网店")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"地址")==true && is_numeric($action)==true){
             $action=$action-4;
-    }
+        }
     if(ideas_str_find($articlewikied,"欢迎")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"订购")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"从速")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"脱销")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"代开")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"发票")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"办证")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"单位")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"朋友")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"预约")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"只需")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"特效")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"限量")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"稀有")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"超低价格")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
+        }
     if(ideas_str_find($articlewikied,"仅有")==true && is_numeric($action)==true){
             $action=$action-5;
-    }
-    if (is_numeric($action)==true && $action< 0){
-        if (is_numeric($action)==true && $action< -5){
-            //悬挂模版G10
-            if (ideas_str_find(ideas_view($title),"{{d")==false && ideas_str_find(ideas_view($title),"{{advert") ==false){
-                $topwikied=ideas_view_top($title);
-                $topwikied="{{D|G11}}\r\n".$topwikied;
-				ideas_edit_top($title,$topwikied,"使用[[Template:D|G11模版]]标记疑似广告的编辑(条目评分:".$action.")");
-                ideas_log("Add {{D|G11}} to : [[".$title."]],条目评分: ".$action);
-            }
-        }else{
-            //悬挂模版advert
-            if (ideas_str_find(ideas_view($title),"{{d")==false && ideas_str_find(ideas_view($title),"{{advert") ==false){
-                $topwikied=ideas_view_top($title);
-                $topwikied="{{subst:Advert/auto}}\r\n".$topwikied;
-                ideas_edit_top($title,$topwikied,"使用[[Template:advert]]标记疑似广告的编辑(条目评分:".$action.")");
-                ideas_log("Add {{advert}} to : [[".$title."]],条目评分: ".$action);
+        }
+
+        if (is_numeric($action)==true && $action< 0){
+            if (is_numeric($action)==true && $action< -5){
+                //悬挂模版G10
+                if (ideas_str_find(ideas_view($title),"{{d")==false && ideas_str_find(ideas_view($title),"{{advert") ==false){
+                    $topwikied=ideas_view_top($title);
+                    $topwikied="{{D|G11}}\r\n".$topwikied;
+                    ideas_edit_top($title,$topwikied,"使用[[Template:D|G11模版]]标记疑似广告的编辑(条目评分:".$action.")");
+                    ideas_log("Add {{D|G11}} to : [[".$title."]],条目评分: ".$action);
+                }
+            }else{
+                //悬挂模版advert
+                if (ideas_str_find(ideas_view($title),"{{d")==false && ideas_str_find(ideas_view($title),"{{advert") ==false){
+                    $topwikied=ideas_view_top($title);
+                    $topwikied="{{subst:Advert/auto}}\r\n".$topwikied;
+                    ideas_edit_top($title,$topwikied,"使用[[Template:advert]]标记疑似广告的编辑(条目评分:".$action.")");
+                    ideas_log("Add {{advert}} to : [[".$title."]],条目评分: ".$action);
+                }
             }
         }
-    }
-//ideaslog("检测到条目[[".$title."]] ,评分:".$action); //通常情况下请注释本行,用于调试算法
-return $action;
+    //ideaslog("检测到条目[[".$title."]] ,评分:".$action); //通常情况下请注释本行,用于调试算法
+    return $action;
+
 }
 
 

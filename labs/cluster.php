@@ -1,3 +1,3 @@
 <?php
-    //put your test code here
+    //在此键入您的测试用代码
 ?>

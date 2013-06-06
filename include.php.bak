@@ -30,5 +30,5 @@
     
     include_once ("extension/example.php"); //这是一个例子,您可以覆盖它或者仿照它添加拓展
     
-    ideas_webverify(); //浏览器触发用户验证
+    ideas_webverify();
 ?>

@@ -1,3 +1,3 @@
 <?php
-//This is a example
+//这是一个示例
 ?>
