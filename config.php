@@ -36,7 +36,7 @@ $written=true; //仅供调试时使用!写入锁定,防止误操作.
 //请不要改动下面的参数,除非您非常明白它的工作原理
 
 //设定版本
-$version="1.0.458 Preview";
+$version="1.0.460";
 
 //机器人的用户代理标识
 $useragent= " By IdeasBot Framework, Version:".$version; 
@@ -107,6 +107,7 @@ $url["nocow"]="http://www.nocow.cn/api.php";
 $url["smmw"]="http://www.semantic-mediawiki.org/w/api.php";
 $url["tfs"]="http://test.happylr.net/api.php"; 
 $url["ubuntu"]="http://wiki.ubuntu.org.cn/api.php";
+$url["wps"]="http://community.wps.cn/wiki/api.php";
 $url["52poke"]="http://wiki.52poke.com/api.php";
 
 $url["feedback"]="http://bots.wmflabs.org/~dgideas/ideasbot/feedback.php";
