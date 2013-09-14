@@ -100,6 +100,7 @@ $url["jpmg"]="http://jp.moegirl.org/api.php";
 
 $url["archlinux"]="http://wiki.archlinux.org/api.php";
 $url["bioedu"]="http://bio.cug.edu.cn/w/api.php";
+$url["boinc"]="http://boinc.berkeley.edu/w/api.php";
 $url["codex"]="http://codex.wordpress.org/api.php";
 $url["filezilla"]="http://wiki.filezilla-project.org/wiki/api.php";
 $url["mozilla"]="http://wiki.mozilla.org/api.php";
