@@ -4,7 +4,7 @@
 //该函数用于编辑条目(标题,内容,摘要)(覆盖!)
 //WARNING:本函数会覆盖页面原有内容
 //$title:指明了目标页面的标题,这个参数是必需的
-//$text:指明了页面的内容
+//$text:指明了页面的内容,这个参数是必需的
 //$summary:指明了编辑摘要,默认为空
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=edit
 function ideas_edit($title,$text,$summary=""){
@@ -52,7 +52,7 @@ function ideas_edit_top($title,$text,$summary=""){
 
 //该函数用于添加新段落(标题,段落标题,内容,编辑摘要)
 //$title:指明了目标页面的标题,这个参数是必需的
-//$sectiontitle:指明了段落的标题
+//$sectiontitle:指明了段落的标题,这个参数是必需的
 //$text:指明了页面的内容
 //$summary:指明了编辑摘要,默认为空
 //API帮助:https://zh.wikipedia.org/w/api.php?action=help&modules=edit
