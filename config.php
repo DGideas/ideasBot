@@ -5,8 +5,6 @@ chdir(dirname(__FILE__));
 
 //====================Settings====================
 //==========Main==========
-$lgname="Botname"; //机器人账户的用户名(记录日志等操作也会用到)
-$lgpassword="Password"; //机器人账户的密码
 $author="Username"; //您自己的用户名,用于机器人报告等多种用途
 $wiki="zhwp"; //指定初始的预设工作维基,请参阅help/workwiki.txt.默认的站点代号,请见下方
 $defaultlanguage="zh-hans"; //默认的语言,请参阅translation/readme.txt
@@ -44,7 +42,7 @@ $written=true; //Enable debug mode can let the bot running under read-only mode.
 $version="2.0 MileStone1";
 
 //==========Bot's User-Agent==========
-$useragent= " By IdeasBot Framework, Version:".$version; 
+$useragent= " By ideasBot Framework, Version:".$version; 
 
 //==========init var==========
 $islogin=false; //User login status
@@ -56,66 +54,5 @@ $lang=$defaultlanguage;
 
 //==========set max exec time==========
 ini_set("max_execution_time",$maxexecutiontime);
-
-//==========Define unicode==========
-$url=array();
-
-$url["meta"]="http://meta.wikimedia.org/w/api.php"; 
-$url["labs"]="http://wikitech.wikimedia.org/w/api.php"; 
-$url["tech"]="http://wikitech.wikimedia.org/w/api.php"; 
-$url["species"]="http://species.wikimedia.org/w/api.php"; 
-$url["commons"]="http://commons.wikimedia.org/w/api.php"; 
-$url["data"]="http://www.wikidata.org/w/api.php"; 
-$url["mw"]="http://www.mediawiki.org/w/api.php";
-$url["mediawiki"]=&$url["mw"];
-
-$url["zhwp"]="http://zh.wikipedia.org/w/api.php"; 
-$url["enwp"]="http://en.wikipedia.org/w/api.php"; 
-$url["arwp"]="http://ar.wikipedia.org/w/api.php"; 
-$url["bgwp"]="http://bg.wikipedia.org/w/api.php"; 
-$url["cawp"]="http://ca.wikipedia.org/w/api.php"; 
-$url["cswp"]="http://cs.wikipedia.org/w/api.php"; 
-$url["dawp"]="http://da.wikipedia.org/w/api.php"; 
-$url["dewp"]="http://de.wikipedia.org/w/api.php"; 
-$url["eswp"]="http://es.wikipedia.org/w/api.php"; 
-$url["etwp"]="http://et.wikipedia.org/w/api.php"; 
-$url["gawp"]="http://gan.wikipedia.org/w/api.php"; 
-$url["fawp"]="http://fa.wikipedia.org/w/api.php"; 
-$url["fiwp"]="http://fi.wikipedia.org/w/api.php"; 
-$url["frwp"]="http://fr.wikipedia.org/w/api.php"; 
-$url["hewp"]="http://he.wikipedia.org/w/api.php"; 
-$url["hrwp"]="http://hr.wikipedia.org/w/api.php"; 
-$url["htwp"]="http://ht.wikipedia.org/w/api.php"; 
-$url["huwp"]="http://hu.wikipedia.org/w/api.php"; 
-$url["idwp"]="http://id.wikipedia.org/w/api.php"; 
-$url["itwp"]="http://it.wikipedia.org/w/api.php"; 
-$url["jawp"]="http://ja.wikipedia.org/w/api.php"; 
-$url["kowp"]="http://ko.wikipedia.org/w/api.php"; 
-$url["srwp"]="http://sr.wikipedia.org/w/api.php"; 
-$url["test"]="http://test.wikipedia.org/w/api.php"; 
-$url["test2"]="http://test2.wikipedia.org/w/api.php"; 
-$url["ruwp"]="http://ru.wikipedia.org/w/api.php"; 
-$url["wuwp"]="http://wuu.wikipedia.org/w/api.php"; 
-$url["zcwp"]="http://zh-classical.wikipedia.org/w/api.php"; 
-$url["zywp"]="http://zh-yue.wikipedia.org/w/api.php"; 
-
-$url["zhmg"]="http://zh.moegirl.org/api.php";
-$url["enmg"]="http://en.moegirl.org/api.php";
-$url["jpmg"]="http://jp.moegirl.org/api.php";
-
-$url["archlinux"]="http://wiki.archlinux.org/api.php";
-$url["bioedu"]="http://bio.cug.edu.cn/w/api.php";
-$url["boinc"]="http://boinc.berkeley.edu/w/api.php";
-$url["codex"]="http://codex.wordpress.org/api.php";
-$url["filezilla"]="http://wiki.filezilla-project.org/wiki/api.php";
-$url["mozilla"]="http://wiki.mozilla.org/api.php";
-$url["nocow"]="http://www.nocow.cn/api.php";
-$url["smmw"]="http://www.semantic-mediawiki.org/w/api.php";
-$url["tfs"]="http://test.happylr.net/api.php"; 
-$url["ubuntu"]="http://wiki.ubuntu.org.cn/api.php";
-$url["wps"]="http://community.wps.cn/wiki/api.php";
-$url["52poke"]="http://wiki.52poke.com/api.php";
-
-$url["feedback"]="http://bots.wmflabs.org/~dgideas/ideasbot/feedback.php";
 
 ?>

@@ -2,11 +2,9 @@
 
 <?php
 include_once("include.php");
-ideas_login();
+$a=new ideasBot();
+$a->set('zhwp','username','password');
+$a->connect();
+print($a->get('首页'));
 
-//这是一个实例文件,请将您的代码置于此处
-ideas_report("it works");
-echo "\r\nit works";
-
-echo "\r\nfinish";
 ?>
