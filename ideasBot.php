@@ -2,6 +2,9 @@
 //This file include MediaWiki APIs.
 //Author:DGideas
 
+chdir(dirname(__FILE__));
+$require_once('include.php');
+
 class ideasBot
 {
 	public $ideasBot=array();
@@ -9,12 +12,14 @@ class ideasBot
 	function __construct()
 	{
 		$ideasBot["wiki"]='';
-		$ideasBot["
+		$ideasBot["charset"]='utf-8';
+		$ideasBot["username"]='';
+		$ideasBot["password"]='';
 	}
 	
 	public function set(PropName,PropValue)
 	{
-		$this->$ideasBot[(string)PropName]=PropValue;
+		$this->$ideasBot[strtolower((string)PropName)]=PropValue;
 		return True;
 	}
 	
