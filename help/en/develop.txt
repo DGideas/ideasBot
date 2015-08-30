@@ -1,3 +1,0 @@
-It's easy to help us to develop the ideasBot, especially extensions.
-
-Please add enough rem to the code.

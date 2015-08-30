@@ -1,9 +1,0 @@
-ideasfuncx.php is the basic functions of ideasBot, it includes:
-
-cURL POST action
-ideasBot login
-API:currect changes
-API:query
-API:edit
-API:image usage
-API:user contribution

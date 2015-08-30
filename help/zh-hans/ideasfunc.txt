@@ -1,9 +1,0 @@
-ideasfuncx.php是ideasBot最基本的函数集,包含以下功能:
-
-cURL POST 提交
-ideasBot 登录
-API:最近更改
-API:查询
-API:编辑
-API:图像用途
-API:用户贡献
