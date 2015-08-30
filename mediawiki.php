@@ -8,7 +8,72 @@ class ideasBot
 	{
 		
 	}
-
+	
+	public function register()
+	{
+		
+	}
+	
+	public function login()
+	{
+		
+	}
+	
+	public function get()
+	{
+		
+	}
+	
+	public function edit()
+	{
+		
+	}
+	
+	public function delete()
+	{
+		
+	}
+	
+	public function watch()
+	{
+		
+	}
+	
+	public function unwatch()
+	{
+		
+	}
+	
+	public function protect()
+	{
+		
+	}
+	
+	public function rollback()
+	{
+		
+	}
+	
+	public function move()
+	{
+		
+	}
+	
+	public function undelete()
+	{
+		
+	}
+	
+	public function patrol()
+	{
+		
+	}
+	
+	protected function get_token()
+	{
+		
+	}
+	
 	protected function uuid(){
 		if (function_exists('com_create_guid')){ 
 			return com_create_guid();
