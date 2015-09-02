@@ -1,9 +1,8 @@
 <?php
 //This file include MediaWiki APIs.
 //Author:DGideas
-
 chdir(dirname(__FILE__));
-$require_once('include.php');
+require_once('config.php');
 
 class ideasBot
 {
@@ -17,7 +16,7 @@ class ideasBot
 		$ideasBot["password"]='';
 	}
 	
-	public function set(PropName,PropValue)
+	public function set($PropName,$PropValue)
 	{
 		$this->$ideasBot[strtolower((string)PropName)]=PropValue;
 		return True;
@@ -118,10 +117,14 @@ class ideasBot
 		
 	}
 	
-	protected function uuid(){
-		if (function_exists('com_create_guid')){ 
+	protected function uuid()
+	{
+		if (function_exists('com_create_guid'))
+		{ 
 			return com_create_guid();
-		}else{
+		}
+		else
+		{
 			mt_srand((double)microtime()*10000);
 			$charid = strtoupper(md5(uniqid(rand(), true)));
 			$hyphen = chr(45);
@@ -1158,4 +1161,6 @@ class ideasBot
 		}
 	
 	}
+
+print('done');
 ?>
